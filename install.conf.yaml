@@ -5,5 +5,5 @@
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
-
+    ~/.atom: "atom/"
 
