@@ -7,11 +7,18 @@
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
     ~/.vim: vim/
-    ~/.atom: atom/
+    ~/.atom/config.cson: atom/config.cson
+    ~/.atom/keymap.cson: atom/keymap.cson
+    ~/.atom/styles.less: atom/styles.less
+    ~/.atom/packages.list: atom/packages.list
     ~/.bash-git-prompt: bash-git-prompt/
     ~/.gnupg/scdaemon.conf: gnupg/scdaemon.conf
     ~/.gnupg/gpg.conf: gnupg/gpg.conf
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.bin: bin/
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --remote --recursive, Installing submodules]
+    - [ls ~/.atom/packages/ | grep -v README | cat packages.list - | sort -u > ~/.atom/packages.list, Adding any missing atom packages to ~/.atom/packages.list]
+    - [ls ~/.atom/packages | comm -13 <(sort -u -) <(sort -u ~/.atom/packages.list) | xargs -r apm install, Installing atom packages missing from ~/.atom/packages.list]

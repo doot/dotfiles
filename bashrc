@@ -17,6 +17,9 @@ export HISTFILESIZE=999999
 # Support for gpg-agent.  Used for ssh via gpg key (stored on yubikey)
 source ~/.gpg-agent-info
 
+# Custom scripts
+PATH="~/.bin:${PATH}"
+
 # Display git status in prompt
 GIT_PROMPT_START="\u@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ "
 source ~/.bash-git-prompt/gitprompt.sh
