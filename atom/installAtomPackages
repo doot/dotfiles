@@ -7,3 +7,4 @@ ls ~/.atom/packages/ | grep -v README | sort -u > ~/.dotfiles/atom/packages.list
 cd ~/.dotfiles/atom/
 git add packages.list
 git commit -m "Updating atom packages list"
+exit 0
