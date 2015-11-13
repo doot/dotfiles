@@ -7,7 +7,7 @@
 	email = jeremy@jhauschildt.com
 	signingkey = D1372D8D
 [core]
-	excludesfile = /Users/doot/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	autocrlf = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
