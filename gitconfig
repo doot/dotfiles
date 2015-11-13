@@ -8,7 +8,7 @@
 	signingkey = D1372D8D
 [core]
 	excludesfile = /Users/doot/.gitignore_global
-	autocrlf = true
+	autocrlf = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
