@@ -1,0 +1,48 @@
+(function() {
+  var SelectStageFiles, SelectUnStageFiles, git, pathToRepoFile, repo, _ref;
+
+  git = require('../../lib/git');
+
+  _ref = require('../fixtures'), repo = _ref.repo, pathToRepoFile = _ref.pathToRepoFile;
+
+  SelectStageFiles = require('../../lib/views/select-stage-files-view');
+
+  SelectUnStageFiles = require('../../lib/views/select-unstage-files-view');
+
+  describe("SelectStageFiles", function() {
+    return it("stages the selected files", function() {
+      var fileItem, view;
+      spyOn(git, 'cmd').andReturn(Promise.resolve(''));
+      fileItem = {
+        path: pathToRepoFile
+      };
+      view = new SelectStageFiles(repo, [fileItem]);
+      view.confirmSelection();
+      view.find('.btn-stage-button').click();
+      return expect(git.cmd).toHaveBeenCalledWith(['add', '-f', pathToRepoFile], {
+        cwd: repo.getWorkingDirectory()
+      });
+    });
+  });
+
+  describe("SelectUnStageFiles", function() {
+    return it("unstages the selected files", function() {
+      var fileItem, view;
+      spyOn(git, 'cmd').andReturn(Promise.resolve(''));
+      fileItem = {
+        path: pathToRepoFile
+      };
+      view = new SelectUnStageFiles(repo, [fileItem]);
+      view.confirmSelection();
+      view.find('.btn-unstage-button').click();
+      return expect(git.cmd).toHaveBeenCalledWith(['reset', 'HEAD', '--', pathToRepoFile], {
+        cwd: repo.getWorkingDirectory()
+      });
+    });
+  });
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAiZmlsZSI6ICIiLAogICJzb3VyY2VSb290IjogIiIsCiAgInNvdXJjZXMiOiBbCiAgICAiL1VzZXJzL2Rvb3QvLmF0b20vcGFja2FnZXMvZ2l0LXBsdXMvc3BlYy92aWV3cy9zZWxlY3Qtc3RhZ2UtZmlsZXMtdmlldy1zcGVjLmNvZmZlZSIKICBdLAogICJuYW1lcyI6IFtdLAogICJtYXBwaW5ncyI6ICJBQUFBO0FBQUEsTUFBQSxxRUFBQTs7QUFBQSxFQUFBLEdBQUEsR0FBTSxPQUFBLENBQVEsZUFBUixDQUFOLENBQUE7O0FBQUEsRUFDQSxPQUF5QixPQUFBLENBQVEsYUFBUixDQUF6QixFQUFDLFlBQUEsSUFBRCxFQUFPLHNCQUFBLGNBRFAsQ0FBQTs7QUFBQSxFQUVBLGdCQUFBLEdBQW1CLE9BQUEsQ0FBUSx5Q0FBUixDQUZuQixDQUFBOztBQUFBLEVBR0Esa0JBQUEsR0FBcUIsT0FBQSxDQUFRLDJDQUFSLENBSHJCLENBQUE7O0FBQUEsRUFLQSxRQUFBLENBQVMsa0JBQVQsRUFBNkIsU0FBQSxHQUFBO1dBQzNCLEVBQUEsQ0FBRywyQkFBSCxFQUFnQyxTQUFBLEdBQUE7QUFDOUIsVUFBQSxjQUFBO0FBQUEsTUFBQSxLQUFBLENBQU0sR0FBTixFQUFXLEtBQVgsQ0FBaUIsQ0FBQyxTQUFsQixDQUE0QixPQUFPLENBQUMsT0FBUixDQUFnQixFQUFoQixDQUE1QixDQUFBLENBQUE7QUFBQSxNQUNBLFFBQUEsR0FDRTtBQUFBLFFBQUEsSUFBQSxFQUFNLGNBQU47T0FGRixDQUFBO0FBQUEsTUFHQSxJQUFBLEdBQVcsSUFBQSxnQkFBQSxDQUFpQixJQUFqQixFQUF1QixDQUFDLFFBQUQsQ0FBdkIsQ0FIWCxDQUFBO0FBQUEsTUFJQSxJQUFJLENBQUMsZ0JBQUwsQ0FBQSxDQUpBLENBQUE7QUFBQSxNQUtBLElBQUksQ0FBQyxJQUFMLENBQVUsbUJBQVYsQ0FBOEIsQ0FBQyxLQUEvQixDQUFBLENBTEEsQ0FBQTthQU1BLE1BQUEsQ0FBTyxHQUFHLENBQUMsR0FBWCxDQUFlLENBQUMsb0JBQWhCLENBQXFDLENBQUMsS0FBRCxFQUFRLElBQVIsRUFBYyxjQUFkLENBQXJDLEVBQW9FO0FBQUEsUUFBQSxHQUFBLEVBQUssSUFBSSxDQUFDLG1CQUFMLENBQUEsQ0FBTDtPQUFwRSxFQVA4QjtJQUFBLENBQWhDLEVBRDJCO0VBQUEsQ0FBN0IsQ0FMQSxDQUFBOztBQUFBLEVBZUEsUUFBQSxDQUFTLG9CQUFULEVBQStCLFNBQUEsR0FBQTtXQUM3QixFQUFBLENBQUcsNkJBQUgsRUFBa0MsU0FBQSxHQUFBO0FBQ2hDLFVBQUEsY0FBQTtBQUFBLE1BQUEsS0FBQSxDQUFNLEdBQU4sRUFBVyxLQUFYLENBQWlCLENBQUMsU0FBbEIsQ0FBNEIsT0FBTyxDQUFDLE9BQVIsQ0FBZ0IsRUFBaEIsQ0FBNUIsQ0FBQSxDQUFBO0FBQUEsTUFDQSxRQUFBLEdBQ0U7QUFBQSxRQUFBLElBQUEsRUFBTSxjQUFOO09BRkYsQ0FBQTtBQUFBLE1BR0EsSUFBQSxHQUFXLElBQUEsa0JBQUEsQ0FBbUIsSUFBbkIsRUFBeUIsQ0FBQyxRQUFELENBQXpCLENBSFgsQ0FBQTtBQUFBLE1BSUEsSUFBSSxDQUFDLGdCQUFMLENBQUEsQ0FKQSxDQUFBO0FBQUEsTUFLQSxJQUFJLENBQUMsSUFBTCxDQUFVLHFCQUFWLENBQWdDLENBQUMsS0FBakMsQ0FBQSxDQUxBLENBQUE7YUFNQSxNQUFBLENBQU8sR0FBRyxDQUFDLEdBQVgsQ0FBZSxDQUFDLG9CQUFoQixDQUFxQyxDQUFDLE9BQUQsRUFBVSxNQUFWLEVBQWtCLElBQWxCLEVBQXdCLGNBQXhCLENBQXJDLEVBQThFO0FBQUEsUUFBQSxHQUFBLEVBQUssSUFBSSxDQUFDLG1CQUFMLENBQUEsQ0FBTDtPQUE5RSxFQVBnQztJQUFBLENBQWxDLEVBRDZCO0VBQUEsQ0FBL0IsQ0FmQSxDQUFBO0FBQUEiCn0=
+
+//# sourceURL=/Users/doot/.atom/packages/git-plus/spec/views/select-stage-files-view-spec.coffee

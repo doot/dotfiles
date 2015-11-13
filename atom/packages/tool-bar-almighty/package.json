@@ -1,0 +1,52 @@
+{
+  "name": "tool-bar-almighty",
+  "main": "./lib/tool-bar-almighty",
+  "version": "0.2.2",
+  "description": "An atom-tool-bar plugin that adds an 'almighty toolbar' with many commonly used actions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varemenos/atom-toolbar-almighty.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "keywords": [
+    "toolbar",
+    "tool-bar"
+  ],
+  "dependencies": {},
+  "packageDependencies": {
+    "tool-bar": "0.1.1"
+  },
+  "consumedServices": {
+    "tool-bar": {
+      "versions": {
+        "^0.1.0": "consumeToolBar"
+      }
+    }
+  },
+  "readme": "# Toolbar Almighty - a tool-bar plugin\n\n## Description\n\nAn atom-tool-bar plugin that adds many commonly used actions in the tool-bar.\n\n![screenshot](https://rawgit.com/varemenos/atom-toolbar-almighty/master/screenshot.png)\n\nAvailable toolbar buttons:\n\n* __open file__\n* __open folder__\n* __save file__\n* __open git-control__ (missing from the screenshot) (requires `git-control` package)\n* __open git projects__ (requires `git-projects` package)\n* __list projects__ (requires `project-manager` package)\n* -\n* __split left__\n* __split right__\n* -\n* __git merge conflicts__ (requires `merge-conflicts` package)\n* __toggle fullscreen__\n* __toggle tree-view__\n* __toggle minimap__ (requires `minimap` package)\n* -\n* __auto indent__\n* __fold all__\n* __unfold all__\n* -\n* __reload window__\n* __opens a terminal (split bottom)__  (requires `term2` or `term3` package)\n* __toggle devtools__\n* __settings__\n\n__Note__: The toolbar buttons that require other packages will only appear if you have those packages installed\n\n## Installation\n\nFirst you have to install the `tool-bar` package which is required:\n\n```bash\napm install tool-bar\n```\n\nThen you install the `tool-bar-almighty` package:\n\n```bash\napm install tool-bar-almighty\n```\n\n## TODO\n\nAdd package settings to toggle (and maybe reorder) toolbar items\n\n## License\n\nThe MIT License\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/varemenos/atom-toolbar-almighty/issues"
+  },
+  "homepage": "https://github.com/varemenos/atom-toolbar-almighty#readme",
+  "_id": "tool-bar-almighty@0.2.2",
+  "_shasum": "9c897793eb2cac4cba1d2b2968586a9b2ed7a753",
+  "_resolved": "file:../d-115104-62950-1uwpf74/package.tgz",
+  "_from": "../d-115104-62950-1uwpf74/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".coffee": [
+        "lib/tool-bar-almighty.coffee"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

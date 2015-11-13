@@ -1,0 +1,57 @@
+(function() {
+  var GitShow, Os, Path, fs, git, pathToRepoFile, repo, _ref,
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+
+  fs = require('fs-plus');
+
+  Path = require('flavored-path');
+
+  Os = require('os');
+
+  git = require('../../lib/git');
+
+  _ref = require('../fixtures'), repo = _ref.repo, pathToRepoFile = _ref.pathToRepoFile;
+
+  GitShow = require('../../lib/models/git-show');
+
+  describe("GitShow", function() {
+    beforeEach(function() {
+      return spyOn(git, 'cmd').andReturn(Promise.resolve('foobar'));
+    });
+    it("calls git.cmd with 'show' and " + pathToRepoFile, function() {
+      var args;
+      GitShow(repo, 'foobar-hash', pathToRepoFile);
+      args = git.cmd.mostRecentCall.args[0];
+      expect(__indexOf.call(args, 'show') >= 0).toBe(true);
+      return expect(__indexOf.call(args, pathToRepoFile) >= 0).toBe(true);
+    });
+    it("writes the output to a file", function() {
+      var outputFile;
+      spyOn(fs, 'writeFile').andCallFake(function() {
+        return fs.writeFile.mostRecentCall.args[3]();
+      });
+      outputFile = Path.join(Os.tmpDir(), "foobar-hash.diff");
+      waitsForPromise(function() {
+        return GitShow(repo, 'foobar-hash', pathToRepoFile);
+      });
+      return runs(function() {
+        var args;
+        args = fs.writeFile.mostRecentCall.args;
+        expect(args[0]).toBe(outputFile);
+        return expect(args[1]).toBe('foobar');
+      });
+    });
+    return describe("When a hash is not specified", function() {
+      return it("returns a view for entering a hash", function() {
+        var view;
+        view = GitShow(repo);
+        return expect(view).toBeDefined();
+      });
+    });
+  });
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAiZmlsZSI6ICIiLAogICJzb3VyY2VSb290IjogIiIsCiAgInNvdXJjZXMiOiBbCiAgICAiL1VzZXJzL2Rvb3QvLmF0b20vcGFja2FnZXMvZ2l0LXBsdXMvc3BlYy9tb2RlbHMvZ2l0LXNob3ctc3BlYy5jb2ZmZWUiCiAgXSwKICAibmFtZXMiOiBbXSwKICAibWFwcGluZ3MiOiAiQUFBQTtBQUFBLE1BQUEsc0RBQUE7SUFBQSxxSkFBQTs7QUFBQSxFQUFBLEVBQUEsR0FBSyxPQUFBLENBQVEsU0FBUixDQUFMLENBQUE7O0FBQUEsRUFDQSxJQUFBLEdBQU8sT0FBQSxDQUFRLGVBQVIsQ0FEUCxDQUFBOztBQUFBLEVBRUEsRUFBQSxHQUFLLE9BQUEsQ0FBUSxJQUFSLENBRkwsQ0FBQTs7QUFBQSxFQUdBLEdBQUEsR0FBTSxPQUFBLENBQVEsZUFBUixDQUhOLENBQUE7O0FBQUEsRUFJQSxPQUF5QixPQUFBLENBQVEsYUFBUixDQUF6QixFQUFDLFlBQUEsSUFBRCxFQUFPLHNCQUFBLGNBSlAsQ0FBQTs7QUFBQSxFQUtBLE9BQUEsR0FBVSxPQUFBLENBQVEsMkJBQVIsQ0FMVixDQUFBOztBQUFBLEVBT0EsUUFBQSxDQUFTLFNBQVQsRUFBb0IsU0FBQSxHQUFBO0FBQ2xCLElBQUEsVUFBQSxDQUFXLFNBQUEsR0FBQTthQUNULEtBQUEsQ0FBTSxHQUFOLEVBQVcsS0FBWCxDQUFpQixDQUFDLFNBQWxCLENBQTRCLE9BQU8sQ0FBQyxPQUFSLENBQWdCLFFBQWhCLENBQTVCLEVBRFM7SUFBQSxDQUFYLENBQUEsQ0FBQTtBQUFBLElBR0EsRUFBQSxDQUFJLGdDQUFBLEdBQWdDLGNBQXBDLEVBQXNELFNBQUEsR0FBQTtBQUNwRCxVQUFBLElBQUE7QUFBQSxNQUFBLE9BQUEsQ0FBUSxJQUFSLEVBQWMsYUFBZCxFQUE2QixjQUE3QixDQUFBLENBQUE7QUFBQSxNQUNBLElBQUEsR0FBTyxHQUFHLENBQUMsR0FBRyxDQUFDLGNBQWMsQ0FBQyxJQUFLLENBQUEsQ0FBQSxDQURuQyxDQUFBO0FBQUEsTUFFQSxNQUFBLENBQU8sZUFBVSxJQUFWLEVBQUEsTUFBQSxNQUFQLENBQXNCLENBQUMsSUFBdkIsQ0FBNEIsSUFBNUIsQ0FGQSxDQUFBO2FBR0EsTUFBQSxDQUFPLGVBQWtCLElBQWxCLEVBQUEsY0FBQSxNQUFQLENBQThCLENBQUMsSUFBL0IsQ0FBb0MsSUFBcEMsRUFKb0Q7SUFBQSxDQUF0RCxDQUhBLENBQUE7QUFBQSxJQVNBLEVBQUEsQ0FBRyw2QkFBSCxFQUFrQyxTQUFBLEdBQUE7QUFDaEMsVUFBQSxVQUFBO0FBQUEsTUFBQSxLQUFBLENBQU0sRUFBTixFQUFVLFdBQVYsQ0FBc0IsQ0FBQyxXQUF2QixDQUFtQyxTQUFBLEdBQUE7ZUFDakMsRUFBRSxDQUFDLFNBQVMsQ0FBQyxjQUFjLENBQUMsSUFBSyxDQUFBLENBQUEsQ0FBakMsQ0FBQSxFQURpQztNQUFBLENBQW5DLENBQUEsQ0FBQTtBQUFBLE1BRUEsVUFBQSxHQUFhLElBQUksQ0FBQyxJQUFMLENBQVUsRUFBRSxDQUFDLE1BQUgsQ0FBQSxDQUFWLEVBQXVCLGtCQUF2QixDQUZiLENBQUE7QUFBQSxNQUdBLGVBQUEsQ0FBZ0IsU0FBQSxHQUFBO2VBQ2QsT0FBQSxDQUFRLElBQVIsRUFBYyxhQUFkLEVBQTZCLGNBQTdCLEVBRGM7TUFBQSxDQUFoQixDQUhBLENBQUE7YUFLQSxJQUFBLENBQUssU0FBQSxHQUFBO0FBQ0gsWUFBQSxJQUFBO0FBQUEsUUFBQSxJQUFBLEdBQU8sRUFBRSxDQUFDLFNBQVMsQ0FBQyxjQUFjLENBQUMsSUFBbkMsQ0FBQTtBQUFBLFFBQ0EsTUFBQSxDQUFPLElBQUssQ0FBQSxDQUFBLENBQVosQ0FBZSxDQUFDLElBQWhCLENBQXFCLFVBQXJCLENBREEsQ0FBQTtlQUVBLE1BQUEsQ0FBTyxJQUFLLENBQUEsQ0FBQSxDQUFaLENBQWUsQ0FBQyxJQUFoQixDQUFxQixRQUFyQixFQUhHO01BQUEsQ0FBTCxFQU5nQztJQUFBLENBQWxDLENBVEEsQ0FBQTtXQW9CQSxRQUFBLENBQVMsOEJBQVQsRUFBeUMsU0FBQSxHQUFBO2FBQ3ZDLEVBQUEsQ0FBRyxvQ0FBSCxFQUF5QyxTQUFBLEdBQUE7QUFDdkMsWUFBQSxJQUFBO0FBQUEsUUFBQSxJQUFBLEdBQU8sT0FBQSxDQUFRLElBQVIsQ0FBUCxDQUFBO2VBQ0EsTUFBQSxDQUFPLElBQVAsQ0FBWSxDQUFDLFdBQWIsQ0FBQSxFQUZ1QztNQUFBLENBQXpDLEVBRHVDO0lBQUEsQ0FBekMsRUFyQmtCO0VBQUEsQ0FBcEIsQ0FQQSxDQUFBO0FBQUEiCn0=
+
+//# sourceURL=/Users/doot/.atom/packages/git-plus/spec/models/git-show-spec.coffee

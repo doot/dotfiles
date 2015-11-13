@@ -1,0 +1,82 @@
+(function() {
+  var Project, findGitRepos, fs, path, shouldIgnorePathFn, sortByFn, utils;
+
+  fs = require('fs-plus');
+
+  path = require('path');
+
+  utils = require('./utils');
+
+  Project = require('./models/project');
+
+  sortByFn = function(_sortKey) {
+    return function(array) {
+      return utils.sortBy(_sortKey, array);
+    };
+  };
+
+  shouldIgnorePathFn = function(_ignoredPath, _ignoredPatterns) {
+    return function(_path) {
+      var ignoredPaths, ignoredPattern;
+      ignoredPaths = utils.parsePathString(_ignoredPath);
+      ignoredPattern = new RegExp((_ignoredPatterns || "").split(/\s*;\s*/g).join("|"), "g");
+      if (ignoredPattern.test(_path)) {
+        return true;
+      }
+      return ignoredPaths && ignoredPaths.has(_path);
+    };
+  };
+
+  findGitRepos = function(root, maxDepth, sortBy, shouldIgnorePath, cb) {
+    var pathsChecked, projects, rootPaths;
+    projects = [];
+    pathsChecked = 0;
+    rootPaths = utils.parsePathString(root);
+    return rootPaths.forEach(function(rootPath) {
+      var rootDepth, sendCallback;
+      sendCallback = function() {
+        if (++pathsChecked === rootPaths.size) {
+          return cb(sortBy(projects));
+        }
+      };
+      if (shouldIgnorePath(rootPath)) {
+        return sendCallback();
+      }
+      rootDepth = rootPath.split(path.sep).length;
+      return fs.traverseTree(rootPath, (function() {}), function(_dir) {
+        var dirDepth, project;
+        if (shouldIgnorePath(_dir)) {
+          return false;
+        }
+        if (utils.isRepositorySync(_dir)) {
+          project = new Project(_dir);
+          if (!project.ignored) {
+            projects.push(project);
+          }
+          return false;
+        }
+        dirDepth = _dir.split(path.sep).length;
+        return rootDepth + maxDepth > dirDepth;
+      }, function() {
+        return sendCallback();
+      });
+    });
+  };
+
+  module.exports = function(rootPaths, config) {
+    var callback, maxDepth, shouldIgnorePath, sortBy;
+    callback = this.async();
+    maxDepth = config.maxDepth;
+    sortBy = sortByFn(config.sortBy);
+    shouldIgnorePath = shouldIgnorePathFn(config.ignoredPath, config.ignoredPatterns);
+    return findGitRepos(rootPaths, maxDepth, sortBy, shouldIgnorePath, function(projects) {
+      emit('found-repos', projects);
+      return callback();
+    });
+  };
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAiZmlsZSI6ICIiLAogICJzb3VyY2VSb290IjogIiIsCiAgInNvdXJjZXMiOiBbCiAgICAiL1VzZXJzL2Rvb3QvLmF0b20vcGFja2FnZXMvZ2l0LXByb2plY3RzL2xpYi9maW5kLWdpdC1yZXBvcy10YXNrLmNvZmZlZSIKICBdLAogICJuYW1lcyI6IFtdLAogICJtYXBwaW5ncyI6ICJBQUFBO0FBQUEsTUFBQSxvRUFBQTs7QUFBQSxFQUFBLEVBQUEsR0FBSyxPQUFBLENBQVEsU0FBUixDQUFMLENBQUE7O0FBQUEsRUFDQSxJQUFBLEdBQU8sT0FBQSxDQUFRLE1BQVIsQ0FEUCxDQUFBOztBQUFBLEVBRUEsS0FBQSxHQUFRLE9BQUEsQ0FBUSxTQUFSLENBRlIsQ0FBQTs7QUFBQSxFQUlBLE9BQUEsR0FBVSxPQUFBLENBQVEsa0JBQVIsQ0FKVixDQUFBOztBQUFBLEVBTUEsUUFBQSxHQUFXLFNBQUMsUUFBRCxHQUFBO0FBQ1QsV0FBTyxTQUFDLEtBQUQsR0FBQTthQUNMLEtBQUssQ0FBQyxNQUFOLENBQWEsUUFBYixFQUF1QixLQUF2QixFQURLO0lBQUEsQ0FBUCxDQURTO0VBQUEsQ0FOWCxDQUFBOztBQUFBLEVBVUEsa0JBQUEsR0FBcUIsU0FBQyxZQUFELEVBQWUsZ0JBQWYsR0FBQTtBQUtuQixXQUFPLFNBQUMsS0FBRCxHQUFBO0FBQ0wsVUFBQSw0QkFBQTtBQUFBLE1BQUEsWUFBQSxHQUFlLEtBQUssQ0FBQyxlQUFOLENBQXNCLFlBQXRCLENBQWYsQ0FBQTtBQUFBLE1BQ0EsY0FBQSxHQUFxQixJQUFBLE1BQUEsQ0FBTyxDQUFDLGdCQUFBLElBQW9CLEVBQXJCLENBQXdCLENBQUMsS0FBekIsQ0FBK0IsVUFBL0IsQ0FBMEMsQ0FBQyxJQUEzQyxDQUFnRCxHQUFoRCxDQUFQLEVBQTZELEdBQTdELENBRHJCLENBQUE7QUFFQSxNQUFBLElBQWUsY0FBYyxDQUFDLElBQWYsQ0FBb0IsS0FBcEIsQ0FBZjtBQUFBLGVBQU8sSUFBUCxDQUFBO09BRkE7QUFHQSxhQUFPLFlB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
+
+//# sourceURL=/Users/doot/.atom/packages/git-projects/lib/find-git-repos-task.coffee
