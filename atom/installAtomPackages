@@ -1,0 +1,9 @@
+#!/bin/bash
+ls ~/.atom/packages/ | grep -v README > /tmp/installedAtomPackages.tmp
+comm -13 <(sort -u /tmp/installedAtomPackages.tmp) <(sort -u ~/.atom/packages.list) | xargs apm install
+rm /tmp/installedAtomPackages.tmp
+cp ~/.dotfiles/atom/packages.list ~/.atom/packages.backup
+ls ~/.atom/packages/ | grep -v README | sort -u > ~/.dotfiles/atom/packages.list
+cd ~/.dotfiles/atom/
+git add packages.list
+git commit -m "Updating atom packages list"
