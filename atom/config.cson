@@ -1,0 +1,8 @@
+"*":
+  "exception-reporting":
+    userId: "bce0a17e-0c1a-7b9a-3b80-b30140ccd0e7"
+  minimap:
+    plugins:
+      linter: true
+  welcome:
+    showOnStartup: false
