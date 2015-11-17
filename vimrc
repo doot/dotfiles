@@ -5,3 +5,4 @@ set expandtab
 filetype plugin indent on
 syntax on
 set ruler
+let g:netrw_dirhistmax=0
