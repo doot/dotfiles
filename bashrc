@@ -26,6 +26,9 @@ tabs 4
 # Support for gpg-agent.  Used for ssh via gpg key (stored on yubikey)
 source ~/.gpg-agent-info
 
+# Support for auto-completing git commands
+source ~/.git-completion.bash
+
 # Custom scripts
 PATH="~/.bin:${PATH}"
 
