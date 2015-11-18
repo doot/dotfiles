@@ -7,6 +7,7 @@
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
     ~/.vim: vim/
+    ~/.ssh/config: ssh_config
     ~/.atom/config.cson: atom/config.cson
     ~/.atom/keymap.cson: atom/keymap.cson
     ~/.atom/styles.less: atom/styles.less
@@ -16,6 +17,8 @@
     ~/.gnupg/scdaemon.conf: gnupg/scdaemon.conf
     ~/.gnupg/gpg.conf: gnupg/gpg.conf
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/Library/Preferences/com.googlecode.iterm2.plist: Library/Preferences/com.googlecode.iterm2.plist
+    ~/.vim/colors/solarized.vim: solarized/vim-colors-solarized/colors/solarized.vim 
     ~/.bin: bin/
 
 - shell:
