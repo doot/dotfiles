@@ -7,3 +7,6 @@
 [submodule "solarized"]
 	path = solarized
 	url = git://github.com/altercation/solarized.git
+[submodule "/Users/doot/.dotfiles/vim/bundle/Vundle.vim"]
+	path = /Users/doot/.dotfiles/vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
