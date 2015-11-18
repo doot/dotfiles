@@ -3,9 +3,18 @@ alias lsusb='system_profiler SPUSBDataType'
 alias h=history
 alias db-update=~/.dotfiles/install
 
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias dammit='sudo $(history -p \!\!)'
+alias ls='ls -G'
+alias ll='ls -lrht'
+
 # Bash settings
 export HISTSIZE=9999
 export HISTFILESIZE=999999
+tabs 4
 
 #if [ -f "${HOME}/.gpg-agent-info" ]; then
 #  . "${HOME}/.gpg-agent-info"
