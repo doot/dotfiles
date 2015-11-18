@@ -9,6 +9,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = false
+    editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -19,3 +20,7 @@
 	gpgsign = true
 [push]
 	default = simple
+[color]
+    ui = true
+[github]
+    user = doot
