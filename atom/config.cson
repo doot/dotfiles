@@ -4,5 +4,51 @@
   minimap:
     plugins:
       linter: true
+    absoluteMode: true
+    scrollAnimation: true
   welcome:
     showOnStartup: false
+  core:
+    disabledPackages: [
+      "git-plus"
+    ]
+    audioBeep: false
+    openEmptyEditorOnStart: false
+    projectHome: "~/projects"
+    themes: [
+      "nucleus-dark-ui"
+      "batman-syntax"
+    ]
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+    fontSize: 12
+  "linter-perlcritic":
+    executablePath: "/usr/local/bin/perlcritic"
+  "atom-beautify":
+    analytics: false
+    beautifyEntireFileOnSave: false
+  atomatigit: {}
+  "git-plus": {}
+  linter:
+    showErrorPanel: false
+  "linter-bootlint": {}
+  "linter-flint":
+    executablePath: "~/.bin/flint"
+    colorOutput: true
+  "linter-htmlhint": {}
+  "linter-liferay": {}
+  "linter-perl": {}
+  "linter-pylint": {}
+  "linter-scspell": {}
+  "linter-shellcheck": {}
+  "linter-tidy":
+    tidyExecutablePath: "/usr/local/bin/tidy"
+  "linter-write-good": {}
+  "merge-conflicts": {}
+  "preview-plus": {}
+  "tool-bar":
+    position: "Left"
+    iconSize: "16px"
+  "vim-mode":
+    useSmartcaseForSearch: true
