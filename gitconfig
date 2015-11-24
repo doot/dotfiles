@@ -24,3 +24,6 @@
     ui = true
 [github]
     user = doot
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
