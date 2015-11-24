@@ -29,6 +29,11 @@ source ~/.gpg-agent-info
 # Support for auto-completing git commands
 source ~/.git-completion.bash
 
+# Support for auto-completing brew.  Also loads other auto-completions installed via brew.
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 # Custom scripts
 PATH="~/.bin:${PATH}"
 
