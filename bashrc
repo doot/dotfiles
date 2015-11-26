@@ -1,6 +1,5 @@
 # Aliases
 alias lsusb='system_profiler SPUSBDataType'
-alias h=history
 alias db-update=~/.dotfiles/install
 
 alias ..='cd ..'
@@ -8,13 +7,24 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias dammit='sudo $(history -p \!\!)'
+alias h=history
 alias ls='ls -G'
 alias ll='ls -lrht'
+alias sudo="sudo -E"
+
+# Show hidden files on OS X
+alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
+alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
 
 # Bash settings
 export HISTSIZE=9999
 export HISTFILESIZE=999999
 tabs 4
+
+# Always enable GREP colors
+export GREP_OPTIONS='--color=auto'
+# complete sudo and man-pages
+complete -cf sudo man
 
 #if [ -f "${HOME}/.gpg-agent-info" ]; then
 #  . "${HOME}/.gpg-agent-info"
