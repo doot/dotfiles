@@ -21,6 +21,8 @@
     ~/Library/Preferences/com.googlecode.iterm2.plist: Library/Preferences/com.googlecode.iterm2.plist
     ~/.vim/colors/solarized.vim: solarized/vim-colors-solarized/colors/solarized.vim 
     ~/.bin: bin/
+    ~/.config/deluge/hostlist.conf.1.2: config/deluge/hostlist.conf.1.2
+    ~/.config/deluge/core.conf: config/deluge/core.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
