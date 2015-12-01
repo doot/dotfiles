@@ -2,6 +2,7 @@ atom-beautify
 atomatigit
 batman-syntax
 browser-plus
+ex-mode
 file-icons
 git-control
 git-plus
@@ -33,3 +34,4 @@ term3
 tool-bar
 tool-bar-almighty
 vim-mode
+vim-mode-visual-block
