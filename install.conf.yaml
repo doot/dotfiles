@@ -43,10 +43,10 @@
     ~/Library/Preferences/com.googlecode.iterm2.plist:
         path: Library/Preferences/com.googlecode.iterm2.plist
         create: true
-    ~/.vim/colors/solarized.vim:
-        path: solarized/vim-colors-solarized/colors/solarized.vim 
-        create: true
-        force: true
+#    ~/.vim/colors/solarized.vim:
+#        path: solarized/vim-colors-solarized/colors/solarized.vim 
+#        create: true
+#        force: true
     ~/.bin:
         path: bin/
         create: true
