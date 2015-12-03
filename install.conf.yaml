@@ -7,22 +7,54 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
-    ~/.vim: vim/
-    ~/.ssh/config: ssh_config
-    ~/.atom/config.cson: atom/config.cson
-    ~/.atom/keymap.cson: atom/keymap.cson
-    ~/.atom/styles.less: atom/styles.less
-    ~/.atom/packages.list: atom/packages.list
-    ~/.atom/installAtomPackages: atom/installAtomPackages
-    ~/.bash-git-prompt: bash-git-prompt/
-    ~/.gnupg/scdaemon.conf: gnupg/scdaemon.conf
-    ~/.gnupg/gpg.conf: gnupg/gpg.conf
-    ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
-    ~/Library/Preferences/com.googlecode.iterm2.plist: Library/Preferences/com.googlecode.iterm2.plist
-    ~/.vim/colors/solarized.vim: solarized/vim-colors-solarized/colors/solarized.vim 
-    ~/.bin: bin/
-    ~/.config/deluge/hostlist.conf.1.2: config/deluge/hostlist.conf.1.2
-    ~/.config/deluge/core.conf: config/deluge/core.conf
+    ~/.vim:
+        path: vim/
+        create: true
+    ~/.ssh/config:
+        path: ssh_config
+        create: true
+    ~/.atom/config.cson:
+        path: atom/config.cson
+        create: true
+    ~/.atom/keymap.cson:
+        path: atom/keymap.cson
+        create: true
+    ~/.atom/styles.less:
+        path: atom/styles.less
+        create: true
+    ~/.atom/packages.list:
+        path: atom/packages.list
+        create: true
+    ~/.atom/installAtomPackages:
+        path: atom/installAtomPackages
+        create: true
+    ~/.bash-git-prompt:
+        path: bash-git-prompt/
+        create: true
+    ~/.gnupg/scdaemon.conf:
+        path: gnupg/scdaemon.conf
+        create: true
+    ~/.gnupg/gpg.conf:
+        path: gnupg/gpg.conf
+        create: true
+    ~/.gnupg/gpg-agent.conf:
+        path: gnupg/gpg-agent.conf
+        create: true
+    ~/Library/Preferences/com.googlecode.iterm2.plist:
+        path: Library/Preferences/com.googlecode.iterm2.plist
+        create: true
+    ~/.vim/colors/solarized.vim:
+        path: solarized/vim-colors-solarized/colors/solarized.vim 
+        create: true
+    ~/.bin:
+        path: bin/
+        create: true
+    ~/.config/deluge/hostlist.conf.1.2:
+        path: config/deluge/hostlist.conf.1.2
+        create: true
+    ~/.config/deluge/core.conf:
+        path: config/deluge/core.conf
+        create: true
 
 - shell:
     - 
