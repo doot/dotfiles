@@ -40,19 +40,24 @@ syntax enable
 set background=dark
 colorscheme solarized
 set autoindent
-set copyindent    " copy the previous indentation on autoindenting
+set copyindent              " copy the previous indentation on autoindenting
 set showmatch
 set matchtime=1
-set hlsearch      " highlight search terms
-set smartcase     " ignore case if search pattern is all lowercase,
-set incsearch     " show search matches as you type
+set hlsearch                " highlight search terms
+set smartcase               " ignore case if search pattern is all lowercase,
+set incsearch               " show search matches as you type
 set scrolloff=2
-set history=1000         " remember more commands and search history
-set undolevels=1000      " use many muchos levels of undo
+set history=1000            " remember more commands and search history
+set undolevels=1000         " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
-set title                " change the terminal's title
-set visualbell           " don't beep
-set noerrorbells         " don't beep
+set title                   " change the terminal's title
+set visualbell              " don't beep
+set noerrorbells            " don't beep
+set nostartofline           " Don’t reset cursor to start of line when moving around.
+set title                   " Show filename
+set showmode                " Show current mode
+set showcmd                 " Show commands/info while typing
+set backspace=2             " Allow backspace to work on characters entered in previous sessions
 
 " For mouse click in NERDTree
 ":set mouse=a
