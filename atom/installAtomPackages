@@ -1,4 +1,8 @@
 #!/bin/bash
+if ! type atom > /dev/null; then
+    echo "Atom does not exist, exiting..."
+    exit
+fi
 ls ~/.atom/packages/ | grep -v README > /tmp/installedAtomPackages.tmp
 comm -13 <(sort -u /tmp/installedAtomPackages.tmp) <(sort -u ~/.atom/packages.list) | xargs apm install
 rm /tmp/installedAtomPackages.tmp
