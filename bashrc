@@ -1,5 +1,32 @@
+# Determine host and os info
+os=`uname -s`
+host=`hostname | cut -d. -f1`
+
+# OS Specific settings
+case $os in
+	"Darwin")
+        alias ls='ls -FG';
+        tabs 4;
+        
+        # Kindof does the same thing as lsub when it doesn't exist on OS X
+        alias lsusb='system_profiler SPUSBDataType'
+
+        # Show hidden files on OS X
+        alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
+        alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
+
+        # Support for auto-completing brew.  Also loads other auto-completions installed via brew.
+        if [ -f $(brew --prefix)/etc/bash_completion ]
+        then
+          . $(brew --prefix)/etc/bash_completion
+        fi
+        ;;
+    "Linux")
+        alias ls='ls -F --color=auto'
+    ;;
+esac
+
 # Aliases
-alias lsusb='system_profiler SPUSBDataType'
 alias db-update=~/.dotfiles/install
 
 alias ..='cd ..'
@@ -8,18 +35,13 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias dammit='sudo $(history -p \!\!)'
 alias h=history
-alias ls='ls -G'
+alias docker='sudo docker'
 alias ll='ls -lrht'
 alias sudo="sudo -E"
-
-# Show hidden files on OS X
-alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
-alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
 
 # Bash settings
 export HISTSIZE=9999
 export HISTFILESIZE=999999
-tabs 4
 
 # Always enable GREP colors
 export GREP_OPTIONS='--color=auto'
@@ -34,14 +56,13 @@ complete -cf sudo man
 #export GPG_TTY=$(tty)
 
 # Support for gpg-agent.  Used for ssh via gpg key (stored on yubikey)
-source ~/.gpg-agent-info
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+    source ~/.gpg-agent-info
+fi
 
 # Support for auto-completing git commands
-source ~/.git-completion.bash
-
-# Support for auto-completing brew.  Also loads other auto-completions installed via brew.
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+if [ -f "${HOME}/.git-completion.bash" ]; then
+    source ~/.git-completion.bash
 fi
 
 # Custom scripts
@@ -49,7 +70,9 @@ PATH="~/.bin:${PATH}"
 
 # Display git status in prompt
 GIT_PROMPT_START="\u@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ "
-source ~/.bash-git-prompt/gitprompt.sh
+if [ -f "${HOME}/.bash-git-prompt/gitprompt.sh" ]; then
+    source ~/.bash-git-prompt/gitprompt.sh
+fi
 
 PATH="/Users/doot/perl5/bin${PATH+:}${PATH}"; export PATH;
 PERL5LIB="/Users/doot/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
