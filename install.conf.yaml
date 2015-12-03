@@ -46,6 +46,7 @@
     ~/.vim/colors/solarized.vim:
         path: solarized/vim-colors-solarized/colors/solarized.vim 
         create: true
+        force: true
     ~/.bin:
         path: bin/
         create: true
@@ -71,7 +72,13 @@
         stdin:          true
     -
         description:    "Installing Atom packages and updating package list"
-        command:    "~/.atom/installAtomPackages"
-        stdout:     true
-        stderr:     true
-        stdin:      true
+        command:        "~/.atom/installAtomPackages"
+        stdout:         true
+        stderr:         true
+        stdin:          true
+    -
+        description:    "Installing vim plugins"
+        command:        "vim +PluginInstall +qall"
+        stdout:         true
+        stderr:         true
+        stdin:          true
