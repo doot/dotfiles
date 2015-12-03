@@ -25,11 +25,21 @@
     ~/.config/deluge/core.conf: config/deluge/core.conf
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
-    - [git submodule update --remote --recursive, Installing submodules]
+    - 
+        description:    "Installing submodules"
+        command:        "git submodule update --init --recursive"
+        stdout:         true
+        stderr:         true
+        stdin:          true
+    - 
+        description:    "Updating submodules"
+        command:        "git submodule update --remote --recursive"
+        stdout:         true
+        stderr:         true
+        stdin:          true
     -
-        description: "Installing Atom packages and updating package list"
-        command: "~/.atom/installAtomPackages"
-        stdout: true
-        stderr: true
-        stdin: true
+        description:    "Installing Atom packages and updating package list"
+        command:    "~/.atom/installAtomPackages"
+        stdout:     true
+        stderr:     true
+        stdin:      true
