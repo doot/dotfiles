@@ -6,6 +6,7 @@
 [submodule "bash-git-prompt"]
 	path = bash-git-prompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
+    branch = master
 [submodule "solarized"]
 	path = solarized
 	url = git://github.com/altercation/solarized.git
