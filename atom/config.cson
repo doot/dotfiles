@@ -52,3 +52,6 @@
     iconSize: "16px"
   "vim-mode":
     useSmartcaseForSearch: true
+  "atom-ternjs":
+    useSnippets: true
+  "linter-jscs": {}
