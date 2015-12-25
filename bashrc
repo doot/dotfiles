@@ -38,13 +38,12 @@ alias h=history
 alias docker='sudo docker'
 alias ll='ls -lrht'
 alias sudo="sudo -E"
+alias grep="grep --color=auto"
 
 # Bash settings
 export HISTSIZE=9999
 export HISTFILESIZE=999999
 
-# Always enable GREP colors
-export GREP_OPTIONS='--color=auto'
 # complete sudo and man-pages
 complete -cf sudo man
 
