@@ -2,3 +2,16 @@ Host shit
     HostName 192.168.1.50
     Port 2222
     User admin
+    ForwardAgent yes
+
+Host do-dev1
+    HostName do-dev1.jhauschildt.com
+    Port 22
+    User doot
+    ForwardAgent yes
+
+Host do-dev2
+    HostName 159.203.253.22
+    Port 22
+    User doot
+    ForwardAgent yes
