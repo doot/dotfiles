@@ -1,4 +1,5 @@
 atom-beautify
+atom-ternjs
 atomatigit
 batman-syntax
 browser-plus
@@ -14,6 +15,7 @@ linter-flint
 linter-htmlhint
 linter-javac
 linter-js-standard
+linter-jscs
 linter-jsonlint
 linter-package-json-validator
 linter-perl
