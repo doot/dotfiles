@@ -4,6 +4,12 @@ Host shit
     User admin
     ForwardAgent yes
 
+Host prod1
+    HostName 45.55.113.116
+    Port 2022
+    User doot
+    ForwardAgent yes
+
 Host do-dev1
     HostName do-dev1.jhauschildt.com
     Port 22
