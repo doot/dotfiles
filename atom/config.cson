@@ -1,18 +1,15 @@
 "*":
-  "exception-reporting":
-    userId: "bce0a17e-0c1a-7b9a-3b80-b30140ccd0e7"
-  minimap:
-    plugins:
-      linter: true
-    absoluteMode: true
-    scrollAnimation: true
-  welcome:
-    showOnStartup: false
+  "atom-beautify":
+    analytics: false
+    beautifyEntireFileOnSave: false
+  "atom-ternjs":
+    useSnippets: true
+  atomatigit: {}
   core:
+    audioBeep: false
     disabledPackages: [
       "git-plus"
     ]
-    audioBeep: false
     openEmptyEditorOnStart: false
     projectHome: "~/projects"
     themes: [
@@ -20,25 +17,24 @@
       "batman-syntax"
     ]
   editor:
+    fontSize: 12
     invisibles: {}
     showIndentGuide: true
-    fontSize: 12
-  "linter-perlcritic":
-    executablePath: "/usr/local/bin/perlcritic"
-  "atom-beautify":
-    analytics: false
-    beautifyEntireFileOnSave: false
-  atomatigit: {}
+  "exception-reporting":
+    userId: "bce0a17e-0c1a-7b9a-3b80-b30140ccd0e7"
   "git-plus": {}
   linter:
     showErrorPanel: false
   "linter-bootlint": {}
   "linter-flint":
-    executablePath: "~/.bin/flint"
     colorOutput: true
+    executablePath: "~/.bin/flint"
   "linter-htmlhint": {}
+  "linter-jscs": {}
   "linter-liferay": {}
   "linter-perl": {}
+  "linter-perlcritic":
+    executablePath: "/usr/local/bin/perlcritic"
   "linter-pylint": {}
   "linter-scspell": {}
   "linter-shellcheck": {}
@@ -46,12 +42,16 @@
     tidyExecutablePath: "/usr/local/bin/tidy"
   "linter-write-good": {}
   "merge-conflicts": {}
+  minimap:
+    absoluteMode: true
+    plugins:
+      linter: true
+    scrollAnimation: true
   "preview-plus": {}
   "tool-bar":
-    position: "Left"
     iconSize: "16px"
+    position: "Left"
   "vim-mode":
     useSmartcaseForSearch: true
-  "atom-ternjs":
-    useSnippets: true
-  "linter-jscs": {}
+  welcome:
+    showOnStartup: false
