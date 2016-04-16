@@ -54,6 +54,8 @@ alias sudo="sudo -E"
 alias grep="grep --color=auto"
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias drm="docker rm"
+alias dps="docker ps"
 
 # Bash settings
 export HISTSIZE=9999
