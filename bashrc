@@ -58,7 +58,7 @@ alias egrep='egrep --color=auto'
 # Bash settings
 export HISTSIZE=9999
 export HISTFILESIZE=999999
-export PROMPT_COMMAND="history -a"
+export PROMPT_COMMAND="$PROMPT_COMMAND;history -a"
 # append to the history file, don't overwrite it
 shopt -s histappend
 # check the window size after each command and, if necessary,
