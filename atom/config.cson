@@ -10,6 +10,27 @@
     disabledPackages: [
       "git-plus"
     ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      ".unison"
+      "CVS"
+      ".AppleDouble"
+      ".LSOverride"
+      ".Spotlight-V100"
+      ".Trashes"
+      "desktop.ini"
+      "*.lock"
+      "*.sock"
+      "*.pid"
+      "*.sw?"
+      ".unison*"
+      "*~"
+    ]
     openEmptyEditorOnStart: false
     projectHome: "~/projects"
     themes: [
@@ -46,11 +67,23 @@
     absoluteMode: true
     plugins:
       linter: true
+      linterDecorationsZIndex: 0
     scrollAnimation: true
+  nitrogen:
+    showWelcomeOnStartup: false
   "preview-plus": {}
+  "sync-settings":
+    _analyticsUserId: "d8824353-7dac-443c-a64f-b8528982477c"
+    _lastBackupHash: "1e7d639056132f8603906b359602fd7388ddb09c"
+    analytics: false
+    gistDescription: "atom-sync-settings"
+    gistId: "3e597d128d78da67382a155b39ed4905"
+    personalAccessToken: "a814b96f2db503864e85dd985b9917f2137aca0a"
   "tool-bar":
     iconSize: "16px"
     position: "Left"
+  "tree-view":
+    hideIgnoredNames: true
   "vim-mode":
     useSmartcaseForSearch: true
   welcome:
