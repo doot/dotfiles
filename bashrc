@@ -60,7 +60,7 @@ alias dps="docker ps"
 # Bash settings
 export HISTSIZE=9999
 export HISTFILESIZE=999999
-export PROMPT_COMMAND="$PROMPT_COMMAND;history -a"
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # append to the history file, don't overwrite it
 shopt -s histappend
 # check the window size after each command and, if necessary,
@@ -70,6 +70,8 @@ shopt -s checkwinsize
 # complete sudo and man-pages
 complete -cf sudo man
 
+# Vi Mode
+set -o vi
 #if [ -f "${HOME}/.gpg-agent-info" ]; then
 #  . "${HOME}/.gpg-agent-info"
 #  export GPG_AGENT_INFO
