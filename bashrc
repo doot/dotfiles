@@ -49,7 +49,9 @@ alias .....='cd ../../../../'
 alias dammit='sudo $(history -p \!\!)'
 alias h=history
 alias docker='sudo docker'
-alias ll='ls -lrht'
+alias l='ls -lrht'
+alias ll='ls -lrhta'
+alias diff='colordiff'
 alias sudo="sudo -E"
 alias grep="grep --color=auto"
 alias fgrep='fgrep --color=auto'
