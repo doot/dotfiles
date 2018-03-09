@@ -1,0 +1,23 @@
+#Install stuff I use all the time
+apt-get install -y docker fail2ban git vim unattended-upgrades ufw
+
+#Configure firewall
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow ssh
+
+cat /etc/ufw/ufw.conf | sed 's/ENABLED=no/ENABLED=yes/g' > ~/ufw.conf
+chmod 0644 ~/ufw.conf
+mv -f ~/ufw.conf /etc/ufw/ufw.conf
+
+#
+# Upgrade installed packages to latest
+#
+apt-get update && apt-get dist-upgrade -y
+
+#
+#
+
+# Setup unattended upgrades
+sudo dpkg-reconfigure --priority=low unattended-upgrades
+
