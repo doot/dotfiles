@@ -4,6 +4,7 @@
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.chunkwmrc: chunkwmrc
+    ~/.khdrc: khdrc
     ~/.git-completion.bash: git-completion.bash
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
@@ -73,7 +74,7 @@
         stdin:          true
     -
         description:    "Installing Atom packages and updating package list"
-        command:        ";#~/.atom/installAtomPackages"
+        command:        "#~/.atom/installAtomPackages"
         stdout:         true
         stderr:         true
         stdin:          true
