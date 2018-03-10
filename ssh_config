@@ -11,7 +11,13 @@ host shit2
     ForwardAgent yes
 
 Host prod1
-    HostName 45.55.113.116
+    HostName 45.55.108.119
+    Port 2022
+    User doot
+    ForwardAgent yes
+
+Host do1
+    HostName 165.227.11.199
     Port 2022
     User doot
     ForwardAgent yes
