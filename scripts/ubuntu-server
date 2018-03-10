@@ -5,10 +5,14 @@ apt-get install -y docker fail2ban git vim unattended-upgrades ufw
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow ssh
+ufw allow 2022/tcp
 
 cat /etc/ufw/ufw.conf | sed 's/ENABLED=no/ENABLED=yes/g' > ~/ufw.conf
 chmod 0644 ~/ufw.conf
 mv -f ~/ufw.conf /etc/ufw/ufw.conf
+
+ufw enable
+ufw status
 
 #
 # Upgrade installed packages to latest
@@ -21,3 +25,12 @@ apt-get update && apt-get dist-upgrade -y
 # Setup unattended upgrades
 sudo dpkg-reconfigure --priority=low unattended-upgrades
 
+sudo dpkg-reconfigure tzdata
+sudo apt-get update
+sudo apt-get install ntp
+
+git clone git@github.com:doot/dotfiles.git ~/.dotfiles
+~/.dotfiles/install
+
+# If digital ocean server:
+# curl -sSL https://agent.digitalocean.com/install.sh | sh
