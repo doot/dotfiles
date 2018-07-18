@@ -18,7 +18,7 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	gpgsign = true
+	gpgsign = false
 [push]
 	default = simple
 [color]
@@ -33,3 +33,4 @@
 [alias]
 	lol = log --oneline --graph --decorate --all
 	co = commit -m
+  open = !vim `git-open.sh`
