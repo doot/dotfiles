@@ -106,3 +106,10 @@ PERL_LOCAL_LIB_ROOT="/Users/doot/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_R
 PERL_MB_OPT="--install_base \"/Users/doot/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/doot/perl5"; export PERL_MM_OPT;
 EDITOR=vim
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/serverless.bash ] && . /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/sls.bash ] && . /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/sls.bash
