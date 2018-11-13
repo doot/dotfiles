@@ -34,3 +34,5 @@
 	lol = log --oneline --graph --decorate --all
 	co = commit -m
   open = !vim `git-open.sh`
+[merge]
+	conflictstyle = diff3
