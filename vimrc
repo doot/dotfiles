@@ -62,11 +62,15 @@ set showmode                " Show current mode
 set showcmd                 " Show commands/info while typing
 set backspace=2             " Allow backspace to work on characters entered in previous sessions
 
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 " For mouse click in NERDTree
 set mouse=a
 let g:NERDTreeMouseMode=3 
 " Map ctrl+c to yank to system clipboard.  Useful when mouse=a is set and we
-" want to copy a lot of text to the system clipboard.  Also remember shit (or
+" want to copy a lot of text to the system clipboard.  Also remember shift (or
 " alt/option on mac) will temporarily stop that stupid mouse=a shit.
 vmap <C-C> "+y
 
