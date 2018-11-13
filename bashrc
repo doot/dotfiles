@@ -12,7 +12,6 @@ host=`hostname | cut -d. -f1`
 case $os in
 	"Darwin")
         alias ls='ls -FG';
-        tabs 4;
         
         # Kindof does the same thing as lsub when it doesn't exist on OS X
         alias lsusb='system_profiler SPUSBDataType'
