@@ -1,4 +1,4 @@
-#dotfiles 
+# dotfiles 
 Personal configuration files.  A bit messy and sparse, mostly for my own use.
 
 Uses Dotbot to install and maintain: https://git.io/dotbot.  Also see authors [blog post](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/).
