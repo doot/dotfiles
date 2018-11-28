@@ -1,0 +1,46 @@
+{
+    "workbench.colorTheme": "Gruvbox Dark (Medium)",
+    "editor.fontFamily": "'Fira Code'",
+    "editor.fontLigatures": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true,
+        "suppressWelcomeNotice": true
+    },
+    "gitlens.keymap": "none",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.tabSize": 2,
+    "window.zoomLevel": -0.5,
+    "editor.fontSize": 13,
+    "files.hotExit": "onExitAndWindowClose",
+    "standard.usePackageJson": true,
+    "vim.useSystemClipboard": true,
+    "vim.statusBarColorControl": true,
+    "vim.ignorecase": false,
+    "vim.incsearch": false,
+    "vim.textwidth": 100,
+    "vim.hlsearch": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "code-runner.enableAppInsights": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "vim.easymotion": true,
+    "vsicons.projectDetection.autoReload": true,
+    "gitlabPipelineMonitor.tokens": {
+        "gitlab.com" : "Ct8xUtgcVAChD81sczMY"
+    },
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-a>": false
+    },
+    "vim.statusBarColors.visualline": "#96962E",
+    "editor.renderLineHighlight": "all",
+    "editor.occurrencesHighlight": false,
+    "files.autoSave": "off",
+    "editor.cursorStyle": "line"
+}
