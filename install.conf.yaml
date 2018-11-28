@@ -59,6 +59,9 @@
     ~/.config/deluge/core.conf:
         path: config/deluge/core.conf
         create: true
+    ~/Library/Application Support/Code/User/settings.json:
+        path: vscode-settings.json
+        create: true
 
 - shell:
     - 
