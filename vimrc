@@ -29,6 +29,9 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'mattn/calendar-vim'
 Plugin 'altercation/vim-colors-solarized'
 
+" unsure about these plugins:
+"Plugin 'Shougo/denite.nvim'
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,6 +82,9 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" Fix ^G before folder names on Mac
+let g:NERDTreeNodeDelimiter = "\u00a0"
+
 " For mouse click in NERDTree
 set mouse=a
 let g:NERDTreeMouseMode=3 
@@ -115,3 +121,52 @@ call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('py', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
+
+function! ToggleCalendar()
+  execute ":Calendar"
+  if exists("g:calendar_open")
+    if g:calendar_open == 1
+      execute "q"
+      unlet g:calendar_open
+    else
+      g:calendar_open = 1
+    end
+  else
+    let g:calendar_open = 1
+  end
+endfunction
+" update this to new key, c is dumb
+":autocmd FileType vimwiki map c :call ToggleCalendar()
+
+
+"let g:vimwiki_url_maxsave=0
+"let g:vimwiki-option-auto_tags=1
+let g:vimwiki_auto_toc=1
+let g:vimwiki_nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'java': 'java'}
+let g:vimwiki_listsyms = ' ○◐●✓'
+
+
+" Python ident
+au FileType python set ts=2 sts=2 et sw=2 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
+let g:airline#extensions#ale#enabled = 1
+
+" Let's try this out for a little while to kick my arrow key habbit:
+" don't use arrowkeys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" really, just don't
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+
+" use nice symbols for errors and warnings
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
