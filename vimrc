@@ -13,8 +13,21 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins:
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'wakatime/vim-wakatime'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'vimwiki/vimwiki'
+Plugin 'majutsushi/tagbar'
+Plugin 'blindFS/vim-taskwarrior'
+Plugin 'powerman/vim-plugin-AnsiEsc'
+Plugin 'tbabej/taskwiki'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ervandew/supertab'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'mattn/calendar-vim'
+Plugin 'altercation/vim-colors-solarized'
 
 
 " All of your Plugins must be added before the following line
