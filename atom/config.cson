@@ -10,11 +10,16 @@
       end_with_newline: true
       indent_size: 2
       space_after_anon_function: true
+  "atom-ide-ui":
+    use: {}
   "atom-ternjs":
     useSnippets: true
   atomatigit: {}
   core:
     audioBeep: false
+    disabledPackages: [
+      "linter"
+    ]
     ignoredNames: [
       ".git"
       ".hg"
@@ -55,6 +60,8 @@
   "git-plus": {}
   "gruvbox-plus-syntax":
     contrast: "Soft"
+  "ide-python":
+    python: "python3"
   linter: {}
   "linter-bootlint": {}
   "linter-eslint":
@@ -79,7 +86,7 @@
   "linter-tidy":
     tidyExecutablePath: "/usr/local/bin/tidy"
   "linter-ui-default":
-    panelHeight: 71.5
+    panelHeight: 213.5
   "linter-write-good": {}
   "merge-conflicts": {}
   minimap:
@@ -95,6 +102,7 @@
   "one-dark-ui":
     fontSize: 11
   "preview-plus": {}
+  "standard-formatter": {}
   "sync-settings":
     _analyticsUserId: "d8824353-7dac-443c-a64f-b8528982477c"
     _lastBackupHash: "75a75be1117d34fd50770ce47ca306064c1b4295"
@@ -109,9 +117,6 @@
     hideIgnoredNames: true
   "vim-mode":
     useSmartcaseForSearch: true
-  wakatime:
-    apikey: "Saved in your ~/.wakatime.cfg file"
-  "wakatime-hidden":
-    lastInit: 1494993465
+  "vim-mode-plus": {}
   welcome:
     showOnStartup: false

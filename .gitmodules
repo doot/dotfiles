@@ -19,6 +19,3 @@
 [submodule "vim/bundle/nerdtree-git-plugin"]
     path = vim/bundle/nerdtree-git-plugin
     url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-[submodule "vim/bundle/vim-wakatime"]
-	path = vim/bundle/vim-wakatime
-	url = https://github.com/wakatime/vim-wakatime
