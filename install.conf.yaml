@@ -10,6 +10,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
+    ~/.Brewfile: Brewfile
     ~/.vim:
         path: vim/
         create: true
@@ -79,6 +80,12 @@
     -
         description:    "Installing Atom packages and updating package list"
         command:        "#~/.atom/installAtomPackages"
+        stdout:         true
+        stderr:         true
+        stdin:          true
+    -
+        description:    "Installing packages via 'brew bundle'.  Run 'brew dump --describe --force --global' to update with currently installed packages."
+        command:        "brew bundle --global"
         stdout:         true
         stderr:         true
         stdin:          true
