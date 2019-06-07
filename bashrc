@@ -65,6 +65,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias drm="docker rm"
 alias dps="docker ps"
+alias wiki="vim ~/vimwiki/index.wiki"
 
 # Bash settings
 export HISTSIZE=9999

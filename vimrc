@@ -170,3 +170,8 @@ inoremap <Right> <NOP>
 " use nice symbols for errors and warnings
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
+
+aug python
+  " ftype/python.vim overwrites this
+  au FileType python setlocal ts=2 sts=2 sw=2 expandtab
+aug end
