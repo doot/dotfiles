@@ -19,3 +19,48 @@
 [submodule "vim/bundle/nerdtree-git-plugin"]
     path = vim/bundle/nerdtree-git-plugin
     url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "vim/bundle/vimwiki"]
+	path = vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "vim/bundle/vim-taskwarrior"]
+	path = vim/bundle/vim-taskwarrior
+	url = https://github.com/blindFS/vim-taskwarrior
+[submodule "vim/bundle/vim-plugin-AnsiEsc"]
+	path = vim/bundle/vim-plugin-AnsiEsc
+	url = https://github.com/powerman/vim-plugin-AnsiEsc
+[submodule "vim/bundle/taskwiki"]
+	path = vim/bundle/taskwiki
+	url = https://github.com/tbabej/taskwiki
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/bundle/vim-airline-themes"]
+	path = vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "vim/bundle/vim-gitgutter"]
+	path = vim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "vim/bundle/vim-signify"]
+	path = vim/bundle/vim-signify
+	url = https://github.com/mhinz/vim-signify
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "vim/bundle/tmuxline.vim"]
+	path = vim/bundle/tmuxline.vim
+	url = https://github.com/edkolev/tmuxline.vim
+[submodule "vim/bundle/calendar-vim"]
+	path = vim/bundle/calendar-vim
+	url = https://github.com/mattn/calendar-vim
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule "vim/bundle/ale"]
+	path = vim/bundle/ale
+	url = https://github.com/w0rp/ale
