@@ -87,7 +87,7 @@ let g:NERDTreeNodeDelimiter = "\u00a0"
 
 " For mouse click in NERDTree
 set mouse=a
-let g:NERDTreeMouseMode=3 
+let g:NERDTreeMouseMode=3
 " Map ctrl+c to yank to system clipboard.  Useful when mouse=a is set and we
 " want to copy a lot of text to the system clipboard.  Also remember shift (or
 " alt/option on mac) will temporarily stop that stupid mouse=a shit.
