@@ -6,14 +6,13 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/completions"
 tap "homebrew/core"
-tap "homebrew/science"
 tap "homebrew/services"
 tap "keybase/beta"
 tap "koekeishiya/formulae"
 tap "michaeldfallen/formula"
 tap "neovim/neovim"
+cask "xquartz"
 # Completion for Atom Package Manager
 brew "apm-bash-completion"
 # Collection of portable C++ source libraries
@@ -62,6 +61,8 @@ brew "docbook-xsl"
 brew "docker-completion"
 # GNU Emacs text editor
 brew "emacs"
+# Modern replacement for 'ls'
+brew "exa"
 # Command-line tool to interact with exercism.io
 brew "exercism"
 # Perl compatible regular expressions library with a new API
@@ -72,6 +73,8 @@ brew "fish"
 brew "mpfr"
 # C library for number theory
 brew "flint"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
 # Command-line option parsing utility
@@ -149,24 +152,92 @@ brew "keybase/beta/keybase", link: false
 # Simple hotkey-daemon for OSX.
 brew "koekeishiya/formulae/khd"
 brew "michaeldfallen/formula/git-radar"
-mas "com.amazon.Kindle", id: 405399194
-mas "com.apple.dt.Xcode", id: 497799835
-mas "com.apple.iWork.Keynote", id: 409183694
-mas "com.apple.iWork.Numbers", id: 409203825
-mas "com.apple.iWork.Pages", id: 409201541
-mas "com.atlassian.trello", id: 1278508951
-mas "com.devhd.feedly.osx", id: 865500966
-mas "com.duncancunningham.CoinBar", id: 957162288
-mas "com.ghostery.lite", id: 1436953057
-mas "com.guidedways.TodoMac", id: 477670270
-mas "com.kapeli.dash", id: 458034879
-mas "com.lastpass.LastPass", id: 926036361
-mas "com.openbrand.krakenticker", id: 858785280
-mas "com.readitlater.PocketMac", id: 568494494
-mas "com.reederapp.rkit2.mac", id: 880001334
-mas "com.todoist.mac.Todoist", id: 585829637
-mas "com.toodledo.menulet", id: 865407053
-mas "com.twitter.twitter-mac", id: 409789998
-mas "com.wunderkinder.wunderlistdesktop", id: 410628904
-mas "de.milchimgemuesefach.Display-Menu", id: 549083868
-mas "it.bloop.airmail2", id: 918858936
+cask "alfred"
+cask "angular-console"
+cask "appcleaner"
+cask "atom"
+cask "atom-beta"
+cask "beaker-browser"
+cask "bettertouchtool"
+cask "bisq"
+cask "bitwarden"
+cask "black-screen"
+cask "bragi-updater"
+cask "brave"
+cask "caffeine"
+cask "cakebrew"
+cask "ccleaner"
+cask "cerebro"
+cask "coconutbattery"
+cask "daisydisk"
+cask "deluge"
+cask "discord"
+cask "dropbox"
+cask "eclipse-java"
+cask "electrum"
+cask "etcher"
+cask "exodus"
+cask "firefox"
+cask "firefox-developer-edition"
+cask "flux"
+cask "font-fira-code"
+cask "freeter"
+cask "github"
+cask "githubpulse"
+cask "gitkraken"
+cask "google-backup-and-sync"
+cask "gpg-suite"
+cask "gpodder"
+cask "hyper"
+cask "itsycal"
+cask "jaxx"
+cask "jaxx-liberty"
+cask "jdiskreport"
+cask "karabiner-elements"
+cask "keybase"
+cask "kitematic"
+cask "loading"
+cask "patchwork"
+cask "plex-media-player"
+cask "polymail"
+cask "resilio-sync"
+cask "riot"
+cask "slack"
+cask "sourcetree"
+cask "spotify"
+cask "spotify-notifications"
+cask "steam"
+cask "swift-explorer"
+cask "taskwarrior-pomodoro"
+cask "the-unarchiver"
+cask "tunnelblick"
+cask "vagrant"
+cask "virtualbox"
+cask "vlc"
+cask "vnc-viewer"
+cask "xtrafinder"
+cask "yubikey-neo-manager"
+cask "yubikey-personalization-gui"
+cask "yubikey-piv-manager"
+cask "yubiswitch"
+mas "2Do", id: 477670270
+mas "Airmail", id: 918858936
+mas "Bitcoin Ticker - Kraken", id: 858785280
+mas "CoinBar", id: 957162288
+mas "Dash", id: 458034879
+mas "Display Menu", id: 549083868
+mas "feedly", id: 865500966
+mas "GhosteryLite", id: 1436953057
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+mas "LastPass", id: 926036361
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pocket", id: 568494494
+mas "Reeder", id: 880001334
+mas "Todoist", id: 585829637
+mas "Toodledo", id: 865407053
+mas "Trello", id: 1278508951
+mas "Twitter", id: 409789998
+mas "Wunderlist", id: 410628904
+mas "Xcode", id: 497799835

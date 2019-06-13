@@ -121,3 +121,5 @@ EDITOR=vim
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/sls.bash ] && . /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/sls.bash
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
