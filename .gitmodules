@@ -3,10 +3,6 @@
 	url = https://github.com/anishathalye/dotbot
     branch = master
     ignore = dirty
-[submodule "bash-git-prompt"]
-	path = bash-git-prompt
-	url = https://github.com/magicmonty/bash-git-prompt.git
-    branch = master
 [submodule "solarized"]
 	path = solarized
 	url = git://github.com/altercation/solarized.git
@@ -64,3 +60,6 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale
+[submodule "bash-git-prompt"]
+	path = bash-git-prompt
+	url = https://github.com/magicmonty/bash-git-prompt.git
