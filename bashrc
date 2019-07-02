@@ -26,12 +26,14 @@ case $os in
         alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
 
         # Support for auto-completing brew.  Also loads other auto-completions installed via brew.
-        if [ -f $(brew --prefix)/etc/bash_completion ]
+        if [ -f "$(brew --prefix)/etc/bash_completion" ]
         then
-          . $(brew --prefix)/etc/bash_completion
+          # shellcheck source=/dev/null
+          . "$(brew --prefix)/etc/bash_completion"
         fi
         if type brew 2&>/dev/null; then
-          for completion_file in $(brew --prefix)/etc/bash_completion.d/*; do
+          for completion_file in "$(brew --prefix)"/etc/bash_completion.d/*; do
+            # shellcheck source=/dev/null
             source "$completion_file"
           done
         fi
@@ -112,25 +114,31 @@ set -o vi
 
 # Support for gpg-agent.  Used for ssh via gpg key (stored on yubikey)
 if [ -f "${HOME}/.gpg-agent-info" ]; then
-    source ~/.gpg-agent-info
+    # shellcheck source=/dev/null
+    source "$HOME/.gpg-agent-info"
 fi
 
 # Support for auto-completing git commands
 if [ -f "${HOME}/.git-completion.bash" ]; then
-    source ~/.git-completion.bash
+    # shellcheck source=/dev/null
+    source "${HOME}/.git-completion.bash"
 fi
 
 # Custom scripts
-PATH="~/.bin:${PATH}"
+PATH="$HOME/.bin:${PATH}"
 
 # Display git status in prompt
 GIT_PROMPT_START="\u@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ "
+export GIT_PROMPT_START
 if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
+  export __GIT_PROMPT_DIR
+  # shellcheck source=/dev/null
   source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 if [ -f "${HOME}/.bash-git-prompt/gitprompt.sh" ]; then
-    source ~/.bash-git-prompt/gitprompt.sh
+    # shellcheck source=/dev/null
+    source "${HOME}/.bash-git-prompt/gitprompt.sh"
 fi
 
 export EDITOR=nvim
@@ -158,4 +166,5 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 export PATH
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# shellcheck source=/dev/null
+[ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
