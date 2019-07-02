@@ -1,18 +1,23 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+  *i*) ;;
+    *) return;;
 esac
 
 # Determine host and os info
-os=`uname -s`
-host=`hostname | cut -d. -f1`
+os=$(uname -s)
+host=$(hostname | cut -d. -f1)
 
 # OS Specific settings
 case $os in
-	"Darwin")
+  "Darwin")
         alias ls='ls -FG';
-        
+
         # Kindof does the same thing as lsub when it doesn't exist on OS X
         alias lsusb='system_profiler SPUSBDataType'
 
@@ -36,19 +41,21 @@ case $os in
         ;;
     "Linux")
         alias ls='ls -F --color=auto'
-		if ! shopt -oq posix; then
-		  if [ -f /usr/share/bash-completion/bash_completion ]; then
-		    . /usr/share/bash-completion/bash_completion
-		  elif [ -f /etc/bash_completion ]; then
-		    . /etc/bash_completion
-		  fi
-		fi
+    if ! shopt -oq posix; then
+      if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+      elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+      fi
+    fi
     ;;
 esac
 
 # Aliases
 alias db-update=~/.dotfiles/install
 
+alias vim='nvim'
+alias vimdiff='nvim -d'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -56,8 +63,10 @@ alias .....='cd ../../../../'
 alias dammit='sudo $(history -p \!\!)'
 alias h=history
 alias docker='sudo docker'
-alias l='ls -lrht'
-alias ll='ls -lrhta'
+alias l='exa -l -snew --color-scale'
+alias ll='exa -la --color-scale'
+#alias l='ls -lrht'
+#alias ll='ls -lrhta'
 alias diff='colordiff'
 alias sudo="sudo -E"
 alias grep="grep --color=auto"
@@ -65,17 +74,29 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias drm="docker rm"
 alias dps="docker ps"
-alias wiki="vim ~/vimwiki/index.wiki"
+alias wiki='vim ~/vimwiki/index.wiki'
+alias todo='vim ~/vimwiki/todo.wiki'
+alias diary='vim ~/vimwiki/diary/diary.wiki +VimwikiDiaryGenerateLinks +Calendar'
 
 # Bash settings
-export HISTSIZE=9999
-export HISTFILESIZE=999999
+shopt -s histappend
+export HISTSIZE=
+export HISTFILESIZE=
+export HISTTIMEFORMAT="[%F %T] "
+export HISTFILE=~/.bash_eternal_history
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # append to the history file, don't overwrite it
 shopt -s histappend
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+shopt -s lithist
+shopt -s cdspell        # correct minor spelling mistakes in directory names for cd
+
+# prevent me from doing stupid shit
+export PIP_REQUIRE_VIRTUALENV=true
+
 
 # complete sudo and man-pages
 complete -cf sudo man
@@ -104,9 +125,16 @@ PATH="~/.bin:${PATH}"
 
 # Display git status in prompt
 GIT_PROMPT_START="\u@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ "
+if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
+  source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
+fi
 if [ -f "${HOME}/.bash-git-prompt/gitprompt.sh" ]; then
     source ~/.bash-git-prompt/gitprompt.sh
 fi
+
+export EDITOR=nvim
+export VISUAL=nvim
 
 PATH="/Users/doot/perl5/bin${PATH+:}${PATH}"; export PATH;
 PERL5LIB="/Users/doot/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
@@ -121,5 +149,13 @@ EDITOR=vim
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/sls.bash ] && . /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/sls.bash
+
+export LS_COLORS="di=34"
+
+
+# Put GNU versions of utilities further up in the path than older OSX versions
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+export PATH
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

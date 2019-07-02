@@ -70,6 +70,7 @@ set history=1000            " remember more commands and search history
 set undolevels=1000         " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                   " change the terminal's title
+set titleold=""             " remove 'Thanks for flying Vim!' when leaving vim
 set visualbell              " don't beep
 set noerrorbells            " don't beep
 set nostartofline           " Don’t reset cursor to start of line when moving around.
@@ -105,8 +106,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
- exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
- exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+ exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
 call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
@@ -156,9 +157,9 @@ let g:airline#extensions#ale#enabled = 1
 
 " Let's try this out for a little while to kick my arrow key habbit:
 " don't use arrowkeys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
+noremap <Up>    <NOP>
+noremap <Down>  <NOP>
+noremap <Left>  <NOP>
 noremap <Right> <NOP>
 
 " really, just don't
@@ -175,3 +176,7 @@ aug python
   " ftype/python.vim overwrites this
   au FileType python setlocal ts=2 sts=2 sw=2 expandtab
 aug end
+
+set rtp+=~/.dotfiles/fzf
+
+set updatetime=700
