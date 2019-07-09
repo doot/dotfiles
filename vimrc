@@ -174,7 +174,7 @@ let g:ale_sign_warning = '⚠'
 
 aug python
   " ftype/python.vim overwrites this
-  au FileType python setlocal ts=2 sts=2 sw=2 expandtab
+  au FileType python setlocal ts=4 sts=4 sw=4 expandtab
 aug end
 
 set rtp+=~/.dotfiles/fzf
