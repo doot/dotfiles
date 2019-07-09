@@ -65,6 +65,7 @@ alias .....='cd ../../../../'
 alias dammit='sudo $(history -p \!\!)'
 alias h=history
 alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
 alias l='exa -l -snew --color-scale'
 alias ll='exa -la --color-scale'
 #alias l='ls -lrht'
