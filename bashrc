@@ -56,8 +56,24 @@ esac
 # Aliases
 alias db-update=~/.dotfiles/install
 
-alias vim='nvim'
-alias vimdiff='nvim -d'
+if type "nvim" &> /dev/null; then
+  alias vim='nvim'
+  alias vimdiff='nvim -d'
+  export EDITOR=nvim
+  export VISUAL=nvim
+else
+  export EDITOR=vim
+  export VISUAL=vim
+fi
+
+if type "exa" &> /dev/null; then
+  alias l='exa -l -snew --color-scale'
+  alias ll='exa -la --color-scale'
+else
+  alias l='ls -lrht'
+  alias ll='ls -lrhta'
+fi
+
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -66,10 +82,6 @@ alias dammit='sudo $(history -p \!\!)'
 alias h=history
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
-alias l='exa -l -snew --color-scale'
-alias ll='exa -la --color-scale'
-#alias l='ls -lrht'
-#alias ll='ls -lrhta'
 alias diff='colordiff'
 alias sudo="sudo -E"
 alias grep="grep --color=auto"
@@ -141,9 +153,6 @@ if [ -f "${HOME}/.bash-git-prompt/gitprompt.sh" ]; then
     # shellcheck source=/dev/null
     source "${HOME}/.bash-git-prompt/gitprompt.sh"
 fi
-
-export EDITOR=nvim
-export VISUAL=nvim
 
 PATH="/Users/doot/perl5/bin${PATH+:}${PATH}"; export PATH;
 PERL5LIB="/Users/doot/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
