@@ -27,6 +27,10 @@ brew "autoconf"
 brew "automake"
 # Automatically restart SSH sessions and tunnels
 brew "autossh"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
+# Microsoft Azure CLI 2.0
+brew "azure-cli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 4.1+
@@ -35,8 +39,6 @@ brew "bash-completion@2"
 brew "brew-cask-completion"
 # GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Cross-platform make
 brew "cmake"
 # Color-highlighted diff(1) output
@@ -105,8 +107,12 @@ brew "livestreamer"
 brew "makedepend"
 # Mac App Store command-line interface
 brew "mas"
+# Remote terminal application
+brew "mosh"
 # Multiple Repository management tool
 brew "mr"
+# DNS benchmark utility
+brew "namebench"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Port scanning utility for large networks
@@ -200,9 +206,11 @@ cask "karabiner-elements"
 cask "keybase"
 cask "kitematic"
 cask "loading"
+cask "openbazaar"
 cask "patchwork"
 cask "plex-media-player"
 cask "polymail"
+cask "pycharm-edu"
 cask "resilio-sync"
 cask "riot"
 cask "slack"
