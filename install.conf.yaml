@@ -11,6 +11,7 @@
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
     ~/.Brewfile: Brewfile
+    ~/.tmux.conf: tmux.conf
     ~/.vim:
         path: vim/
         create: true
