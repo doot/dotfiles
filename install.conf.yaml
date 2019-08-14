@@ -12,6 +12,7 @@
     ~/.vimrc: vimrc
     ~/.Brewfile: Brewfile
     ~/.tmux.conf: tmux.conf
+    ~/.inputrc: inputrc
     ~/.vim:
         path: vim/
         create: true
