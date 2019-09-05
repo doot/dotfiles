@@ -185,8 +185,9 @@ cask "eclipse-java"
 cask "electrum"
 cask "etcher"
 cask "exodus"
-cask "firefox"
+cask "firefox-beta"
 cask "firefox-developer-edition"
+cask "firefox-nightly"
 cask "flux"
 cask "font-fira-code"
 cask "freeter"
@@ -207,7 +208,7 @@ cask "kitematic"
 cask "loading"
 cask "openbazaar"
 cask "patchwork"
-cask "plex-media-player"
+cask "plex"
 cask "polymail"
 cask "pycharm-edu"
 cask "resilio-sync"
@@ -253,5 +254,4 @@ mas "Todoist", id: 585829637
 mas "Toodledo", id: 865407053
 mas "Trello", id: 1278508951
 mas "Twitter", id: 409789998
-mas "Wunderlist", id: 410628904
 mas "Xcode", id: 497799835
