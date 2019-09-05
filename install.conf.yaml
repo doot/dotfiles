@@ -86,8 +86,26 @@
         stderr:         true
         stdin:          true
     -
-        description:    "Installing packages via 'brew bundle'.  Run 'brew dump --describe --force --global' to update with currently installed packages."
+        description:    "Installing packages via 'brew bundle --global'.  Run 'brew bundle dump --describe --force --global' to update with currently installed packages."
         command:        "brew bundle --global"
+        stdout:         true
+        stderr:         true
+        stdin:          true
+    -
+        description:    "Upgrading installed packages via brew upgrade"
+        command:        "brew upgrade"
+        stdout:         true
+        stderr:         true
+        stdin:          true
+    -
+        description:    "Upgrading installed packages via brew cask upgrade"
+        command:        "brew cask upgrade"
+        stdout:         true
+        stderr:         true
+        stdin:          true
+    -
+        description:    "Upgrading installed packages via mas upgrade"
+        command:        "mas upgrade"
         stdout:         true
         stderr:         true
         stdin:          true
