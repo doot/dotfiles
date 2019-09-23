@@ -32,6 +32,8 @@ Plugin 'altercation/vim-colors-solarized'
 " unsure about these plugins:
 "Plugin 'Shougo/denite.nvim'
 Plugin 'w0rp/ale'
+" Plugin 'python-mode/python-mode'
+Plugin 'vim-scripts/indentpython.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -74,7 +76,6 @@ set titleold=""             " remove 'Thanks for flying Vim!' when leaving vim
 set visualbell              " don't beep
 set noerrorbells            " don't beep
 set nostartofline           " Don’t reset cursor to start of line when moving around.
-set title                   " Show filename
 set showmode                " Show current mode
 set showcmd                 " Show commands/info while typing
 set backspace=2             " Allow backspace to work on characters entered in previous sessions
@@ -123,6 +124,13 @@ call NERDTreeHighlightFile('py', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
+
+"let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+" set termguicolors " Setting this will fix the background in vim when
+" not using tmux/iterm2.  in gnome-terminal it will be dark gray and crazy
+" colors instead of solorized and in other terminals it might be a crazy orange
+
 let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 
@@ -148,10 +156,17 @@ endfunction
 let g:vimwiki_auto_toc=1
 let g:vimwiki_nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'java': 'java'}
 let g:vimwiki_listsyms = ' ○◐●✓'
-
+"let g:vimwiki_template_path = '$HOME/vimwiki/templates'
+let g:vimwiki_template_path = '$HOME/vimwiki/templates/Dark-Vimwiki-Template/wiki/templates/'
+let g:vimwiki_template_default = 'def_template'
+let g:vimwiki_template_ext = '.html'
 
 " Python ident
-au FileType python set ts=2 sts=2 et sw=2 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+au FileType python set ts=4 sts=4 et sw=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
+
+"set t_ut=
+"set ttyfast
 
 let g:airline#extensions#ale#enabled = 1
 

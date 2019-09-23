@@ -1,12 +1,18 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+  name = Jeremy Hauschildt
+  email = jeremy@jhauschildt.com
+  signingkey = D1372D8D
+
+[color]
+  ui = true
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	name = Jeremy Hauschildt
-	email = jeremy@jhauschildt.com
-	signingkey = D1372D8D
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
@@ -21,8 +27,6 @@
 	gpgsign = false
 [push]
 	default = simple
-[color]
-    ui = true
 [github]
     user = doot
 [branch "master"]

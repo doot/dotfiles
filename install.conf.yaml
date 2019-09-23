@@ -11,8 +11,12 @@
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
     ~/.Brewfile: Brewfile
+    ~/.fzf.bash: fzf.bash
     ~/.tmux.conf: tmux.conf
     ~/.inputrc: inputrc
+    ~/scripts:
+        path: scripts/
+        create: true
     ~/.vim:
         path: vim/
         create: true
@@ -50,11 +54,14 @@
         path: Library/Preferences/com.googlecode.iterm2.plist
         create: true
 #    ~/.vim/colors/solarized.vim:
-#        path: solarized/vim-colors-solarized/colors/solarized.vim 
+#        path: solarized/vim-colors-solarized/colors/solarized.vim
 #        create: true
 #        force: true
     ~/.bin:
         path: bin/
+        create: true
+    ~/.config/nvim:
+        path: config/nvim
         create: true
     ~/.config/deluge/hostlist.conf.1.2:
         path: config/deluge/hostlist.conf.1.2
@@ -86,8 +93,14 @@
         stderr:         true
         stdin:          true
     -
+        description:    "Installing fzf binary"
+        command:        "./fzf/install --bin"
+        stdout:         true
+        stderr:         true
+        stdin:          true
+    -
         description:    "Installing packages via 'brew bundle --global'.  Run 'brew bundle dump --describe --force --global' to update with currently installed packages."
-        command:        "brew bundle --global"
+        command:        "brew bundle --global || { echo 'Homebrew not installed, this is probably linux'; }"
         stdout:         true
         stderr:         true
         stdin:          true
@@ -111,7 +124,7 @@
         stdin:          true
     -
         description:    "Installing vim plugins"
-        command:        "vim +PluginInstall +qall"
+        command:        "nvim +PluginInstall +qall"
         stdout:         true
         stderr:         true
         stdin:          true

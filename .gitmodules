@@ -63,3 +63,9 @@
 [submodule "bash-git-prompt"]
 	path = bash-git-prompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
+[submodule "linuxbrew/Homebrew"]
+	path = linuxbrew/Homebrew
+	url = https://github.com/Homebrew/brew
+[submodule "fzf"]
+	path = fzf
+	url = https://github.com/junegunn/fzf.git
