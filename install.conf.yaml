@@ -6,7 +6,6 @@
     ~/.profile: profile
     ~/.chunkwmrc: chunkwmrc
     ~/.khdrc: khdrc
-    ~/.git-completion.bash: git-completion.bash
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc

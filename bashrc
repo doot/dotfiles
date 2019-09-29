@@ -40,21 +40,21 @@ case $os in
         source "$completion_file"
       done
     fi
-    if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-      . /usr/local/share/bash-completion/bash_completion
-    fi
     ;;
     "Linux")
       alias ls='ls -F --color=auto'
-    if ! shopt -oq posix; then
-      if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-      elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
+      if ! shopt -oq posix; then
+        if [ -f /usr/share/bash-completion/bash_completion ]; then
+          . /usr/share/bash-completion/bash_completion
+        elif [ -f /etc/bash_completion ]; then
+          . /etc/bash_completion
+        fi
       fi
-    fi
     ;;
 esac
+
+# Brew autocompletion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Aliases
 alias db-update=~/.dotfiles/install
@@ -137,12 +137,6 @@ set -o vi
 if [ -f "${HOME}/.gpg-agent-info" ]; then
     # shellcheck source=/dev/null
     source "$HOME/.gpg-agent-info"
-fi
-
-# Support for auto-completing git commands
-if [ -f "${HOME}/.git-completion.bash" ]; then
-  # shellcheck source=/dev/null
-  source "${HOME}/.git-completion.bash"
 fi
 
 # Custom scripts
