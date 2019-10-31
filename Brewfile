@@ -33,6 +33,8 @@ brew "python"
 brew "azure-cli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Programmable completion for Bash 3.2
+brew "bash-completion"
 # Programmable completion for Bash 4.1+
 brew "bash-completion@2"
 # Fish completion for brew-cask
@@ -77,6 +79,8 @@ brew "mpfr"
 brew "flint"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Distributed revision control system
+brew "git"
 # Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
 # Command-line option parsing utility
@@ -191,7 +195,6 @@ cask "firefox-nightly"
 cask "flux"
 cask "font-fira-code"
 cask "font-fira-mono-for-powerline"
-cask "iterm2-beta"
 cask "freeter"
 cask "github"
 cask "githubpulse"
@@ -200,6 +203,7 @@ cask "google-backup-and-sync"
 cask "gpg-suite"
 cask "gpodder"
 cask "hyper"
+cask "iterm2-beta"
 cask "itsycal"
 cask "jaxx"
 cask "jaxx-liberty"
@@ -222,6 +226,8 @@ cask "spotify"
 cask "spotify-notifications"
 cask "steam"
 cask "swift-explorer"
+cask "synology-cloud-station-backup"
+cask "synology-drive"
 cask "taskwarrior-pomodoro"
 cask "the-unarchiver"
 cask "thunderbird"
