@@ -482,6 +482,10 @@
 	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 348 1680 679 0 0 1680 1027 </string>
+	<key>NeverWarnAboutShortLivedSessions_703078C3-72AA-4F0C-A0CC-18FCBA52313C</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_703078C3-72AA-4F0C-A0CC-18FCBA52313C_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2766,7 +2770,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>9B0796BB-0E88-4AF6-8F67-D29012B0164D</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>93</integer>
+	<integer>97</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3543,7 +3547,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-28T00:37:14Z</date>
+	<date>2019-10-02T22:43:33Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
