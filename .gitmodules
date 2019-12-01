@@ -69,3 +69,6 @@
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "vim/bundle/indentpython.vim"]
+	path = vim/bundle/indentpython.vim
+	url = //github.com/vim-scripts/indentpython.vim.git
