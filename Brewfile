@@ -93,6 +93,8 @@ brew "pinentry"
 brew "gpg-agent"
 # Automatically generate simple man pages
 brew "help2man"
+# Improved top (interactive process viewer)
+brew "htop"
 # Generic library support script
 brew "libtool"
 # JSON parser for C
@@ -131,6 +133,8 @@ brew "ykclient"
 brew "ykpers"
 # Yubico pluggable authentication module
 brew "pam_yubico"
+# Display the PID number for a given process name
+brew "pidof"
 # Bash completion for Pip
 brew "pip-completion"
 # Docker Compose compatible client to deploy to Rancher
@@ -149,7 +153,7 @@ brew "tig"
 brew "vcsh"
 # Vi 'workalike' with many additional features
 brew "vim"
-# Front-end for Task Warrior
+# Full-screen terminal interface for Taskwarrior
 brew "vit"
 # Internet file retriever
 brew "wget"
