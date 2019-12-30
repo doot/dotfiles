@@ -34,9 +34,9 @@ brew "azure-cli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 3.2
-brew "bash-completion"
+brew "bash-completion", link: false
 # Programmable completion for Bash 4.1+
-brew "bash-completion@2"
+brew "bash-completion@2", link: false
 # Fish completion for brew-cask
 brew "brew-cask-completion"
 # GNU internationalization (i18n) and localization (l10n) library
@@ -97,6 +97,8 @@ brew "help2man"
 brew "htop"
 # Generic library support script
 brew "libtool"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # JSON parser for C
 brew "json-c"
 # Kubernetes command-line interface
@@ -149,6 +151,8 @@ brew "the_silver_searcher"
 brew "tidy-html5"
 # Text interface for Git repositories
 brew "tig"
+# Terminal multiplexer
+brew "tmux"
 # Config manager based on git
 brew "vcsh"
 # Vi 'workalike' with many additional features
@@ -165,6 +169,8 @@ brew "d12frosted/emacs-plus/emacs-plus", link: false
 brew "heroku/brew/heroku"
 # Command-line interface to Keybase.io
 brew "keybase/beta/keybase", link: false
+# A tiling window manager for macOS based on binary space partitioning.
+brew "koekeishiya/formulae/yabai"
 brew "michaeldfallen/formula/git-radar"
 cask "alfred"
 cask "amethyst"
@@ -197,8 +203,10 @@ cask "firefox-beta"
 cask "firefox-developer-edition"
 cask "firefox-nightly"
 cask "flux"
+cask "font-awesome-terminal-fonts"
 cask "font-fira-code"
 cask "font-fira-mono-for-powerline"
+cask "font-fontawesome"
 cask "freeter"
 cask "github"
 cask "githubpulse"
@@ -250,6 +258,7 @@ cask "yubiswitch"
 mas "2Do", id: 477670270
 mas "Airmail", id: 918858936
 mas "Bitcoin Ticker - Kraken", id: 858785280
+mas "Canary Mail", id: 1236045954
 mas "CoinBar", id: 957162288
 mas "Dash", id: 458034879
 mas "Display Menu", id: 549083868
