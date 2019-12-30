@@ -28,7 +28,7 @@ brew "automake"
 # Automatically restart SSH sessions and tunnels
 brew "autossh"
 # Interpreted, interactive, object-oriented programming language
-brew "python"
+brew "python", link: false
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -36,7 +36,7 @@ brew "bash"
 # Programmable completion for Bash 3.2
 brew "bash-completion", link: false
 # Programmable completion for Bash 4.1+
-brew "bash-completion@2", link: false
+brew "bash-completion@2"
 # Fish completion for brew-cask
 brew "brew-cask-completion"
 # GNU internationalization (i18n) and localization (l10n) library
@@ -250,14 +250,12 @@ cask "virtualbox"
 cask "vlc"
 cask "vnc-viewer"
 cask "x2goclient"
-cask "xtrafinder"
 cask "yubikey-neo-manager"
 cask "yubikey-personalization-gui"
 cask "yubikey-piv-manager"
 cask "yubiswitch"
 mas "2Do", id: 477670270
 mas "Airmail", id: 918858936
-mas "Bitcoin Ticker - Kraken", id: 858785280
 mas "Canary Mail", id: 1236045954
 mas "CoinBar", id: 957162288
 mas "Dash", id: 458034879
@@ -272,7 +270,6 @@ mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
 mas "Reeder", id: 880001334
 mas "Todoist", id: 585829637
-mas "Toodledo", id: 865407053
 mas "Trello", id: 1278508951
 mas "Twitter", id: 409789998
 mas "Xcode", id: 497799835
