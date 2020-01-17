@@ -28,7 +28,7 @@ brew "automake"
 # Automatically restart SSH sessions and tunnels
 brew "autossh"
 # Interpreted, interactive, object-oriented programming language
-brew "python", link: false
+brew "python"
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -127,6 +127,8 @@ brew "neovim"
 brew "nmap"
 # Platform built on V8 to build network applications
 brew "node"
+# Kubernetes introspection tool for developers
+brew "octant"
 # Learn vim commands via a game
 brew "pacvim"
 # Library to validate YubiKey OTPs against YubiCloud
@@ -169,6 +171,8 @@ brew "d12frosted/emacs-plus/emacs-plus", link: false
 brew "heroku/brew/heroku"
 # Command-line interface to Keybase.io
 brew "keybase/beta/keybase", link: false
+# Simple hotkey-daemon for macOS.
+brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
 brew "michaeldfallen/formula/git-radar"
@@ -261,11 +265,9 @@ mas "CoinBar", id: 957162288
 mas "Dash", id: 458034879
 mas "Display Menu", id: 549083868
 mas "feedly", id: 865500966
-mas "GhosteryLite", id: 1436953057
-mas "Keynote", id: 409183694
+mas "Ghostery Lite", id: 1436953057
 mas "Kindle", id: 405399194
 mas "LastPass", id: 926036361
-mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
 mas "Reeder", id: 880001334

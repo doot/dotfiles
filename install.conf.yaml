@@ -12,6 +12,8 @@
     ~/.Brewfile: Brewfile
     ~/.fzf.bash: fzf.bash
     ~/.tmux.conf: tmux.conf
+    ~/.skhdrc: skhdrc
+    ~/.yabairc: yabairc
     ~/.inputrc: inputrc
     ~/scripts:
         path: scripts/
