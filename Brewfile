@@ -17,8 +17,6 @@ cask "xquartz"
 brew "apm-bash-completion"
 # Collection of portable C++ source libraries
 brew "boost"
-# Standard SGML representation system for technical documents
-brew "docbook"
 # Formatter/translator for text files to numerous formats. Includes a2x
 brew "asciidoc"
 # Automatic configure script builder
@@ -27,8 +25,6 @@ brew "autoconf"
 brew "automake"
 # Automatically restart SSH sessions and tunnels
 brew "autossh"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -37,6 +33,10 @@ brew "bash"
 brew "bash-completion", link: false
 # Programmable completion for Bash 4.1+
 brew "bash-completion@2"
+# Informative, fancy bash prompt for Git users
+brew "bash-git-prompt"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # Fish completion for brew-cask
 brew "brew-cask-completion"
 # GNU internationalization (i18n) and localization (l10n) library
@@ -47,6 +47,10 @@ brew "cmake"
 brew "colordiff"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Libraries for security-enabled client and server applications
+brew "nss"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
 # Visually compare two PDF files
 brew "diff-pdf"
 # Assuan IPC Library
@@ -69,6 +73,8 @@ brew "emacs"
 brew "exa"
 # Command-line tool to interact with exercism.io
 brew "exercism"
+# X11 image viewer
+brew "feh"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -79,6 +85,8 @@ brew "mpfr"
 brew "flint"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU debugger
+brew "gdb"
 # Distributed revision control system
 brew "git"
 # Extensions to follow Vincent Driessen's branching model
@@ -91,16 +99,24 @@ brew "go"
 brew "pinentry"
 # GPG key agent
 brew "gpg-agent"
+# GNU grep, egrep and fgrep
+brew "grep"
+# The Kubernetes package manager
+brew "helm"
 # Automatically generate simple man pages
 brew "help2man"
 # Improved top (interactive process viewer)
 brew "htop"
+# Command-line benchmarking tool
+brew "hyperfine"
 # Generic library support script
 brew "libtool"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # JSON parser for C
 brew "json-c"
+# User-friendly front-end to ssh-agent(1)
+brew "keychain"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Library for USB device access
@@ -115,6 +131,8 @@ brew "livestreamer"
 brew "makedepend"
 # Mac App Store command-line interface
 brew "mas"
+# Collection of tools that nobody wrote when UNIX was young
+brew "moreutils"
 # Remote terminal application
 brew "mosh"
 # Multiple Repository management tool
@@ -141,10 +159,22 @@ brew "pam_yubico"
 brew "pidof"
 # Bash completion for Pip
 brew "pip-completion"
+# Show ps output as a tree
+brew "pstree"
 # Docker Compose compatible client to deploy to Rancher
 brew "rancher-compose"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Utility that provides fast incremental file transfer
+brew "rsync"
+# Command-line Reddit client
+brew "rtv"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Version control system designed to be a better CVS
+brew "subversion"
+# Feature-rich console based todo list manager
+brew "task"
 # Shell wrapper for Taskwarrior commands
 brew "tasksh"
 # Code-search similar to ack
@@ -155,16 +185,22 @@ brew "tidy-html5"
 brew "tig"
 # Terminal multiplexer
 brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
 # Config manager based on git
 brew "vcsh"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Full-screen terminal interface for Taskwarrior
 brew "vit"
+# Extensible IRC client
+brew "weechat"
 # Internet file retriever
 brew "wget"
 # Convert XML to another format (based on XSL or other tools)
 brew "xmlto"
+# Download YouTube videos from the command-line
+brew "youtube-dl"
 # GNU Emacs text editor
 brew "d12frosted/emacs-plus/emacs-plus", link: false
 # Everything you need to get started with Heroku
@@ -176,6 +212,7 @@ brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
 brew "michaeldfallen/formula/git-radar"
+cask "aether"
 cask "alfred"
 cask "amethyst"
 cask "angular-console"
@@ -228,13 +265,17 @@ cask "karabiner-elements"
 cask "keybase"
 cask "kitematic"
 cask "loading"
+cask "omnidisksweeper"
 cask "openbazaar"
 cask "patchwork"
 cask "plex"
+cask "plexamp"
 cask "polymail"
 cask "pycharm-edu"
+cask "quassel"
 cask "resilio-sync"
 cask "riot"
+cask "seaglass"
 cask "slack"
 cask "sourcetree"
 cask "spectacle"
@@ -268,10 +309,12 @@ mas "feedly", id: 865500966
 mas "Ghostery Lite", id: 1436953057
 mas "Kindle", id: 405399194
 mas "LastPass", id: 926036361
+mas "LimeChat", id: 414030210
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
 mas "Reeder", id: 880001334
 mas "Todoist", id: 585829637
 mas "Trello", id: 1278508951
 mas "Twitter", id: 409789998
+mas "Wunderlist", id: 410628904
 mas "Xcode", id: 497799835
