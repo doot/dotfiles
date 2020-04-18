@@ -80,6 +80,11 @@ set showmode                " Show current mode
 set showcmd                 " Show commands/info while typing
 set backspace=2             " Allow backspace to work on characters entered in previous sessions
 
+" Way better vimdiff in newer versions of vim/neovim
+if has('nvim-0.3.2') || has("patch-8.1.0360")
+  set diffopt=filler,internal,algorithm:histogram,indent-heuristic
+endif
+
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
