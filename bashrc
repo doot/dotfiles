@@ -40,6 +40,9 @@ case $os in
         source "$completion_file"
       done
     fi
+    if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+      . /usr/local/share/bash-completion/bash_completion
+    fi
     ;;
     "Linux")
       alias ls='ls -F --color=auto'
@@ -99,7 +102,6 @@ alias vimwiki2html='vim -R ~/vimwiki/index.wiki +VimwikiAll2HTML +q; open ~/vimw
 alias wikipull='cd ~/vimwiki/; git pull; cd -;'
 alias wikipush='cd ~/vimwiki/; git add . && git commit -m "alias commit: `date`" && git push origin master; cd -;'
 
-# alias ltmux="ssh -t deskr 'tmux -CC attach -d'"
 alias ltmux="ssh -t deskr '/home/linuxbrew/.linuxbrew/bin/tmux -CC attach -d'"
 # Bash settings
 export PS1='\u@\h:\w [$?]\n\$ '
@@ -182,6 +184,24 @@ export PATH
 
 # shellcheck source=/dev/null
 [ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs | grep -v .git | grep -v .shiv'
+export FZF_CTRL_T_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs | grep -v .git | grep -v .shiv'
+export FZF_DEFAULT_OPTS="
+  --layout=reverse
+  --border
+  --multi
+  --header='>:@ '
+  --pointer='->'
+  --prompt='$ '
+  --height 60%
+  --info=inline
+  --preview-window=:hidden
+  --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+  --bind '?:toggle-preview'
+  --bind 'ctrl-a:select-all'
+  --bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
+  --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
+"
 
 if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
