@@ -34,6 +34,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'w0rp/ale'
 " Plugin 'python-mode/python-mode'
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'mhartington/oceanic-next'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -71,6 +72,8 @@ set scrolloff=2
 set history=1000            " remember more commands and search history
 set undolevels=1000         " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildmode=longest:full,full
+set wildmenu
 set title                   " change the terminal's title
 set titleold=""             " remove 'Thanks for flying Vim!' when leaving vim
 set visualbell              " don't beep
@@ -84,6 +87,17 @@ set backspace=2             " Allow backspace to work on characters entered in p
 if has('nvim-0.3.2') || has("patch-8.1.0360")
   set diffopt=filler,internal,algorithm:histogram,indent-heuristic
 endif
+
+" trying out new theme:
+" for vim 7
+ set t_Co=256
+" for vim 8
+ if (has("termguicolors"))
+  set termguicolors
+ endif
+colorscheme OceanicNext
+let g:airline_theme='oceanicnext'
+" end new theme
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -200,3 +214,14 @@ aug end
 set rtp+=~/.dotfiles/fzf
 
 set updatetime=700
+
+let g:tmuxline_theme = 'airline'
+let g:tmuxline_preset = {
+  \'a'    : '#(whoami)@#H',
+  \'b'    : ['%Y-%m-%d', '%H:%M', '#S'],
+  \'c'    : "#(echo $(tmux-mem-cpu-load -g 4 --interval 2 -m 2 -m 0))",
+  \'win'  : ['#I', '#W'],
+  \'cwin' : ['#I', '#W'],
+  \'options': { 'status-justify': 'left' },
+  \'win_options': { 'window-status-activity-style': 'none' }
+  \}
