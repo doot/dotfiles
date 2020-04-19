@@ -6,7 +6,52 @@
   signingkey = D1372D8D
 
 [color]
-  ui = true
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  showbranch = auto
+  interactive = always
+
+[color "branch"]
+  current = green bold
+  local = green
+  remote = red bold
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = red
+  changed = green
+  untracked = cyan
+
+[color "sh"]
+  branch = yellow
+
+[log]
+  decorate = full
+
+[merge]
+  tool = vimdiff
+  log  = true
+  conflictstyle = diff3
+
+[diff]
+  tool = vimdiff
+  renames = copies
+  # Tell git diff to use mnemonic prefixes (index, work tree, commit, object) instead of the standard a and b notation
+  mnemonicprefix = true
+
+[difftool]
+  tool = vimdiff
+	prompt = false
+
+[help]
+  autocorrect = 1
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -16,7 +61,12 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
-    editor = vim
+  editor = nvim
+
+# Automatic `git config branch.BRANCHNAME.rebase true` on new branches/repos
+# Changes default `git pull` to `git pull --rebase`
+[branch]
+  autosetuprebase = always
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -32,8 +82,6 @@
 [branch "master"]
     remote = origin
     merge = refs/heads/master
-[diff]
-	tool = vimdiff
 [alias]
 	lol = log --oneline --graph --decorate --all
 	co = commit -m
