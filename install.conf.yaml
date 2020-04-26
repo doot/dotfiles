@@ -75,15 +75,15 @@
         create: true
 
 - shell:
-    - 
-        description:    "Installing submodules"
-        command:        "git submodule update --init --recursive"
-        stdout:         true
-        stderr:         true
-        stdin:          true
+    # - this might not be needed, remove after confirming
+    #     description:    "Installing submodules"
+    #     command:        "git submodule update --init --recursive"
+    #     stdout:         true
+    #     stderr:         true
+    #     stdin:          true
     - 
         description:    "Updating submodules"
-        command:        "git submodule update --remote --recursive"
+        command:        "git submodule update --init --remote --recursive --merge"
         stdout:         true
         stderr:         true
         stdin:          true
