@@ -28,6 +28,7 @@ Plugin 'ervandew/supertab'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'mattn/calendar-vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'alok/notational-fzf-vim'
 
 " unsure about these plugins:
 "Plugin 'Shougo/denite.nvim'
@@ -225,3 +226,6 @@ let g:tmuxline_preset = {
   \'options': { 'status-justify': 'left' },
   \'win_options': { 'window-status-activity-style': 'none' }
   \}
+
+let g:nv_search_paths = ['~/vimwiki', '~/workspace']
+let g:nv_default_extension = '.wiki'

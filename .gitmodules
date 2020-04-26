@@ -72,3 +72,6 @@
 [submodule "vim/bundle/indentpython.vim"]
 	path = vim/bundle/indentpython.vim
 	url = //github.com/vim-scripts/indentpython.vim.git
+[submodule "vim/bundle/notational-fzf-vim"]
+	path = vim/bundle/notational-fzf-vim
+	url = https://github.com/alok/notational-fzf-vim.git
