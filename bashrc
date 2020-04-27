@@ -103,6 +103,7 @@ alias wikipull='cd ~/vimwiki/; git pull; cd -;'
 alias wikipush='cd ~/vimwiki/; git add . && git commit -m "alias commit: `date`" && git push origin master; cd -;'
 
 alias ltmux="ssh -t deskr '/home/linuxbrew/.linuxbrew/bin/tmux -CC attach -d'"
+
 # Bash settings
 export PS1='\u@\h:\w [$?]\n\$ '
 shopt -s histappend
@@ -128,12 +129,6 @@ complete -cf sudo man
 
 # Vi Mode
 set -o vi
-#if [ -f "${HOME}/.gpg-agent-info" ]; then
-#  . "${HOME}/.gpg-agent-info"
-#  export GPG_AGENT_INFO
-#  export SSH_AUTH_SOCK
-#fi
-#export GPG_TTY=$(tty)
 
 # Support for gpg-agent.  Used for ssh via gpg key (stored on yubikey)
 if [ -f "${HOME}/.gpg-agent-info" ]; then
@@ -206,3 +201,5 @@ export FZF_DEFAULT_OPTS="
 if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
+
+vws() { vim -c ":VWS /\c$1/" ~/vimwiki/index.wiki; }
