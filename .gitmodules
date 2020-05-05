@@ -2,7 +2,7 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
     branch = master
-    ignore = dirty
+	ignore = dirty
 [submodule "solarized"]
 	path = solarized
 	url = git://github.com/altercation/solarized.git
@@ -21,9 +21,11 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
+	ignore = dirty
 [submodule "vim/bundle/vim-taskwarrior"]
 	path = vim/bundle/vim-taskwarrior
 	url = https://github.com/blindFS/vim-taskwarrior
+	ignore = dirty
 [submodule "vim/bundle/vim-plugin-AnsiEsc"]
 	path = vim/bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
