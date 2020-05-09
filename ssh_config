@@ -33,3 +33,8 @@ Host do-dev2
     Port 22
     User doot
     ForwardAgent yes
+
+host shitfucker sf
+    HostName shitfucker
+    User doot
+    ForwardAgent yes
