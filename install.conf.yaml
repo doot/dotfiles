@@ -1,5 +1,13 @@
 - clean: ['~']
 
+# work specific files
+- link:
+    ~/.Brewfile:
+      if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+      path: work/Brewfile
+      relink: true
+
+# home or shared files
 - link:
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
@@ -9,7 +17,10 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
-    ~/.Brewfile: Brewfile
+    ~/.Brewfile:
+      if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+      path: Brewfile
+      relink: true
     ~/.fzf.bash: fzf.bash
     ~/.tmux.conf: tmux.conf
     ~/.skhdrc: skhdrc
