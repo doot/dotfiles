@@ -24,21 +24,6 @@
     ~/.ssh/config:
         path: ssh_config
         create: true
-    ~/.atom/config.cson:
-        path: atom/config.cson
-        create: true
-    ~/.atom/keymap.cson:
-        path: atom/keymap.cson
-        create: true
-    ~/.atom/styles.less:
-        path: atom/styles.less
-        create: true
-    ~/.atom/packages.list:
-        path: atom/packages.list
-        create: true
-    ~/.atom/installAtomPackages:
-        path: atom/installAtomPackages
-        create: true
     ~/.bash-git-prompt:
         path: bash-git-prompt/
         create: true
@@ -84,12 +69,6 @@
     - 
         description:    "Updating submodules"
         command:        "git submodule update --init --remote --recursive --merge"
-        stdout:         true
-        stderr:         true
-        stdin:          true
-    -
-        description:    "Installing Atom packages and updating package list"
-        command:        "#~/.atom/installAtomPackages"
         stdout:         true
         stderr:         true
         stdin:          true
