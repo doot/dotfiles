@@ -11,6 +11,7 @@ tap "homebrew/services"
 tap "keybase/beta"
 tap "koekeishiya/formulae"
 tap "michaeldfallen/formula"
+tap "mistertea/et"
 tap "neovim/neovim"
 cask "xquartz"
 # Completion for Atom Package Manager
@@ -39,8 +40,6 @@ brew "bash-git-prompt"
 brew "bat"
 # Fish completion for brew-cask
 brew "brew-cask-completion"
-# GNU internationalization (i18n) and localization (l10n) library
-brew "gettext"
 # Cross-platform make
 brew "cmake"
 # Color-highlighted diff(1) output
@@ -49,8 +48,6 @@ brew "colordiff"
 brew "coreutils"
 # Libraries for security-enabled client and server applications
 brew "nss"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Visually compare two PDF files
 brew "diff-pdf"
 # Assuan IPC Library
@@ -109,6 +106,8 @@ brew "help2man"
 brew "htop"
 # Command-line benchmarking tool
 brew "hyperfine"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
 # Generic library support script
 brew "libtool"
 # Lightweight and flexible command-line JSON processor
@@ -212,6 +211,8 @@ brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
 brew "michaeldfallen/formula/git-radar"
+# Remote terminal with IP roaming
+brew "mistertea/et/et"
 cask "aether"
 cask "alfred"
 cask "amethyst"
@@ -223,6 +224,7 @@ cask "atom-beta"
 cask "beaker-browser"
 cask "bettertouchtool"
 cask "bisq"
+cask "bitbar"
 cask "bitwarden"
 cask "black-screen"
 cask "bragi-updater"
@@ -261,7 +263,6 @@ cask "itsycal"
 cask "jaxx"
 cask "jaxx-liberty"
 cask "jdiskreport"
-cask "karabiner-elements"
 cask "keybase"
 cask "kitematic"
 cask "loading"
