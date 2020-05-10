@@ -3,9 +3,9 @@
 # work specific files
 - link:
     ~/.Brewfile:
-      if: '[[ $(hostname) == *"linkedin.biz"* ]]'
-      path: work/Brewfile
-      relink: true
+        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        path: work/Brewfile
+        relink: true
 
 # home or shared files
 - link:
@@ -18,9 +18,9 @@
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
     ~/.Brewfile:
-      if: '[[ $(hostname) != *"linkedin.biz"* ]]'
-      path: Brewfile
-      relink: true
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        path: Brewfile
+        relink: true
     ~/.fzf.bash: fzf.bash
     ~/.tmux.conf: tmux.conf
     ~/.skhdrc: skhdrc
@@ -33,6 +33,7 @@
         path: vim/
         create: true
     ~/.ssh/config:
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: ssh_config
         create: true
     ~/.bash-git-prompt:
