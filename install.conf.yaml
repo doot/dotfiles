@@ -22,6 +22,7 @@
         path: ${HOME}/.dotfiles_work/bitbar/
         create: true
     ~/bin_li:
+        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
         path: ${HOME}.dotfiles_work/bin_li
         create: true
 
