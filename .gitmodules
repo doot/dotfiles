@@ -77,9 +77,6 @@
 [submodule "vim/bundle/indentpython.vim"]
 	path = vim/bundle/indentpython.vim
 	url = https://github.com/vim-scripts/indentpython.vim.git
-[submodule "vim/bundle/oceanic-next"]
-	path = vim/bundle/oceanic-next
-	url = https://github.com/vim-scripts/indentpython.vim.git
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
 	url = https://github.com/python-mode/python-mode.git
