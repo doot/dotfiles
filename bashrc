@@ -96,7 +96,7 @@ alias egrep='egrep --color=auto'
 alias drm="docker rm"
 alias dps="docker ps"
 alias wiki='vim ~/vimwiki/index.wiki'
-alias todo='vim ~/vimwiki/todo.wiki'
+alias todo='vim ~/vimwiki/Todo.wiki'
 alias diary='vim ~/vimwiki/diary/diary.wiki +VimwikiDiaryGenerateLinks +Calendar'
 alias vimwiki2html='vim -R ~/vimwiki/index.wiki +VimwikiAll2HTML +q; open ~/vimwiki_html/index.html'
 alias wikipull='cd ~/vimwiki/; git pull; cd -;'
@@ -152,8 +152,8 @@ fi
 PATH="${HOME}/bin:${PATH}"
 
 # Display git status in prompt
-GIT_PROMPT_START="\u@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ "
-export GIT_PROMPT_START
+GIT_PROMPT_START="${USER}@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ " # \u is somehow broken when calling new version of bash on linux
+# export GIT_PROMPT_START
 if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
   export __GIT_PROMPT_DIR
@@ -167,19 +167,13 @@ if [ -f "${HOME}/.bash-git-prompt/gitprompt.sh" ]; then
   source "${HOME}/.bash-git-prompt/gitprompt.sh"
 fi
 
-PATH="/Users/doot/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/Users/doot/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/doot/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/doot/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/doot/perl5"; export PERL_MM_OPT;
-EDITOR=vim
+# PATH="/Users/doot/perl5/bin${PATH+:}${PATH}"; export PATH;
+# PERL5LIB="/Users/doot/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="/Users/doot/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+# PERL_MB_OPT="--install_base \"/Users/doot/perl5\""; export PERL_MB_OPT;
+# PERL_MM_OPT="INSTALL_BASE=/Users/doot/perl5"; export PERL_MM_OPT;
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/serverless.bash ] && . /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/serverless.bash
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/sls.bash ] && . /Users/doot/projects/github/testpwa/node_modules/tabtab/.completions/sls.bash
+EDITOR=vim
 
 export LS_COLORS="di=34"
 
@@ -191,8 +185,9 @@ export PATH
 
 # shellcheck source=/dev/null
 [ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs | grep -v .git | grep -v .shiv'
-export FZF_CTRL_T_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs | grep -v .git | grep -v .shiv'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs --ignore-file ~/.dotfiles/rgignore_fzf'
+export FZF_ALT_C_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs --ignore-file ~/.dotfiles/rgignore_fzf'
+export FZF_CTRL_T_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs --ignore-file ~/.dotfiles/rgignore_fzf'
 export FZF_DEFAULT_OPTS="
   --layout=reverse
   --border
@@ -200,7 +195,7 @@ export FZF_DEFAULT_OPTS="
   --header='>:@ '
   --pointer='->'
   --prompt='$ '
-  --height 60%
+  --height 40%
   --info=inline
   --preview-window=:hidden
   --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
@@ -209,7 +204,6 @@ export FZF_DEFAULT_OPTS="
   --bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
   --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 "
-
 if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
