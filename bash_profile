@@ -2,7 +2,12 @@
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+  . ~/.bashrc
+fi
+
+# Include work specific bash_profile if it exists
+if [[ -f ~/.dotfiles/work/bash_profile ]]; then
+  . "${HOME}/dotfiles/work/bashrc_aliases"
 fi
 
 # User specific environment and startup programs

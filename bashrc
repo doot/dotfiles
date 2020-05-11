@@ -104,6 +104,18 @@ alias wikipush='cd ~/vimwiki/; git add . && git commit -m "alias commit: `date`"
 
 alias ltmux="ssh -t deskr '/home/linuxbrew/.linuxbrew/bin/tmux -CC attach -d'"
 
+# Include work specific aliases if it exists
+if [[ -f ${HOME}/.dotfiles_work/bashrc_aliases ]]; then
+  # shellcheck source=/dev/null
+  . "${HOME}/.dotfiles_work/bashrc_aliases"
+fi
+
+# Include other work specific bashrc if it exists
+if [[ -f ${HOME}/.dotfiles_work/bashrc ]]; then
+  # shellcheck source=/dev/null
+  . "${HOME}/.dotfiles_work/bashrc"
+fi
+
 # Bash settings
 export PS1='\u@\h:\w [$?]\n\$ '
 shopt -s histappend
@@ -137,7 +149,7 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
 fi
 
 # Custom scripts
-PATH="${HOME}/.bin:${PATH}"
+PATH="${HOME}/bin:${PATH}"
 
 # Display git status in prompt
 GIT_PROMPT_START="\u@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ "

@@ -6,6 +6,8 @@ Uses Dotbot to install and maintain: https://git.io/dotbot.  Also see authors [b
 
 ### Install
 ```
+# If there is a work dotfiles repository, make sure it is cloned to ~/.dotfiles_work/scripts/ and the hostnames in install.conf.yaml apply to the work environment
+
 git clone git@github.com:doot/dotfiles.git ~/.dotfiles
 ~/.dotfiles/install
 ```

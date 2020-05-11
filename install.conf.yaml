@@ -4,8 +4,23 @@
 - link:
     ~/.Brewfile:
         if: '[[ $(hostname) == *"linkedin.biz"* ]]'
-        path: work/Brewfile
+        path: ${HOME}/.dotfiles_work/Brewfile
         relink: true
+    ~/.ssh/config.custom:
+        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        path: ${HOME}/.dotfiles_work/ssh_config
+        create: true
+    ~/.gitconfig:
+        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        path: ${HOME}/.dotfiles_work/gitconfig
+    ~/scripts:
+        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        path: ${HOME}/.dotfiles_work/scripts/
+        create: true
+    ~/bitbar:
+        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        path: ${HOME}/.dotfiles/bitbar/
+        create: true
 
 # home or shared files
 - link:
@@ -14,7 +29,9 @@
     ~/.profile: profile
     ~/.chunkwmrc: chunkwmrc
     ~/.khdrc: khdrc
-    ~/.gitconfig: gitconfig
+    ~/.gitconfig:
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        path: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
     ~/.Brewfile:
@@ -27,12 +44,14 @@
     ~/.yabairc: yabairc
     ~/.inputrc: inputrc
     ~/scripts:
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: scripts/
         create: true
     ~/.vim:
         path: vim/
         create: true
     ~/.ssh/config:
+        # ssh_config at work is managed automatically
         if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: ssh_config
         create: true
@@ -40,35 +59,45 @@
         path: bash-git-prompt/
         create: true
     ~/.gnupg/scdaemon.conf:
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: gnupg/scdaemon.conf
         create: true
     ~/.gnupg/gpg.conf:
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: gnupg/gpg.conf
         create: true
     ~/.gnupg/gpg-agent.conf:
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: gnupg/gpg-agent.conf
         create: true
     ~/Library/Preferences/com.googlecode.iterm2.plist:
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: Library/Preferences/com.googlecode.iterm2.plist
         create: true
 #    ~/.vim/colors/solarized.vim:
 #        path: solarized/vim-colors-solarized/colors/solarized.vim
 #        create: true
 #        force: true
-    ~/.bin:
+    ~/bin:
         path: bin/
         create: true
     ~/.config/nvim:
         path: config/nvim
         create: true
     ~/.config/deluge/hostlist.conf.1.2:
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: config/deluge/hostlist.conf.1.2
         create: true
     ~/.config/deluge/core.conf:
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: config/deluge/core.conf
         create: true
     ~/Library/Application Support/Code/User/settings.json:
         path: vscode-settings.json
+        create: true
+    ~/bitbar:
+        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        path: bitbar/
         create: true
 
 - shell:
@@ -78,7 +107,7 @@
     #     stdout:         true
     #     stderr:         true
     #     stdin:          true
-    - 
+    -
         description:    "Updating submodules"
         command:        "git submodule update --init --remote --recursive --merge"
         stdout:         true
