@@ -8,7 +8,7 @@
         relink: true
     ~/.ssh/config.custom:
         if: '[[ $(hostname) == *"linkedin.biz"* ]]'
-        path: ${HOME}/.dotfiles_work/ssh_config
+        path: ${HOME}/.dotfiles_work/ssh_config.custom
         create: true
     ~/.gitconfig:
         if: '[[ $(hostname) == *"linkedin.biz"* ]]'
@@ -23,7 +23,7 @@
         create: true
     ~/bin_li:
         if: '[[ $(hostname) == *"linkedin.biz"* ]]'
-        path: ${HOME}.dotfiles_work/bin_li
+        path: ${HOME}/.dotfiles_work/bin_li
         create: true
 
 # home or shared files
@@ -118,12 +118,12 @@
         stdout:         true
         stderr:         true
         stdin:          true
-    -
-        description:    "Installing packages via 'brew bundle --global'.  Run 'brew bundle dump --describe --force --global' to update with currently installed packages."
-        command:        "brew bundle --global || { echo 'Homebrew not installed, this is probably linux'; }"
-        stdout:         true
-        stderr:         true
-        stdin:          true
+    #    -
+    #        description:    "Installing packages via 'brew bundle --global'.  Run 'brew bundle dump --describe --force --global' to update with currently installed packages."
+    #        command:        "brew bundle --global || { echo 'Homebrew not installed, this is probably linux'; }"
+    #        stdout:         true
+    #        stderr:         true
+    #        stdin:          true
     -
         description:    "Upgrading installed packages via brew upgrade"
         command:        "brew upgrade"
