@@ -204,8 +204,10 @@ export FZF_DEFAULT_OPTS="
   --bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
   --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 "
-if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
-  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-fi
+
+# TODO: conditionally import this on non-work machines.  This fucks up builds.
+# if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+#   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# fi
 
 vws() { vim -c ":VWS /\c$1/" ~/vimwiki/index.wiki; }

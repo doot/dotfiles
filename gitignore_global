@@ -25,3 +25,10 @@ node_modules
 
 # vim swap files
 *.swp
+
+out/
+
+doc/tags
+
+.ideaDataSources/
+dataSources/

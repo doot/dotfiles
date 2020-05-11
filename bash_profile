@@ -5,9 +5,13 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+
 # Include work specific bash_profile if it exists
 if [[ -f ~/.dotfiles/work/bash_profile ]]; then
-  . "${HOME}/dotfiles/work/bashrc_aliases"
+  . "${HOME}/dotfiles/work/bash_profile"
 fi
 
 # User specific environment and startup programs
