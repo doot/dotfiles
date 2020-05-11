@@ -19,7 +19,10 @@
         create: true
     ~/bitbar:
         if: '[[ $(hostname) == *"linkedin.biz"* ]]'
-        path: ${HOME}/.dotfiles/bitbar/
+        path: ${HOME}/.dotfiles_work/bitbar/
+        create: true
+    ~/bin_li:
+        path: ${HOME}.dotfiles_work/bin_li
         create: true
 
 # home or shared files
@@ -27,8 +30,6 @@
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.profile: profile
-    ~/.chunkwmrc: chunkwmrc
-    ~/.khdrc: khdrc
     ~/.gitconfig:
         if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: gitconfig
@@ -43,6 +44,7 @@
     ~/.skhdrc: skhdrc
     ~/.yabairc: yabairc
     ~/.inputrc: inputrc
+    ~/.Xmodmap: Xmodmap
     ~/scripts:
         if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: scripts/
@@ -69,10 +71,6 @@
     ~/.gnupg/gpg-agent.conf:
         if: '[[ $(hostname) != *"linkedin.biz"* ]]'
         path: gnupg/gpg-agent.conf
-        create: true
-    ~/Library/Preferences/com.googlecode.iterm2.plist:
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
-        path: Library/Preferences/com.googlecode.iterm2.plist
         create: true
 #    ~/.vim/colors/solarized.vim:
 #        path: solarized/vim-colors-solarized/colors/solarized.vim
@@ -108,7 +106,7 @@
     #     stderr:         true
     #     stdin:          true
     -
-        description:    "Updating submodules"
+        description:    "Updating/installing submodules"
         command:        "git submodule update --init --remote --recursive --merge"
         stdout:         true
         stderr:         true
