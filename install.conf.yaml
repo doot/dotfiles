@@ -26,6 +26,13 @@
         path: ${HOME}/.dotfiles_work/bin_li
         create: true
 
+# NAS specific files
+- link:
+    ~/docker-compose.yml:
+        if: '[[ $(hostname) == *"ShitHolder2"* ]]'
+        path: ${HOME}/.dotfiles_personal/docker-compose.yml
+        relink: true
+
 # home or shared files
 - link:
     ~/.bash_profile: bash_profile
