@@ -18,7 +18,6 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'majutsushi/tagbar'
 Plugin 'blindFS/vim-taskwarrior'
 Plugin 'powerman/vim-plugin-AnsiEsc'
-Plugin 'tbabej/taskwiki'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
@@ -36,6 +35,7 @@ Plugin 'w0rp/ale'
 " Plugin 'python-mode/python-mode'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'mhartington/oceanic-next'
+" Plugin 'tbabej/taskwiki'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
