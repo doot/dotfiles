@@ -114,6 +114,12 @@
         stderr:         true
         stdin:          true
     -
+        description:    "Updating work specific repo"
+        command:        'if [[ $(hostname) == *"linkedin.biz"* ]]; then cd ~/.dotfiles_work/ && git pull && cd -; fi'
+        stdout:         true
+        stderr:         true
+        stdin:          true
+    -
         description:    "Installing fzf binary"
         command:        "./fzf/install --bin"
         stdout:         true
