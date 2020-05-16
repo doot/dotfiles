@@ -63,7 +63,7 @@ RESET='\\\033[m'
 # $DEFAULT will be the color of the other spaces
 
 COLOR=$BLUE
-DEFAULT=$BLACK
+DEFAULT=$WHITE
 
 # Change your icons here! $LEFT and $RIGHT refer to the icons on either end of the bar and $DIV refers to the icon between spaces.
 # e.x. if $LEFT='⟨', $RIGHT='⟩', and $DIV='|', your bar would look like this ⟨ | ⟩.
