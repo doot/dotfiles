@@ -48,12 +48,12 @@ yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Preferences$" manage=off
 yabai -m rule --add app="^Bitwarden$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app='IntelliJ IDEA' title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.|Preferences|Data Sources and Drivers|Project Structure|Inspect' manage=off
+yabai -m rule --add app='IntelliJ IDEA' title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.|Preferences|Data Sources and Drivers|Project Structure|Inspect|Move.*|Extract.*|Export.*' manage=off
 
 if [[ "$(hostname)" == *"linkedin.biz"* ]]; then
   echo "loading work laptop specific..."
-  yabai -m rule --add app="^Slack$" display=2 space=7
   yabai -m rule --add app="Outlook" display=2 space=7
+  yabai -m rule --add app="^Slack$" display=2 space=7
   yabai -m rule --add app="Rambox" display=2 space=11
   yabai -m rule --add app="Messages" display=2 space=11
   yabai -m rule --add app="Spotify" display=3
