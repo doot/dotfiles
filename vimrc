@@ -228,5 +228,5 @@ let g:tmuxline_preset = {
   \'win_options': { 'window-status-activity-style': 'none' }
   \}
 
-let g:nv_search_paths = ['~/vimwiki', '~/workspace']
+let g:nv_search_paths = ['~/vimwiki']
 let g:nv_default_extension = '.wiki'
