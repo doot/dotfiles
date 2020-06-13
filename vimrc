@@ -180,6 +180,7 @@ let g:vimwiki_listsyms = ' ○◐●✓'
 let g:vimwiki_template_path = '$HOME/vimwiki/templates/Dark-Vimwiki-Template/wiki/templates/'
 let g:vimwiki_template_default = 'def_template'
 let g:vimwiki_template_ext = '.html'
+let g:vimwiki_auto_header = 1
 
 " Python ident
 au FileType python set ts=4 sts=4 et sw=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
@@ -227,5 +228,5 @@ let g:tmuxline_preset = {
   \'win_options': { 'window-status-activity-style': 'none' }
   \}
 
-let g:nv_search_paths = ['~/vimwiki', '~/workspace']
+let g:nv_search_paths = ['~/vimwiki']
 let g:nv_default_extension = '.wiki'
