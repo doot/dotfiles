@@ -151,6 +151,9 @@ fi
 # Custom scripts
 PATH="${HOME}/bin:${PATH}"
 
+# Rust/cargo
+PATH="${HOME}/.cargo/bin:${PATH}"
+
 # Display git status in prompt
 GIT_PROMPT_START="${USER}@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ " # \u is somehow broken when calling new version of bash on linux
 # export GIT_PROMPT_START
