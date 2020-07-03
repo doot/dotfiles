@@ -53,6 +53,7 @@
     ~/.skhdrc: skhdrc
     ~/.yabairc: yabairc
     ~/.inputrc: inputrc
+    ~/.editrc: editrc
     ~/.Xmodmap: Xmodmap
     ~/scripts:
         if: '[[ $(hostname) != *"linkedin.biz"* ]]'
