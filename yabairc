@@ -49,17 +49,19 @@ yabai -m rule --add app="^Preferences$" manage=off
 yabai -m rule --add app="^Bitwarden$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Code42 CrashPlan$" manage=off
-yabai -m rule --add app='IntelliJ IDEA' title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.|Preferences|Data Sources and Drivers|Project Structure|Inspect|Move.*|Extract.*|Export.*|Create.*|Delete.*' manage=off
+yabai -m rule --add app='IntelliJ IDEA' title='.*Welcome*.|Checkout*.|.*Configurations|Choose*.|Import*.|.*Charges|Tip*.|Rename*.|Preferences|Data Sources and Drivers|Project Structure|Inspect|Move.*|Extract.*|Export.*|Create.*|Delete.*|Update.*|Conflics.*|Merge.*|Confirm.*|Conflicts.*|Modify.*' manage=off
 yabai -m rule --add app="^Steam$" manage=off
+yabai -m rule --add app="^Flux$" manage=off
+yabai -m rule --add app="^Lunar$" manage=off
 
 if [[ "$(hostname)" == *"linkedin.biz"* ]]; then
   echo "loading work laptop specific..."
-  yabai -m rule --add app="Outlook" display=2 space=7
-  yabai -m rule --add app="^Slack$" display=2 space=7
-  yabai -m rule --add app="Rambox" display=2 space=11
-  yabai -m rule --add app="Messages" display=2 space=11
+  yabai -m rule --add app="Outlook" display=1 space=2
+  yabai -m rule --add app="^Slack$" display=1 space=2
+  yabai -m rule --add app="Rambox" display=2 space=12
+  yabai -m rule --add app="Messages" display=2 space=12
+  yabai -m rule --add app="Todoist" display=2 space=13
   yabai -m rule --add app="Spotify" display=3
-  yabai -m rule --add app="Todoist" display=2 space=6
   yabai -m rule --add app="iTerm2" title="tower.*hotkey" manage=off
 else
   echo "loading personal laptop specifics..."
