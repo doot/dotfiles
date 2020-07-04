@@ -88,3 +88,5 @@
   open = !vim `git-open.sh`
 [merge]
 	conflictstyle = diff3
+[pull]
+	rebase = true
