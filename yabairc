@@ -63,6 +63,7 @@ if [[ "$(hostname)" == *"linkedin.biz"* ]]; then
   yabai -m rule --add app="iTerm2" title="tower.*hotkey" manage=off
 else
   echo "loading personal laptop specifics..."
+  yabai -m rule --add app="Firefox" space=1
   yabai -m rule --add app="Canary Mail" space=2
   yabai -m rule --add app="Todoist" space=6
   yabai -m rule --add app="Discord" space=7 # grid=6:6:1:1:3:3
