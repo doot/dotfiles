@@ -33,7 +33,7 @@ brew "bash"
 # Programmable completion for Bash 3.2
 brew "bash-completion", link: false
 # Programmable completion for Bash 4.1+
-brew "bash-completion@2"
+brew "bash-completion@2", link: false
 # Informative, fancy bash prompt for Git users
 brew "bash-git-prompt"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -82,6 +82,8 @@ brew "mpfr"
 brew "flint"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Generic library support script
+brew "libtool"
 # GNU debugger
 brew "gdb"
 # Distributed revision control system
@@ -90,6 +92,8 @@ brew "git"
 brew "git-flow"
 # Command-line option parsing utility
 brew "gnu-getopt"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Passphrase entry dialog utilizing the Assuan protocol
@@ -106,10 +110,10 @@ brew "help2man"
 brew "htop"
 # Command-line benchmarking tool
 brew "hyperfine"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
-# Generic library support script
-brew "libtool"
+# Convert XML to another format (based on XSL or other tools)
+brew "xmlto"
+# CLI wrapper for basic network utilities on macOS - ip command
+brew "iproute2mac"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # JSON parser for C
@@ -118,6 +122,8 @@ brew "json-c"
 brew "keychain"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
 # Library for USB device access
 brew "libusb"
 # Library for USB device access
@@ -168,8 +174,12 @@ brew "ripgrep"
 brew "rsync"
 # Command-line Reddit client
 brew "rtv"
+# Safe, concurrent, practical language
+brew "rust"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Add a public key to a remote machine's authorized_keys file
+brew "ssh-copy-id"
 # Version control system designed to be a better CVS
 brew "subversion"
 # Feature-rich console based todo list manager
@@ -196,12 +206,10 @@ brew "vit"
 brew "weechat"
 # Internet file retriever
 brew "wget"
-# Convert XML to another format (based on XSL or other tools)
-brew "xmlto"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
 # GNU Emacs text editor
-brew "d12frosted/emacs-plus/emacs-plus", link: false
+brew "d12frosted/emacs-plus/emacs-plus@26", link: false
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # Command-line interface to Keybase.io
@@ -300,6 +308,7 @@ cask "yubikey-neo-manager"
 cask "yubikey-personalization-gui"
 cask "yubikey-piv-manager"
 cask "yubiswitch"
+cask "zoom"
 mas "2Do", id: 477670270
 mas "Airmail", id: 918858936
 mas "Canary Mail", id: 1236045954
