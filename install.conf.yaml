@@ -3,33 +3,33 @@
 # work specific files
 - link:
     ~/.Brewfile:
-        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
         path: ${HOME}/.dotfiles_work/Brewfile
         relink: true
     ~/.ssh/config.custom:
-        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
         path: ${HOME}/.dotfiles_work/ssh_config.custom
         create: true
     ~/.gitconfig:
-        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
         path: ${HOME}/.dotfiles_work/gitconfig
     ~/scripts:
-        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
         path: ${HOME}/.dotfiles_work/scripts/
         create: true
     ~/bitbar:
-        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
         path: ${HOME}/.dotfiles_work/bitbar/
         create: true
     ~/bin_li:
-        if: '[[ $(hostname) == *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
         path: ${HOME}/.dotfiles_work/bin_li
         create: true
 
 # NAS specific files
 - link:
     ~/docker-compose.yml:
-        if: '[[ $(hostname) == *"ShitHolder2"* ]]'
+        if: '[[ $(hostname -f) == *"ShitHolder2"* ]]'
         path: ${HOME}/.dotfiles_personal/docker-compose.yml
         relink: true
 
@@ -39,13 +39,13 @@
     ~/.bashrc: bashrc
     ~/.profile: profile
     ~/.gitconfig:
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
     ~/.ideavimrc: ideavimrc
     ~/.Brewfile:
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: Brewfile
         relink: true
     ~/.fzf.bash: fzf.bash
@@ -56,7 +56,7 @@
     ~/.editrc: editrc
     ~/.Xmodmap: Xmodmap
     ~/scripts:
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: scripts/
         create: true
     ~/.vim:
@@ -64,22 +64,22 @@
         create: true
     ~/.ssh/config:
         # ssh_config at work is managed automatically
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: ssh_config
         create: true
     ~/.bash-git-prompt:
         path: bash-git-prompt/
         create: true
     ~/.gnupg/scdaemon.conf:
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: gnupg/scdaemon.conf
         create: true
     ~/.gnupg/gpg.conf:
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: gnupg/gpg.conf
         create: true
     ~/.gnupg/gpg-agent.conf:
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: gnupg/gpg-agent.conf
         create: true
 #    ~/.vim/colors/solarized.vim:
@@ -93,18 +93,18 @@
         path: config/nvim
         create: true
     ~/.config/deluge/hostlist.conf.1.2:
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: config/deluge/hostlist.conf.1.2
         create: true
     ~/.config/deluge/core.conf:
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: config/deluge/core.conf
         create: true
     ~/Library/Application Support/Code/User/settings.json:
         path: vscode-settings.json
         create: true
     ~/bitbar:
-        if: '[[ $(hostname) != *"linkedin.biz"* ]]'
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: bitbar/
         create: true
 
@@ -123,7 +123,7 @@
         stdin:          true
     -
         description:    "Updating work specific repo"
-        command:        'if [[ $(hostname) == *"linkedin.biz"* ]]; then cd ~/.dotfiles_work/ && git pull && cd -; fi'
+        command:        'if [[ $(hostname -f) == *"linkedin.biz"* ]]; then cd ~/.dotfiles_work/ && git pull && cd -; fi'
         stdout:         true
         stderr:         true
         stdin:          true
