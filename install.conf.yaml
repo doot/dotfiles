@@ -122,8 +122,14 @@
         stderr:         true
         stdin:          true
     -
-        description:    "Updating work specific repo"
+        description:    "Updating work specific private repo"
         command:        'if [[ $(hostname -f) == *"linkedin.biz"* ]]; then cd ~/.dotfiles_work/ && git pull && cd -; fi'
+        stdout:         true
+        stderr:         true
+        stdin:          true
+    -
+        description:    "Updating personal specific private repo"
+        command:        'if [[ $(hostname -f) != *"linkedin.biz"* ]] && [[ -d ~/.dotfiles_personal ]]; then cd ~/.dotfiles_personal/ && git pull && cd -; fi'
         stdout:         true
         stderr:         true
         stdin:          true
