@@ -30,6 +30,6 @@ Host do-dev1
     ForwardAgent yes
 
 host shitfucker sf
-    HostName 192.168.1.70
+    HostName 192.168.1.52
     User doot
     ForwardAgent yes
