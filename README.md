@@ -8,7 +8,7 @@ Uses Dotbot to install and maintain: https://git.io/dotbot.  Also see authors [b
 ```
 # If there is a work dotfiles repository, make sure it is cloned to ~/.dotfiles_work/ and the hostnames in install.conf.yaml apply to the work environment
 
-git clone git@github.com:doot/dotfiles.git ~/.dotfiles
+git clone --recurse-submodules git@github.com:doot/dotfiles.git ~/.dotfiles
 ~/.dotfiles/install
 ```
     
