@@ -33,6 +33,13 @@
         path: ${HOME}/.dotfiles_personal/docker-compose.yml
         relink: true
 
+# PVE specific files
+- link:
+    ~/pve_scripts:
+        if: '[[ $(hostname -f) == *"pve"* ]]'
+        path: ${HOME}/.dotfiles_personal/pve_scripts
+        relink: true
+
 # home or shared files
 - link:
     ~/.bash_profile: bash_profile
