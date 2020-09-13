@@ -40,6 +40,13 @@
         path: ${HOME}/.dotfiles_personal/pve_scripts
         relink: true
 
+# media-docker specific files
+- link:
+    ~/media-docker_config:
+        if: '[[ $(hostname -f) == *"media-docker"* ]]'
+        path: ${HOME}/.dotfiles_personal/media-docker_config
+        relink: true
+
 # home or shared files
 - link:
     ~/.bash_profile: bash_profile
