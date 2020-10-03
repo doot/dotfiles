@@ -53,6 +53,7 @@ yabai -m rule --add app='IntelliJ IDEA' title='.*Welcome*.|Checkout*.|.*Configur
 yabai -m rule --add app="^Steam$" manage=off
 yabai -m rule --add app="^Flux$" manage=off
 yabai -m rule --add app="^Lunar$" manage=off
+yabai -m rule --add app="^Firefox$" title='Opening.*' manage=off
 
 if [[ "$(hostname)" == *"linkedin.biz"* ]]; then
   echo "loading work laptop specific..."
