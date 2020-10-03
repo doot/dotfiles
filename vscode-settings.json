@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Gruvbox Dark (Medium)",
+    "workbench.colorTheme": "Oceanic Plus",
     "editor.fontFamily": "'Fira Code'",
     "editor.fontLigatures": true,
     "gitlens.advanced.messages": {
@@ -42,5 +42,9 @@
     "editor.renderLineHighlight": "all",
     "editor.occurrencesHighlight": false,
     "files.autoSave": "off",
-    "editor.cursorStyle": "line"
+    "editor.cursorStyle": "line",
+    "settingsSync.ignoredExtensions": [
+    
+    ],
+    "workbench.preferredLightColorTheme": "Visual Studio Dark"
 }
