@@ -489,7 +489,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>5 0 1670 1027 0 0 1680 1027 </string>
+	<string>0 1027 1680 574 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_703078C3-72AA-4F0C-A0CC-18FCBA52313C</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_703078C3-72AA-4F0C-A0CC-18FCBA52313C_selection</key>
@@ -7409,17 +7409,18 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.4.0beta1</string>
-		<string>3.3.1beta1</string>
-		<string>3.3.0beta16</string>
-		<string>3.3.0beta11</string>
-		<string>3.3.0beta13</string>
-		<string>3.3.5beta3</string>
-		<string>3.3.0beta10</string>
-		<string>3.3.0beta15</string>
-		<string>3.3.7beta1</string>
-		<string>3.3.0beta12</string>
 		<string>3.3.10beta4</string>
+		<string>3.3.0beta10</string>
+		<string>3.3.7beta1</string>
+		<string>3.3.0beta11</string>
+		<string>3.3.0beta12</string>
+		<string>3.3.0beta13</string>
+		<string>3.3.1beta1</string>
+		<string>3.4.0beta4</string>
+		<string>3.3.0beta15</string>
+		<string>3.3.0beta16</string>
+		<string>3.3.5beta3</string>
+		<string>3.4.0beta1</string>
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
 	<true/>
@@ -7443,12 +7444,14 @@
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
+	<key>NoSyncIgnoreSystemWindowRestoration</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>9B0796BB-0E88-4AF6-8F67-D29012B0164D</string>
 	<key>NoSyncLastOSVersion</key>
-	<string>Version 10.15.6 (Build 19G71a)</string>
+	<string>Version 10.15.6 (Build 19G2021)</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>114</integer>
+	<integer>117</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -8361,9 +8364,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-28T18:12:29Z</date>
+	<date>2020-10-03T09:07:46Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>SeparateStatusBarsPerPane</key>
@@ -8401,7 +8404,7 @@
 	<key>ThreeFingerEmulates</key>
 	<false/>
 	<key>TmuxDashboardLimit</key>
-	<integer>10</integer>
+	<integer>20</integer>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Captured Output</string>
@@ -8431,7 +8434,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.4.0beta1</string>
+	<string>3.4.0beta4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
