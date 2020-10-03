@@ -57,6 +57,7 @@
         path: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
+    ~/.doom.d: doom.d
     ~/.ideavimrc: ideavimrc
     ~/.Brewfile:
         if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
