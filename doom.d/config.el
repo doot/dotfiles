@@ -54,3 +54,12 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; (use-package! org-alert
+;;   (setq alert-default-style 'osx-notifier))
+(use-package! org-alert)
+
+
+(unless (equal "Battery status not available"
+               (battery))
+  (display-battery-mode 1))                           ; if batter status is available, show on status
