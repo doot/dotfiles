@@ -67,3 +67,13 @@
 (unless (equal "Battery status not available"
                (battery))
   (display-battery-mode 1))                           ; if batter status is available, show on status
+
+; from https://github.com/sunnyhasija/DOOMEmacs
+(after! company
+  (setq company-idle-delay 0.75
+        company-minimum-prefix-length 3)
+  (setq company-show-numbers t)
+(add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying.
+
+(setq-default history-length 1000) ; remembering history from precedent
+(setq-default prescient-history-length 1000)
