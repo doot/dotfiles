@@ -61,6 +61,7 @@ esac
 
 # Aliases
 alias db-update=~/.dotfiles/install
+alias gl='git log --graph --oneline --all'
 
 if type "nvim" &> /dev/null; then
   alias vim='nvim'
