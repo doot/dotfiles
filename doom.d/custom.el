@@ -15,6 +15,8 @@
               (org-agenda-overriding-header "High-priority unfinished tasks:")))
        (agenda "")
        (alltodo "")))))
+ '(org-agenda-files
+   '("/Users/jhauschi/org/from_vimwiki.org" "/Users/jhauschi/org/notes.org" "/Users/jhauschi/org/projects.org" "/Users/jhauschi/org/template.org" "/Users/jhauschi/org/todo.org" "/Users/jhauschi/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org/journal/2020-11-02.org"))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
