@@ -77,3 +77,14 @@
 
 (setq-default history-length 1000) ; remembering history from precedent
 (setq-default prescient-history-length 1000)
+
+(use-package! org-journal
+  :custom
+  (org-journal-file-type 'weekly)
+  (org-journal-file-format "%Y-%m-%d.org")
+  (org-journal-enable-agenda-integration t)
+  (org-journal-date-format "%B - %F, %A")
+  (org-journal-time-format "%R: ")
+  )
+
+(setq tab-width 2)
