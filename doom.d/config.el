@@ -88,3 +88,19 @@
   )
 
 (setq tab-width 2)
+
+(map! :leader
+      (:prefix ("j" . "journal") ;; org-journal bindings
+        :desc "Create new journal entry" "j" #'org-journal-new-entry
+        :desc "Open previous entry" "p" #'org-journal-previous-entry
+        :desc "Open next entry" "n" #'org-journal-next-entry
+        :desc "Search journal" "s" #'org-journal-search-forever))
+
+;; The built-in calendar mode mappings for org-journal
+;; conflict with evil bindings
+(map!
+ (:map calendar-mode-map
+   :n "o" #'org-journal-display-entry
+   :n "p" #'org-journal-previous-entry
+   :n "n" #'org-journal-next-entry
+   :n "O" #'org-journal-new-date-entry))
