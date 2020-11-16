@@ -83,3 +83,6 @@
 [submodule "vim/bundle/oceanic-next"]
 	path = vim/bundle/oceanic-next
 	url = https://github.com/mhartington/oceanic-next.git
+[submodule "vim/bundle/typescript-vim"]
+	path = vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
