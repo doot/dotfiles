@@ -18,3 +18,8 @@ __pycache__/
 *.pyc
 .sass-cache
 .IntelliJIdeaLI15/
+.venv/
+.dotfiles*
+.shiv/*
+.mozilla
+.mozilla/*
