@@ -59,52 +59,6 @@ esac
 # Brew autocompletion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
-# Aliases
-alias db-update=~/.dotfiles/install
-alias gl='git log --graph --oneline --all'
-
-if type "nvim" &> /dev/null; then
-  alias vim='nvim'
-  alias vimdiff='nvim -d'
-  export EDITOR=nvim
-  export VISUAL=nvim
-else
-  export EDITOR=vim
-  export VISUAL=vim
-fi
-
-if type "exa" &> /dev/null; then
-  alias l='exa -l -snew --color-scale -g'
-  alias ll='exa -la --color-scale -g'
-else
-  alias l='ls -lrht'
-  alias ll='ls -lrhta'
-fi
-
-alias ..='cd ..'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias dammit='sudo $(history -p \!\!)'
-alias h=history
-alias docker='sudo docker'
-alias docker-compose='sudo docker-compose'
-alias diff='colordiff'
-alias sudo="sudo -E"
-alias grep="grep --color=auto"
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias drm="docker rm"
-alias dps="docker ps"
-alias wiki='vim ~/vimwiki/index.wiki'
-alias todo='vim ~/vimwiki/Todo.wiki'
-alias diary='vim ~/vimwiki/diary/diary.wiki +VimwikiDiaryGenerateLinks +Calendar'
-alias vimwiki2html='vim -R ~/vimwiki/index.wiki +VimwikiAll2HTML +q; open ~/vimwiki_html/index.html'
-alias wikipull='cd ~/vimwiki/; git pull && git submodule update --remote --recursive --merge --init; cd -;'
-alias wikipush='cd ~/vimwiki/personal/; git add . && git commit -m "alias commit: `date`" ; git push origin master; cd -; cd ~/vimwiki/; git add . && git commit -m "alias commit: `date`" && git push origin master; cd -;'
-
-alias ltmux="ssh -t deskr '/home/linuxbrew/.linuxbrew/bin/tmux -CC attach -d'"
-
 # Include work specific aliases if it exists
 if [[ -f ${HOME}/.dotfiles_work/bashrc_aliases ]]; then
   # shellcheck source=/dev/null
@@ -180,8 +134,6 @@ fi
 # PERL_MB_OPT="--install_base \"/Users/doot/perl5\""; export PERL_MB_OPT;
 # PERL_MM_OPT="INSTALL_BASE=/Users/doot/perl5"; export PERL_MM_OPT;
 
-EDITOR=vim
-
 export LS_COLORS="di=34"
 
 
@@ -218,3 +170,49 @@ export FZF_DEFAULT_OPTS="
 # fi
 
 vws() { vim -c ":VWS /\c$1/" ~/vimwiki/index.wiki; }
+
+# Aliases
+alias db-update=~/.dotfiles/install
+alias gl='git log --graph --oneline --all'
+
+if type "nvim" &> /dev/null; then
+  alias vim='nvim'
+  alias vimdiff='nvim -d'
+  export EDITOR=nvim
+  export VISUAL=nvim
+else
+  export EDITOR=vim
+  export VISUAL=vim
+fi
+
+if type "exa" &> /dev/null; then
+  alias l='exa -l -snew --color-scale -g'
+  alias ll='exa -la --color-scale -g'
+else
+  alias l='ls -lrht'
+  alias ll='ls -lrhta'
+fi
+
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias dammit='sudo $(history -p \!\!)'
+alias h=history
+alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
+alias diff='colordiff'
+alias sudo="sudo -E"
+alias grep="grep --color=auto"
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias drm="docker rm"
+alias dps="docker ps"
+alias wiki='vim ~/vimwiki/index.wiki'
+alias todo='vim ~/vimwiki/Todo.wiki'
+alias diary='vim ~/vimwiki/diary/diary.wiki +VimwikiDiaryGenerateLinks +Calendar'
+alias vimwiki2html='vim -R ~/vimwiki/index.wiki +VimwikiAll2HTML +q; open ~/vimwiki_html/index.html'
+alias wikipull='cd ~/vimwiki/; git pull && git submodule update --remote --recursive --merge --init; cd -;'
+alias wikipush='cd ~/vimwiki/personal/; git add . && git commit -m "alias commit: `date`" ; git push origin master; cd -; cd ~/vimwiki/; git add . && git commit -m "alias commit: `date`" && git push origin master; cd -;'
+
+alias ltmux="ssh -t deskr '/home/linuxbrew/.linuxbrew/bin/tmux -CC attach -d'"
