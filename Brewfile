@@ -13,7 +13,7 @@ tap "koekeishiya/formulae"
 tap "michaeldfallen/formula"
 tap "mistertea/et"
 tap "neovim/neovim"
-cask "xquartz"
+tap "railwaycat/emacsmacport"
 # Completion for Atom Package Manager
 brew "apm-bash-completion"
 # Collection of portable C++ source libraries
@@ -32,14 +32,16 @@ brew "azure-cli"
 brew "bash"
 # Programmable completion for Bash 3.2
 brew "bash-completion", link: false
-# Programmable completion for Bash 4.1+
-brew "bash-completion@2", link: false
+# Programmable completion for Bash 4.2+
+brew "bash-completion@2"
 # Informative, fancy bash prompt for Git users
 brew "bash-git-prompt"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Fish completion for brew-cask
 brew "brew-cask-completion"
+# Core application library for C
+brew "glib"
 # Cross-platform make
 brew "cmake"
 # Color-highlighted diff(1) output
@@ -64,12 +66,12 @@ brew "dirmngr"
 brew "docbook-xsl"
 # Bash, Zsh and Fish completion for Docker
 brew "docker-completion"
-# GNU Emacs text editor
-brew "emacs"
 # Modern replacement for 'ls'
 brew "exa"
 # Command-line tool to interact with exercism.io
 brew "exercism"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # X11 image viewer
 brew "feh"
 # Perl compatible regular expressions library with a new API
@@ -82,8 +84,6 @@ brew "mpfr"
 brew "flint"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Generic library support script
-brew "libtool"
 # GNU debugger
 brew "gdb"
 # Distributed revision control system
@@ -100,9 +100,11 @@ brew "go"
 brew "pinentry"
 # GPG key agent
 brew "gpg-agent"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
 # GNU grep, egrep and fgrep
 brew "grep"
-# The Kubernetes package manager
+# Kubernetes package manager
 brew "helm"
 # Automatically generate simple man pages
 brew "help2man"
@@ -112,6 +114,10 @@ brew "htop"
 brew "hyperfine"
 # Convert XML to another format (based on XSL or other tools)
 brew "xmlto"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick@6"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
 # Lightweight and flexible command-line JSON processor
@@ -122,8 +128,6 @@ brew "json-c"
 brew "keychain"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Library for USB device access
 brew "libusb"
 # Library for USB device access
@@ -132,6 +136,8 @@ brew "libusb-compat"
 brew "libyubikey"
 # Pipes video from streaming services into a player such as VLC
 brew "livestreamer"
+# Run LogQL queries against a Loki server
+brew "logcli"
 # Creates dependencies in makefiles
 brew "makedepend"
 # Mac App Store command-line interface
@@ -144,6 +150,8 @@ brew "mosh"
 brew "mr"
 # DNS benchmark utility
 brew "namebench"
+# NCurses Disk Usage
+brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Port scanning utility for large networks
@@ -160,6 +168,8 @@ brew "ykclient"
 brew "ykpers"
 # Yubico pluggable authentication module
 brew "pam_yubico"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # Display the PID number for a given process name
 brew "pidof"
 # Bash completion for Pip
@@ -208,8 +218,6 @@ brew "weechat"
 brew "wget"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
-# GNU Emacs text editor
-brew "d12frosted/emacs-plus/emacs-plus@26", link: false
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # Command-line interface to Keybase.io
@@ -221,6 +229,8 @@ brew "koekeishiya/formulae/yabai"
 brew "michaeldfallen/formula/git-radar"
 # Remote terminal with IP roaming
 brew "mistertea/et/et"
+# YAMAMOTO Mitsuharu's Mac port of GNU Emacs
+brew "railwaycat/emacsmacport/emacs-mac"
 cask "aether"
 cask "alfred"
 cask "amethyst"
@@ -239,7 +249,6 @@ cask "brave"
 cask "caffeine"
 cask "cakebrew"
 cask "ccleaner"
-cask "cerebro"
 cask "coconutbattery"
 cask "daisydisk"
 cask "deluge"
@@ -255,6 +264,7 @@ cask "firefox-nightly"
 cask "flux"
 cask "font-awesome-terminal-fonts"
 cask "font-fira-code"
+cask "font-fira-code-nerd-font"
 cask "font-fira-mono-for-powerline"
 cask "font-fontawesome"
 cask "freeter"
@@ -304,10 +314,12 @@ cask "visual-studio-code"
 cask "vlc"
 cask "vnc-viewer"
 cask "x2goclient"
+cask "xquartz"
 cask "yubikey-neo-manager"
 cask "yubikey-personalization-gui"
 cask "yubikey-piv-manager"
 cask "yubiswitch"
+cask "zettlr"
 cask "zoom"
 mas "2Do", id: 477670270
 mas "Airmail", id: 918858936
