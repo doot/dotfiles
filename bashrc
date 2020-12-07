@@ -186,8 +186,8 @@ else
 fi
 
 if type "exa" &> /dev/null; then
-  alias l='exa -l -snew --color-scale -g'
-  alias ll='exa -la --color-scale -g'
+  alias l='exa -l -snew --color-scale -g --icons'
+  alias ll='exa -la --color-scale -g --icons'
 else
   alias l='ls -lrht'
   alias ll='ls -lrhta'
