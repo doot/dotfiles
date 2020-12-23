@@ -22,6 +22,8 @@
 	<true/>
 	<key>ClosingTmuxWindowKillsTmuxWindows</key>
 	<true/>
+	<key>Command</key>
+	<string>/usr/local/bin/et-c"tmux-CCattach-d"shitfucker'</string>
 	<key>CommandSelection</key>
 	<true/>
 	<key>Control</key>
@@ -4026,7 +4028,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/et -c "tmux -CC new -A -s main" shitfucker</string>
+			<string>source ~/.bashrc/; # /usr/local/bin/et -c "tmux -CC new -A -s main" shitfucker</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -6317,7 +6319,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/et -c "tmux -CC attach -d" shitfucker</string>
+			<string>/usr/local/bin/et -f -c "tmux -CC attach -d" shitfucker</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -6343,7 +6345,7 @@
 			<key>Cursor Type</key>
 			<integer>2</integer>
 			<key>Custom Command</key>
-			<string>Yes</string>
+			<string>No</string>
 			<key>Custom Directory</key>
 			<string>No</string>
 			<key>Default Bookmark</key>
@@ -6404,7 +6406,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>/usr/local/bin/et -f -c "tmux -CC attach -d" shitfucker</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -7379,6 +7381,8 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
+	<key>PreventEscapeSequenceFromClearingHistory</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -7425,6 +7429,8 @@
 	<false/>
 	<key>TmuxDashboardLimit</key>
 	<integer>30</integer>
+	<key>TmuxUsesDedicatedProfile</key>
+	<false/>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Captured Output</string>
