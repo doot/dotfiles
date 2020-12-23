@@ -72,6 +72,7 @@ else
   yabai -m rule --add app="Discord" space=3
   yabai -m rule --add app="Todoist" space=4
   yabai -m rule --add app="iTerm2" title=".*hotkey" manage=off
+  yabai -m rule --add app="iTerm2" manage=off
 fi
 
 
