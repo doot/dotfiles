@@ -50,8 +50,12 @@ brew "colordiff"
 brew "coreutils"
 # Libraries for security-enabled client and server applications
 brew "nss"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Visually compare two PDF files
 brew "diff-pdf"
+# Common error values for all GnuPG components
+brew "libgpg-error"
 # Assuan IPC Library
 brew "libassuan"
 # Cryptographic library based on the code from GnuPG
@@ -74,6 +78,8 @@ brew "exercism"
 brew "fd"
 # X11 image viewer
 brew "feh"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -114,6 +120,8 @@ brew "htop"
 brew "hyperfine"
 # Convert XML to another format (based on XSL or other tools)
 brew "xmlto"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Tools and libraries to manipulate images in many formats
@@ -186,6 +194,8 @@ brew "rsync"
 brew "rtv"
 # Safe, concurrent, practical language
 brew "rust"
+# Git-integrated backup tool for macOS and Linux devs
+brew "shallow-backup"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Add a public key to a remote machine's authorized_keys file
@@ -255,6 +265,7 @@ cask "deluge"
 cask "discord"
 cask "dropbox"
 cask "eclipse-java"
+cask "electorrent"
 cask "electrum"
 cask "etcher"
 cask "exodus"
@@ -269,7 +280,6 @@ cask "font-fira-mono-for-powerline"
 cask "font-fontawesome"
 cask "freeter"
 cask "github"
-cask "githubpulse"
 cask "gitkraken"
 cask "google-backup-and-sync"
 cask "gpg-suite"
@@ -328,15 +338,14 @@ mas "CoinBar", id: 957162288
 mas "Dash", id: 458034879
 mas "Display Menu", id: 549083868
 mas "feedly", id: 865500966
-mas "Ghostery Lite", id: 1436953057
 mas "Kindle", id: 405399194
 mas "LastPass", id: 926036361
 mas "LimeChat", id: 414030210
-mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
 mas "Reeder", id: 880001334
 mas "Todoist", id: 585829637
 mas "Trello", id: 1278508951
 mas "Twitter", id: 409789998
+mas "WireGuard", id: 1451685025
 mas "Wunderlist", id: 410628904
 mas "Xcode", id: 497799835
