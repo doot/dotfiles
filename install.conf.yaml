@@ -30,7 +30,7 @@
 - link:
     ~/docker-compose.yml:
         if: '[[ $(hostname -f) == *"ShitHolder2"* ]]'
-        path: ${HOME}/.dotfiles_personal/docker-compose.yml
+        path: ${HOME}/.dotfiles_personal/synology_config/docker-compose.yml
         relink: true
 
 # PVE specific files
