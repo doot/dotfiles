@@ -28,6 +28,7 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'mattn/calendar-vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'alok/notational-fzf-vim'
+Plugin 'jceb/vim-orgmode'
 
 " unsure about these plugins:
 "Plugin 'Shougo/denite.nvim'
