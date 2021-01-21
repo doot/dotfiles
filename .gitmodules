@@ -87,5 +87,5 @@
 	path = vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "vim/bundle/vim/orgmode"]
-	path = vim/bundle/vim/orgmode
+	path = vim/bundle/vim-orgmode
 	url = https://github.com/jceb/vim-orgmode.git
