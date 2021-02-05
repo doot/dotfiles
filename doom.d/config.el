@@ -35,7 +35,9 @@
 
 ;; load org modules
 (after! org
-  (add-to-list 'org-modules 'org-habit))
+  (add-to-list 'org-modules 'org-habit)
+  ;; (add-hook 'before-save-hook #'org-update-all-dblocks) ;; regenerate clock tables before saving
+ )
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -104,3 +106,9 @@
    :n "p" #'org-journal-previous-entry
    :n "n" #'org-journal-next-entry
    :n "O" #'org-journal-new-date-entry))
+
+
+(setq org-deadline-warning-days 7)
+(setq org-agenda-skip-scheduled-if-deadline-is-shown t)
+
+(setq org-duration-format 'h:mm) ;; show hours at max, not days
