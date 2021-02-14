@@ -126,6 +126,8 @@ brew "libheif"
 brew "imagemagick"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick@6"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
+brew "iperf3"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
 # Lightweight and flexible command-line JSON processor
@@ -242,94 +244,152 @@ brew "mistertea/et/et"
 # YAMAMOTO Mitsuharu's Mac port of GNU Emacs
 brew "railwaycat/emacsmacport/emacs-mac"
 cask "aether"
+# Application launcher and productivity software
 cask "alfred"
+# Automatic tiling window manager similar to xmonad
 cask "amethyst"
 cask "angular-console"
+# Memory training application
 cask "anki"
+# Application uninstaller
 cask "appcleaner"
+# Text editor
 cask "atom"
+# Experimental peer-to-peer web browser
 cask "beaker-browser"
+# Tool to customize input devices and automate computer systems
 cask "bettertouchtool"
+# Decentralized bitcoin exchange network
 cask "bisq"
+# Utility to display the output from any script or program in the menu bar
 cask "bitbar"
+# Desktop password and login vault
 cask "bitwarden"
 cask "black-screen"
 cask "bragi-updater"
 cask "brave"
+# Utility that prevents the system from going to sleep
 cask "caffeine"
+# GUI app for Homebrew
 cask "cakebrew"
 cask "ccleaner"
+# Tool to show live information about the batteries in various devices
 cask "coconutbattery"
+# Disk space visualizer
 cask "daisydisk"
+# BitTorrent client
 cask "deluge"
+# Voice and text chat software
 cask "discord"
+# Client for the Dropbox cloud storage service
 cask "dropbox"
 cask "eclipse-java"
+# Desktop remote torrenting application
 cask "electorrent"
+# Bitcoin thin client
 cask "electrum"
 cask "etcher"
+# Desktop wallet for cryptocurrency assets
 cask "exodus"
+# Web browser
 cask "firefox-beta"
+# Web browser
 cask "firefox-developer-edition"
+# Web browser
 cask "firefox-nightly"
+# Screen color temperature controller
 cask "flux"
 cask "font-awesome-terminal-fonts"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-fira-mono-for-powerline"
+# Icon set and toolkit
 cask "font-fontawesome"
 cask "freeter"
+# Desktop client for GitHub repositories
 cask "github"
+# Git client focusing on productivity
 cask "gitkraken"
 cask "google-backup-and-sync"
+# Tools to protect your emails and files
 cask "gpg-suite"
+# Podcast client
 cask "gpodder"
+# Terminal built on web technologies
 cask "hyper"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2-beta"
+# Menu bar calendar
 cask "itsycal"
 cask "jaxx"
 cask "jaxx-liberty"
 cask "jdiskreport"
+# End-to-end encryption software
 cask "keybase"
+# Visual user interface for Docker Container management
 cask "kitematic"
 cask "loading"
+# Finds large, unwanted files and deletes them
 cask "omnidisksweeper"
 cask "openbazaar"
 cask "patchwork"
+# Home media server
 cask "plex"
+# Music player focusing on visuals
 cask "plexamp"
 cask "polymail"
+# Professional IDE for scientific and web Python development
 cask "pycharm-edu"
+# IRC client
 cask "quassel"
+# File sync and share software
 cask "resilio-sync"
 cask "riot"
 cask "seaglass"
+# Team communication and collaboration software
 cask "slack"
+# Graphical client for Git version control
 cask "sourcetree"
+# Move and resize windows with ease
 cask "spectacle"
+# Music streaming service
 cask "spotify"
 cask "spotify-notifications"
+# Video game digital distribution service
 cask "steam"
 cask "swift-explorer"
+# Back up files to a centralized Synology NAS
 cask "synology-cloud-station-backup"
+# Sync and backup service to Synology NAS drives
 cask "synology-drive"
 cask "taskwarrior-pomodoro"
+# Unpacks archive files
 cask "the-unarchiver"
+# Customizable email client
 cask "thunderbird"
 cask "tunnelblick"
+# Run commands and display their output on the desktop
 cask "ubersicht"
+# Development environment
 cask "vagrant"
+# Free and open-source hosted hypervisor for x86 virtualization
 cask "virtualbox"
+# Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
 cask "vlc"
+# Remote desktop application focusing on security
 cask "vnc-viewer"
 cask "x2goclient"
+# Open-source version of the X.Org X Window System
 cask "xquartz"
 cask "yubikey-neo-manager"
 cask "yubikey-personalization-gui"
 cask "yubikey-piv-manager"
 cask "yubiswitch"
+# Open-source markdown editor
 cask "zettlr"
+# Video communication and virtual meeting platform
 cask "zoom"
 mas "2Do", id: 477670270
 mas "Airmail", id: 918858936
