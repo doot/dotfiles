@@ -7336,6 +7336,8 @@
 	<false/>
 	<key>OpenBookmark</key>
 	<false/>
+	<key>OpenNewWindowAtStartup</key>
+	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<true/>
 	<key>OpenTmuxDashboardIfHiddenWindows</key>
