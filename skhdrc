@@ -1,5 +1,5 @@
 # open terminal
-cmd - return : ~/scripts/iterm-window.sh
+# cmd - return : ~/scripts/iterm-window.sh # conflicts with intellij, running sql queries
 
 # focus window
 alt - h : yabai -m window --focus west
