@@ -112,3 +112,5 @@
 (setq org-agenda-skip-scheduled-if-deadline-is-shown t)
 
 (setq org-duration-format 'h:mm) ;; show hours at max, not days
+
+(setq split-width-threshold 5000) ;; try to prevent splitting vertically when we want to split horizontally
