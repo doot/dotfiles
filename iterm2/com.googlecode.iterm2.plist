@@ -7339,7 +7339,7 @@
 	<key>OpenNewWindowAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
-	<true/>
+	<false/>
 	<key>OpenTmuxDashboardIfHiddenWindows</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
@@ -7383,8 +7383,6 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
-	<key>PreventEscapeSequenceFromClearingHistory</key>
-	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
