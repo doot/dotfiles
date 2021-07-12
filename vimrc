@@ -24,7 +24,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
-Plugin 'edkolev/tmuxline.vim'
+" Plugin 'edkolev/tmuxline.vim' " only enable to regen tmux config
 Plugin 'mattn/calendar-vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'alok/notational-fzf-vim'
