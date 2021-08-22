@@ -20,10 +20,6 @@ brew "apm-bash-completion"
 brew "boost"
 # Formatter/translator for text files to numerous formats. Includes a2x
 brew "asciidoc"
-# Automatic configure script builder
-brew "autoconf"
-# Tool for generating GNU Standards-compliant Makefiles
-brew "automake"
 # Automatically restart SSH sessions and tunnels
 brew "autossh"
 # Microsoft Azure CLI 2.0
@@ -38,6 +34,10 @@ brew "bash-completion@2"
 brew "bash-git-prompt"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Platform built on V8 to build network applications
+brew "node"
+# Secure and free password manager for all of your devices
+brew "bitwarden-cli"
 # Fish completion for brew-cask
 brew "brew-cask-completion"
 # Core application library for C
@@ -50,6 +50,10 @@ brew "colordiff"
 brew "coreutils"
 # Libraries for security-enabled client and server applications
 brew "nss"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
+# Cross-platform application and UI framework
+brew "qt"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Visually compare two PDF files
@@ -78,10 +82,14 @@ brew "exercism"
 brew "fd"
 # X11 image viewer
 brew "feh"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
-# Perl compatible regular expressions library with a new API
-brew "pcre2"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
 # C library for multiple-precision floating-point computations
@@ -92,6 +100,8 @@ brew "flint"
 brew "fzf"
 # GNU debugger
 brew "gdb"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
 # Distributed revision control system
 brew "git"
 # Extensions to follow Vincent Driessen's branching model
@@ -106,6 +116,8 @@ brew "go"
 brew "pinentry"
 # GPG key agent
 brew "gpg-agent"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # GNU grep, egrep and fgrep
@@ -166,10 +178,12 @@ brew "ncdu"
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
-# Platform built on V8 to build network applications
-brew "node"
 # Kubernetes introspection tool for developers
 brew "octant"
+# ISO-C API and CLI for generating UUIDs
+brew "ossp-uuid"
+# Tool for creating identical machine images for multiple platforms
+brew "packer"
 # Learn vim commands via a game
 brew "pacvim"
 # Library to validate YubiKey OTPs against YubiCloud
@@ -200,8 +214,12 @@ brew "rust"
 brew "shallow-backup"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Tool to create intelligent and beautiful documentation
+brew "sphinx-doc"
 # Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
+# CLI for extracting streams from various websites to a video player
+brew "streamlink", link: false
 # Version control system designed to be a better CVS
 brew "subversion"
 # Feature-rich console based todo list manager
@@ -230,10 +248,6 @@ brew "weechat"
 brew "wget"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
-# Everything you need to get started with Heroku
-brew "heroku/brew/heroku"
-# Command-line interface to Keybase.io
-brew "keybase/beta/keybase", link: false
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
@@ -242,7 +256,8 @@ brew "michaeldfallen/formula/git-radar"
 # Remote terminal with IP roaming
 brew "mistertea/et/et"
 # YAMAMOTO Mitsuharu's Mac port of GNU Emacs
-brew "railwaycat/emacsmacport/emacs-mac"
+brew "railwaycat/emacsmacport/emacs-mac", args: ["with-imagemagick", "with-mac-metal", "with-rsvg", "without-modules"]
+# Peer-to-peer ephemeral public communities
 cask "aether"
 # Application launcher and productivity software
 cask "alfred"
@@ -263,15 +278,23 @@ cask "bettertouchtool"
 cask "bisq"
 # Utility to display the output from any script or program in the menu bar
 cask "bitbar"
+# Bitcoin client and wallet
+cask "bitcoin-core"
 # Desktop password and login vault
 cask "bitwarden"
 cask "black-screen"
+# Check for new skills for your Dash and switch its language
 cask "bragi-updater"
 cask "brave"
+# Web browser focusing on privacy
+cask "brave-browser"
+# Web browser focusing on privacy
+cask "brave-browser-beta"
 # Utility that prevents the system from going to sleep
 cask "caffeine"
 # GUI app for Homebrew
 cask "cakebrew"
+# Remove junk and unused files
 cask "ccleaner"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
@@ -283,12 +306,12 @@ cask "deluge"
 cask "discord"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
+# Eclipse IDE for Java developers
 cask "eclipse-java"
 # Desktop remote torrenting application
 cask "electorrent"
 # Bitcoin thin client
 cask "electrum"
-cask "etcher"
 # Desktop wallet for cryptocurrency assets
 cask "exodus"
 # Web browser
@@ -310,6 +333,7 @@ cask "freeter"
 cask "github"
 # Git client focusing on productivity
 cask "gitkraken"
+# Back up and sync files with Google Drive
 cask "google-backup-and-sync"
 # Tools to protect your emails and files
 cask "gpg-suite"
@@ -322,6 +346,7 @@ cask "iterm2-beta"
 # Menu bar calendar
 cask "itsycal"
 cask "jaxx"
+# Blockchain Wallet, holdings, crypto prices and news
 cask "jaxx-liberty"
 cask "jdiskreport"
 # End-to-end encryption software
@@ -333,7 +358,7 @@ cask "loading"
 cask "omnidisksweeper"
 cask "openbazaar"
 cask "patchwork"
-# Home media server
+# Home media player
 cask "plex"
 # Music player focusing on visuals
 cask "plexamp"
@@ -345,6 +370,7 @@ cask "quassel"
 # File sync and share software
 cask "resilio-sync"
 cask "riot"
+# Matrix client
 cask "seaglass"
 # Team communication and collaboration software
 cask "slack"
@@ -367,6 +393,7 @@ cask "taskwarrior-pomodoro"
 cask "the-unarchiver"
 # Customizable email client
 cask "thunderbird"
+# Free and open-source OpenVPN client
 cask "tunnelblick"
 # Run commands and display their output on the desktop
 cask "ubersicht"
@@ -380,6 +407,8 @@ cask "visual-studio-code"
 cask "vlc"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
+# Compatibility layer to run Windows applications
+cask "wine-staging"
 cask "x2goclient"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
@@ -398,6 +427,7 @@ mas "CoinBar", id: 957162288
 mas "Dash", id: 458034879
 mas "Display Menu", id: 549083868
 mas "feedly", id: 865500966
+mas "HP Smart", id: 1474276998
 mas "Kindle", id: 405399194
 mas "LastPass", id: 926036361
 mas "LimeChat", id: 414030210
