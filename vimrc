@@ -29,6 +29,7 @@ Plugin 'mattn/calendar-vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'alok/notational-fzf-vim'
 Plugin 'jceb/vim-orgmode'
+Plugin 'sheerun/vim-polyglot'
 
 " unsure about these plugins:
 "Plugin 'Shougo/denite.nvim'
