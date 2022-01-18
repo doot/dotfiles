@@ -156,7 +156,6 @@ export FZF_DEFAULT_OPTS="
   --prompt='$ '
   --height 40%
   --info=inline
-  --preview-window=:hidden
   --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
   --bind '?:toggle-preview'
   --bind 'ctrl-a:select-all'
