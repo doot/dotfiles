@@ -219,3 +219,4 @@ alias setlogintime='sudo lastlog -u $USER -S; sudo lastlog -u $USER'
 alias ltmux="ssh -t deskr '/home/linuxbrew/.linuxbrew/bin/tmux -CC attach -d'"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$PATH:$HOME/.dotfiles/kyrat/bin"

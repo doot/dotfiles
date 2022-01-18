@@ -92,3 +92,6 @@
 [submodule "vim/bundle/fzf.vim"]
 	path = vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "kyrat"]
+	path = kyrat
+	url = https://github.com/fsquillace/kyrat
