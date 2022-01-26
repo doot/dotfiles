@@ -122,6 +122,9 @@
         if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: bitbar/
         create: true
+    ~/.config/kyrat:
+        path: config/kyrat
+        create: true
 
 - shell:
     # - this might not be needed, remove after confirming
@@ -163,12 +166,6 @@
     -
         description:    "Upgrading installed packages via brew upgrade"
         command:        "brew upgrade"
-        stdout:         true
-        stderr:         true
-        stdin:          true
-    -
-        description:    "Upgrading installed packages via brew cask upgrade"
-        command:        "brew cask upgrade"
         stdout:         true
         stderr:         true
         stdin:          true
