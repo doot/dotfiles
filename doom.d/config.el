@@ -114,3 +114,16 @@
 (setq org-duration-format 'h:mm) ;; show hours at max, not days
 
 (setq split-width-threshold 5000) ;; try to prevent splitting vertically when we want to split horizontally
+
+(setq jiralib-url "https://jira01.corp.linkedin.com:8443")
+(after! auth-source
+  (setq auth-sources (nreverse auth-sources))) ;; fucking macos keychain does not support creation
+
+(after! org (setq org-hide-emphasis-markers t)) ;; disable emphasis markers in org-mode
+(add-hook! org-mode :append #'org-appear-mode) ;; reveal org emphasis markers only when under cursor
+
+;; Auto-save all org files periodically
+(add-hook 'auto-save-hook 'org-save-all-org-buffers)
+
+;; Auto-reload files when they are changed on disk
+(global-auto-revert-mode t)
