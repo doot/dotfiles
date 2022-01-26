@@ -113,7 +113,20 @@ PATH="${HOME}/.cargo/bin:${PATH}"
 PATH="${HOME}/go/bin:${PATH}"
 
 # doom emacs
-PATH=$PATH:~/.emacs.d/bin
+PATH="${PATH}:${HOME}/.emacs.d/bin"
+
+# Put GNU versions of utilities further up in the path than older OSX versions
+PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
+
+# Volta
+export VOLTA_HOME="${HOME}/.volta"
+PATH="${VOLTA_HOME}/bin:$PATH"
+
+# Kyrat binary
+PATH="$PATH:$HOME/.dotfiles/kyrat/bin"
+
+export PATH
+
 
 # Display git status in prompt
 GIT_PROMPT_START="${USER}@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ " # \u is somehow broken when calling new version of bash on linux
@@ -131,19 +144,8 @@ if [ -f "${HOME}/.bash-git-prompt/gitprompt.sh" ]; then
   source "${HOME}/.bash-git-prompt/gitprompt.sh"
 fi
 
-# PATH="/Users/doot/perl5/bin${PATH+:}${PATH}"; export PATH;
-# PERL5LIB="/Users/doot/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-# PERL_LOCAL_LIB_ROOT="/Users/doot/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-# PERL_MB_OPT="--install_base \"/Users/doot/perl5\""; export PERL_MB_OPT;
-# PERL_MM_OPT="INSTALL_BASE=/Users/doot/perl5"; export PERL_MM_OPT;
-
 export LS_COLORS="di=34"
 
-
-# Put GNU versions of utilities further up in the path than older OSX versions
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
-export PATH
 
 # shellcheck source=/dev/null
 [ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
@@ -220,6 +222,3 @@ alias wikipush='cd ~/vimwiki/personal/; git add . && git commit -m "alias commit
 alias setlogintime='sudo lastlog -u $USER -S; sudo lastlog -u $USER'
 
 alias ltmux="ssh -t deskr '/home/linuxbrew/.linuxbrew/bin/tmux -CC attach -d'"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="$PATH:$HOME/.dotfiles/kyrat/bin"
