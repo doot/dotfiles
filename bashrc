@@ -109,6 +109,9 @@ PATH="${HOME}/bin:${PATH}"
 # Rust/cargo
 PATH="${HOME}/.cargo/bin:${PATH}"
 
+# Go
+PATH="${HOME}/go/bin:${PATH}"
+
 # doom emacs
 PATH=$PATH:~/.emacs.d/bin
 
