@@ -1,59 +1,61 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+if $VIMINIT !~ 'kyrat'
+  " set the runtime path to include Vundle and initialize
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+  " alternatively, pass a path where Vundle should install plugins
+  "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+  " let Vundle manage Vundle, required
+  Plugin 'VundleVim/Vundle.vim'
 
-" Plugins:
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'majutsushi/tagbar'
-Plugin 'blindFS/vim-taskwarrior'
-Plugin 'powerman/vim-plugin-AnsiEsc'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'mhinz/vim-signify'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ervandew/supertab'
-" Plugin 'edkolev/tmuxline.vim' " only enable to regen tmux config
-Plugin 'mattn/calendar-vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'alok/notational-fzf-vim'
-Plugin 'jceb/vim-orgmode'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'junegunn/fzf.vim'
+  " Plugins:
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'Xuyuanp/nerdtree-git-plugin'
+  Plugin 'leafgarland/typescript-vim'
+  Plugin 'vimwiki/vimwiki'
+  Plugin 'majutsushi/tagbar'
+  Plugin 'blindFS/vim-taskwarrior'
+  Plugin 'powerman/vim-plugin-AnsiEsc'
+  Plugin 'vim-airline/vim-airline'
+  Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'airblade/vim-gitgutter'
+  Plugin 'mhinz/vim-signify'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'ervandew/supertab'
+  " Plugin 'edkolev/tmuxline.vim' " only enable to regen tmux config
+  Plugin 'mattn/calendar-vim'
+  Plugin 'altercation/vim-colors-solarized'
+  Plugin 'alok/notational-fzf-vim'
+  Plugin 'jceb/vim-orgmode'
+  Plugin 'sheerun/vim-polyglot'
+  Plugin 'junegunn/fzf.vim'
 
-" unsure about these plugins:
-"Plugin 'Shougo/denite.nvim'
-Plugin 'w0rp/ale'
-" Plugin 'python-mode/python-mode'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'mhartington/oceanic-next'
-" Plugin 'tbabej/taskwiki'
+  " unsure about these plugins:
+  "Plugin 'Shougo/denite.nvim'
+  Plugin 'w0rp/ale'
+  " Plugin 'python-mode/python-mode'
+  Plugin 'vim-scripts/indentpython.vim'
+  Plugin 'mhartington/oceanic-next'
+  " Plugin 'tbabej/taskwiki'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+  " All of your Plugins must be added before the following line
+  call vundle#end()            " required
+  filetype plugin indent on    " required
+  " To ignore plugin indent changes, instead use:
+  "filetype plugin on
+  "
+  " Brief help
+  " :PluginList       - lists configured plugins
+  " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+  " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+  " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+  "
+  " see :h vundle for more details or wiki for FAQ
+  " Put your non-Plugin stuff after this line
+endif
 
 set softtabstop=2
 set shiftwidth=2
@@ -64,7 +66,6 @@ set ruler
 let g:netrw_dirhistmax=0
 syntax enable
 set background=dark
-colorscheme solarized
 set autoindent
 set copyindent              " copy the previous indentation on autoindenting
 set showmatch
@@ -94,12 +95,15 @@ endif
 
 " trying out new theme:
 " for vim 7
- set t_Co=256
+set t_Co=256
 " for vim 8
- if (has("termguicolors"))
+if (has("termguicolors"))
   set termguicolors
- endif
-colorscheme OceanicNext
+endif
+if $VIMINIT !~ 'kyrat'
+  " colorscheme solarized
+  colorscheme OceanicNext
+endif
 let g:airline_theme='oceanicnext'
 " end new theme
 
