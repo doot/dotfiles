@@ -97,6 +97,9 @@ export PIP_REQUIRE_VIRTUALENV=true
 # complete sudo and man-pages
 complete -cf sudo man
 
+# get a nicer percentage in manpages
+export MANPAGER='less -s -M +Gg'
+
 # Vi Mode
 set -o vi
 
