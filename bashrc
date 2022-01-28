@@ -77,7 +77,10 @@ shopt -s histappend
 export HISTSIZE=
 export HISTFILESIZE=
 export HISTTIMEFORMAT="[%F %T] "
-export HISTFILE=~/.bash_eternal_history
+if [ -z "${KYRAT_HOME}" ]; then
+  # only set different bash history file when not using kyrat
+  export HISTFILE=~/.bash_eternal_history
+fi
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # append to the history file, don't overwrite it
 # check the window size after each command and, if necessary,
