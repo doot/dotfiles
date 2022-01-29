@@ -32,6 +32,7 @@ if $VIMINIT !~ 'kyrat'
   Plugin 'jceb/vim-orgmode'
   Plugin 'sheerun/vim-polyglot'
   Plugin 'junegunn/fzf.vim'
+  Plugin 'justinmk/vim-sneak'
 
   " unsure about these plugins:
   "Plugin 'Shougo/denite.nvim'
