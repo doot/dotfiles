@@ -10,8 +10,8 @@ fi
 PATH=$PATH:$HOME/bin
 
 # Include work specific bash_profile if it exists
-if [[ -f ~/.dotfiles/work/bash_profile ]]; then
-  . "${HOME}/dotfiles/work/bash_profile"
+if [[ -f ~/.dotfiles_work/bash_profile ]]; then
+  . "${HOME}/.dotfiles_work/bash_profile"
 fi
 
 # User specific environment and startup programs
