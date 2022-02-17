@@ -73,16 +73,24 @@ fi
 
 # Bash settings
 export PS1='\u@\h:\w [$?]\n\$ '
+
+# append to the history file, don't overwrite it
 shopt -s histappend
+
+# set history size to unlimited
 export HISTSIZE=
 export HISTFILESIZE=
 export HISTTIMEFORMAT="[%F %T] "
+
+# force flush to history file after every command
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+# only set different bash history file when not using kyrat
 if [ -z "${KYRAT_HOME}" ]; then
-  # only set different bash history file when not using kyrat
+  # set history file to a new location to prevent sessions that don't respect settings above from truncating
   export HISTFILE=~/.bash_eternal_history
 fi
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-# append to the history file, don't overwrite it
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
