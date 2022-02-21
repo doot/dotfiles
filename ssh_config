@@ -5,7 +5,7 @@ Host shit
     User admin
     ForwardAgent yes
 
-host shit2
+Host shit2
     HostName 192.168.1.60
     Port 2222
     User doot
@@ -29,12 +29,17 @@ Host do-dev1
     User doot
     ForwardAgent yes
 
-host shitfucker sf
+Host shitfucker sf
     HostName 192.168.1.53
     User doot
     ForwardAgent yes
 
-host udm
+Host udm
     HostName 192.168.1.1
     User root
     ForwardAgent yes
+
+Host media-docker md
+    Hostname media-docker
+    User doot
+    ProxyJump sf
