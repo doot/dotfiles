@@ -5,7 +5,7 @@
 	ignore = dirty
 [submodule "solarized"]
 	path = solarized
-	url = git://github.com/altercation/solarized.git
+	url = https://github.com/altercation/solarized.git
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
@@ -97,4 +97,4 @@
 	url = https://github.com/fsquillace/kyrat
 [submodule "vim/bundle/vim-sneak"]
 	path = vim/bundle/vim-sneak
-	url = git://github.com/justinmk/vim-sneak.git
+	url = https://github.com/justinmk/vim-sneak.git
