@@ -50,3 +50,7 @@
 ;(unpin! t)
 
 (package! org-alert)
+(package! org-jira)
+(package! org-appear ;; reveal emphais markers when under cursor
+  :recipe (:host github
+           :repo "awth13/org-appear"))

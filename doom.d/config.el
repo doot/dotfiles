@@ -61,10 +61,36 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; (use-package! org-alert
-;;   (setq alert-default-style 'osx-notifier))
-(use-package! org-alert)
+;;  (use-package! org-alert
+;;    (setq alert-default-style 'notifier))
+;;(use-package! org-alert)
 
+;; (require 'org-alert)
+;;
+;; (setq alert-default-style 'osx-notifier)
+;; (use-package! org-wild-notifier
+;;   :after org-agenda
+;;   :init
+;;   :config
+;;   (setq alert-default-style 'osx-notifier
+;;         org-wild-notifier-notification-title "Schedule")
+;;   (org-wild-notifier-mode))
+
+;; (use-package! org-wild-notifier
+;;     ;; The add-hook enables the mode after init
+;;     :defer t
+;;     :init
+;;     (add-hook 'doom-post-init-hook #'org-wild-notifier-mode t)
+;;     :config
+;;     (setq alert-default-style 'osx-notifier))
+
+;; (use-package! org-wild-notifier
+;;    ;; The add-hook enables the mode after init
+;;    :defer t
+;;    :init
+;;    (add-hook 'doom-post-init-hook #'org-wild-notifier-mode t)
+;;    :config
+;;    (setq alert-default-style 'osx-notifier))
 
 (unless (equal "Battery status not available"
                (battery))
