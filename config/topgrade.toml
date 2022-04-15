@@ -44,6 +44,11 @@
 #    "~/src/*/",
 #    "~/.config/something"
 #]
+repos = [
+  "~/.dotfiles/",
+  "~/.dotfiles_work/",
+  "~/.dotfiles_personal/",
+]
 
 # Don't pull the predefined git repos
 #predefined_repos = false
