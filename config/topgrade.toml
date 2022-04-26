@@ -18,6 +18,10 @@
 
 # List of remote machines with Topgrade installed on them
 #remote_topgrades = ["toothless", "pi", "parnas"]
+remote_topgrades = [
+  "sf",
+  "media-docker",
+]
 
 # Arguments to pass SSH when upgrading remote systems
 #ssh_arguments = "-o ConnectTimeout=2"
