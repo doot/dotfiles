@@ -1,5 +1,6 @@
 # open terminal
 # cmd - return : ~/scripts/iterm-window.sh # conflicts with intellij, running sql queries
+cmd - return : ~/.emacs.d/bin/doom everywhere
 
 # focus window
 alt - h : yabai -m window --focus west
