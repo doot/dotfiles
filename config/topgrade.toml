@@ -19,7 +19,6 @@
 # List of remote machines with Topgrade installed on them
 #remote_topgrades = ["toothless", "pi", "parnas"]
 remote_topgrades = [
-  "sf",
   "media-docker",
 ]
 
@@ -27,7 +26,7 @@ remote_topgrades = [
 #ssh_arguments = "-o ConnectTimeout=2"
 
 # Path to Topgrade executable on remote machines
-#remote_topgrade_path = ".cargo/bin/topgrade"
+remote_topgrade_path = ".cargo/bin/topgrade"
 
 # Arguments to pass tmux when pulling Repositories
 #tmux_arguments = "-S /var/tmux.sock"
