@@ -6,6 +6,7 @@
 
 # Ignore failures for these steps
 #ignore_failures = ["powershell"]
+ignore_failures = ["pip3"]
 
 # Run specific steps - same options as the command line flag
 #only = ["system", "emacs"]
@@ -20,6 +21,7 @@
 #remote_topgrades = ["toothless", "pi", "parnas"]
 remote_topgrades = [
   "media-docker",
+  "root@192.168.1.80",
 ]
 
 # Arguments to pass SSH when upgrading remote systems
@@ -70,7 +72,7 @@ repos = [
 # Custom commands
 [commands]
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
-"media-docker compose" = "cd /home/doot; sudo docker-compose pull && sudo docker-compose up -d && cd media-docker_config/ && for d in $(ls -1); do echo $d; cd $d; sudo docker-compose pull && sudo docker-compose up -d; cd -; done && cd plex && sudo docker-compose restart; cd -;"
+"media-docker compose" = "cd /home/doot; sudo docker-compose pull && sudo docker-compose up -d && cd media-docker_config/ && for d in $(ls -1); do echo $d; cd $d; sudo docker-compose pull && sudo docker-compose up -d; cd -; done && cd plex && sudo docker-compose restart; cd -; docker system prune -a -f;"
 # # "dotbot" = "db-update"
 
 [brew]
