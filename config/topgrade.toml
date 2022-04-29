@@ -72,7 +72,7 @@ repos = [
 # Custom commands
 [commands]
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
-"media-docker compose" = "cd /home/doot; sudo docker-compose pull && sudo docker-compose up -d && cd media-docker_config/ && for d in $(ls -1); do echo $d; cd $d; sudo docker-compose pull && sudo docker-compose up -d; cd -; done && cd plex && sudo docker-compose restart; cd -; docker system prune -a -f;"
+"media-docker compose" = "cd /home/doot; sudo docker-compose pull && sudo docker-compose up -d && cd media-docker_config/ && for d in $(ls -1); do echo $d; cd $d; sudo docker-compose pull && sudo docker-compose up -d; cd -; done && cd plex && sudo docker-compose restart; cd -; sudo docker system prune -a -f;"
 # # "dotbot" = "db-update"
 
 [brew]
