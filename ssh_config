@@ -43,3 +43,4 @@ Host media-docker md
     Hostname media-docker
     User doot
     ProxyJump sf
+    ForwardAgent yes
