@@ -18,7 +18,7 @@ tap "railwaycat/emacsmacport"
 brew "apm-bash-completion"
 # Collection of portable C++ source libraries
 brew "boost"
-# Formatter/translator for text files to numerous formats. Includes a2x
+# Formatter/translator for text files to numerous formats
 brew "asciidoc"
 # Automatically restart SSH sessions and tunnels
 brew "autossh"
@@ -256,7 +256,7 @@ brew "michaeldfallen/formula/git-radar"
 # Remote terminal with IP roaming
 brew "mistertea/et/et"
 # YAMAMOTO Mitsuharu's Mac port of GNU Emacs
-brew "railwaycat/emacsmacport/emacs-mac", args: ["with-imagemagick", "with-mac-metal", "with-rsvg", "without-modules"]
+brew "railwaycat/emacsmacport/emacs-mac", args: ["with-imagemagick", "with-mac-metal", "with-rsvg", "without-modules"], link: false
 # Peer-to-peer ephemeral public communities
 cask "aether"
 # Application launcher and productivity software
@@ -333,7 +333,6 @@ cask "freeter"
 cask "github"
 # Git client focusing on productivity
 cask "gitkraken"
-# Back up and sync files with Google Drive
 cask "google-backup-and-sync"
 # Tools to protect your emails and files
 cask "gpg-suite"
@@ -348,11 +347,13 @@ cask "itsycal"
 cask "jaxx"
 # Blockchain Wallet, holdings, crypto prices and news
 cask "jaxx-liberty"
+# Disk usage utility
 cask "jdiskreport"
 # End-to-end encryption software
 cask "keybase"
 # Visual user interface for Docker Container management
 cask "kitematic"
+# Network activity monitor
 cask "loading"
 # Finds large, unwanted files and deletes them
 cask "omnidisksweeper"
@@ -399,7 +400,7 @@ cask "tunnelblick"
 cask "ubersicht"
 # Development environment
 cask "vagrant"
-# Free and open-source hosted hypervisor for x86 virtualization
+# Virtualizer for x86 hardware
 cask "virtualbox"
 # Open-source code editor
 cask "visual-studio-code"
@@ -409,6 +410,7 @@ cask "vlc"
 cask "vnc-viewer"
 # Compatibility layer to run Windows applications
 cask "wine-staging"
+# Remote desktop software
 cask "x2goclient"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
