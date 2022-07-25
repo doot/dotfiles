@@ -16,6 +16,8 @@ tap "neovim/neovim"
 tap "railwaycat/emacsmacport"
 # Completion for Atom Package Manager
 brew "apm-bash-completion"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Collection of portable C++ source libraries
 brew "boost"
 # Formatter/translator for text files to numerous formats
@@ -50,10 +52,6 @@ brew "colordiff"
 brew "coreutils"
 # Libraries for security-enabled client and server applications
 brew "nss"
-# Perl compatible regular expressions library with a new API
-brew "pcre2"
-# Cross-platform application and UI framework
-brew "qt"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Visually compare two PDF files
@@ -90,6 +88,8 @@ brew "harfbuzz"
 brew "libass"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
 # C library for multiple-precision floating-point computations
@@ -200,6 +200,8 @@ brew "pidof"
 brew "pip-completion"
 # Show ps output as a tree
 brew "pstree"
+# Cross-platform application and UI framework
+brew "qt"
 # Docker Compose compatible client to deploy to Rancher
 brew "rancher-compose"
 # Search tool like grep and The Silver Searcher
@@ -256,7 +258,7 @@ brew "michaeldfallen/formula/git-radar"
 # Remote terminal with IP roaming
 brew "mistertea/et/et"
 # YAMAMOTO Mitsuharu's Mac port of GNU Emacs
-brew "railwaycat/emacsmacport/emacs-mac", args: ["with-imagemagick", "with-mac-metal", "with-rsvg", "without-modules"], link: false
+brew "railwaycat/emacsmacport/emacs-mac", args: ["with-imagemagick", "with-mac-metal", "with-native-comp", "with-rsvg", "without-modules"]
 # Peer-to-peer ephemeral public communities
 cask "aether"
 # Application launcher and productivity software
@@ -410,8 +412,6 @@ cask "vlc"
 cask "vnc-viewer"
 # Compatibility layer to run Windows applications
 cask "wine-staging"
-# Remote desktop software
-cask "x2goclient"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
 cask "yubikey-neo-manager"
