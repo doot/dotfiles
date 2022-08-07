@@ -21,6 +21,10 @@
         if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
         path: ${HOME}/.dotfiles_work/bitbar/
         create: true
+    ~/Library/Application Support/xbar/plugins:
+        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
+        path: ${HOME}/.dotfiles_work/bitbar/
+        create: true
     ~/bin_li:
         if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
         path: ${HOME}/.dotfiles_work/bin_li
@@ -119,6 +123,10 @@
         path: vscode-settings.json
         create: true
     ~/bitbar:
+        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+        path: bitbar/
+        create: true
+    ~/Library/Application Support/xbar/plugins:
         if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
         path: bitbar/
         create: true
