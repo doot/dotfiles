@@ -19,6 +19,7 @@ host=$(hostname | cut -d. -f1)
 # OS Specific settings
 case $os in
   "Darwin")
+    export PATH="/opt/homebrew/bin:$PATH"
     alias ls='ls -FG';
 
     # Kindof does the same thing as lsub when it doesn't exist on OS X
