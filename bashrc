@@ -170,19 +170,30 @@ export FZF_ALT_C_COMMAND='rg --files --no-ignore-messages --no-messages --hidden
 export FZF_CTRL_T_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs --ignore-file ~/.dotfiles/rgignore_fzf'
 export FZF_DEFAULT_OPTS="
   --layout=reverse
-  --border
   --multi
   --header='>:@ '
   --pointer='->'
   --prompt='$ '
   --height 40%
   --info=inline
-  --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
   --bind '?:toggle-preview'
   --bind 'ctrl-a:select-all'
   --bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
   --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 "
+
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf "$@" --preview 'tree -C {} | head -200' ;;
+    export|unset) fzf "$@" --preview "eval 'echo \$'{}" ;;
+    ssh)          fzf "$@" --preview 'dig {}' ;;
+    vim)          fzf "$@" --preview 'bat --style=numbers --color=always {} || cat {}' ;;
+    *)            fzf "$@" ;;
+  esac
+}
 
 # TODO: conditionally import this on non-work machines.  This fucks up builds.
 # if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
