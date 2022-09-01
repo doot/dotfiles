@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == *${HOME}/.dotfiles/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}${HOME}/.dotfiles/fzf/bin"
+  PATH="${PATH:+${PATH}:}${HOME}/.dotfiles/fzf/bin"
 fi
 
 # Auto-completion
