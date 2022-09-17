@@ -54,6 +54,9 @@ case $os in
           . /etc/bash_completion
         fi
       fi
+      
+      # needed for podman/distrobox on steam deck
+      PATH=$HOME/.local/bin:$PATH
       PATH=$HOME/.local/podman/bin:$PATH
     ;;
 esac
