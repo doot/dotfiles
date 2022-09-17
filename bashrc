@@ -14,7 +14,7 @@ esac
 
 # Determine host and os info
 os=$(uname -s)
-host=$(hostname | cut -d. -f1)
+host=$(uname -n | cut -d. -f1)
 
 # OS Specific settings
 case $os in
@@ -54,6 +54,7 @@ case $os in
           . /etc/bash_completion
         fi
       fi
+      PATH=$HOME/.local/podman/bin:$PATH
     ;;
 esac
 
@@ -225,6 +226,10 @@ else
   alias ll='ls -lrhta'
 fi
 
+if type "colordiff" &> /dev/null; then
+  alias diff='colordiff'
+fi
+
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -233,7 +238,6 @@ alias dammit='sudo $(history -p \!\!)'
 alias h=history
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
-alias diff='colordiff'
 alias sudo="sudo -E"
 alias grep="grep --color=auto"
 alias fgrep='fgrep --color=auto'
