@@ -191,3 +191,12 @@
 (map! :leader
       :desc "Agenda and All Todos split with notes.org"
       "o n" #'org-agenda-and-all-todos-notes-split)
+
+(setq +doom-dashboard-menu-sections
+  (append
+    '(("Agenda and All TODOs"
+       :icon (all-the-icons-octicon "squirrel"
+       :face 'doom-dashboard-menu-title)
+       :face (:inherit (doom-dashboard-menu-title bold))
+       :action org-agenda-and-all-todos-notes-split))
+  (eval '+doom-dashboard-menu-sections)))
