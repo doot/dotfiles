@@ -181,3 +181,13 @@
 (add-to-list 'default-frame-alist '(left . 3840))
 (add-to-list 'default-frame-alist '(height . 160))
 (add-to-list 'default-frame-alist '(width . 203))
+
+(defun org-agenda-and-all-todos-notes-split ()
+  (interactive)
+  (find-file "~/org/notes.org")
+  (split-window-below)
+  (org-agenda nil "n"))
+
+(map! :leader
+      :desc "Agenda and All Todos split with notes.org"
+      "o n" #'org-agenda-and-all-todos-notes-split)
