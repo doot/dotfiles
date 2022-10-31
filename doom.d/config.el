@@ -175,3 +175,9 @@
 
 ;; Auto-reload files when they are changed on disk
 (global-auto-revert-mode t)
+
+;; Try to start up in a larger window on second, vertical, monitor
+(add-to-list 'default-frame-alist '(top . (+ -398)))
+(add-to-list 'default-frame-alist '(left . 3840))
+(add-to-list 'default-frame-alist '(height . 160))
+(add-to-list 'default-frame-alist '(width . 203))
