@@ -41,6 +41,7 @@ if $VIMINIT !~ 'kyrat'
   Plugin 'vim-scripts/indentpython.vim'
   Plugin 'mhartington/oceanic-next'
   " Plugin 'tbabej/taskwiki'
+  Plugin 'neovim/nvim-lspconfig'
 
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
