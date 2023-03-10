@@ -160,6 +160,7 @@
         +pandoc
         +pretty            ; enables fancy org bullets
         +habit             ; org-habit
+        +dragndrop
         +present)
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
