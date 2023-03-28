@@ -256,3 +256,15 @@ alias wikipush='cd ~/vimwiki/personal/; git add . && git commit -m "alias commit
 alias setlogintime='sudo lastlog -u $USER -S; sudo lastlog -u $USER'
 
 alias ltmux="ssh -t deskr '/home/linuxbrew/.linuxbrew/bin/tmux -CC attach -d'"
+
+# Functions
+
+dirvimdiff ()
+{
+  # Diff files between two directories in vimdiff, one at a time
+  # dirvimdiff dir1/ dir2/
+  for files in $(diff -rq $1 $2 | awk '/^Files .* differ.*$/ {print $2":"$4}');
+  do
+    nvim -d ${files%:*} ${files#*:};
+  done
+}
