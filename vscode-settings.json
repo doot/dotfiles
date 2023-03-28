@@ -46,5 +46,10 @@
     "settingsSync.ignoredExtensions": [
     
     ],
-    "workbench.preferredLightColorTheme": "Visual Studio Dark"
+    "workbench.preferredLightColorTheme": "Visual Studio Dark",
+    "linkedin-extensions.directory": "/Users/jhauschi/.vscode-linkedin-extensions",
+    "terraform-ls.terraformExecPath": "/Users/jhauschi/.vscode-linkedin-extensions/terraform-ls/terraform-ls_darwin_arm64",
+    "terraform.languageServer": {
+        "pathToBinary": "/Users/jhauschi/.vscode-linkedin-extensions/terraform-ls/terraform-ls_darwin_arm64"
+    }
 }
