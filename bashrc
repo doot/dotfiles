@@ -220,10 +220,11 @@ else
   export VISUAL=vim
 fi
 
-if type "exa" &> /dev/null; then
-  alias l='exa -l -snew --color-scale -g --icons --git'
-  alias ll='exa -la --color-scale -g --icons --git'
-  alias lt='exa -l -snew --color-scale -g --icons --git --tree --level=2'
+if type "eza" &> /dev/null; then
+  export EXA_COLORS="xx=37"
+  alias l='eza -l -snew --color-scale -g --icons --git'
+  alias ll='eza -la --color-scale -g --icons --git'
+  alias lt='eza -l -snew --color-scale -g --icons --git --tree --level=2'
 else
   alias l='ls -lrht'
   alias ll='ls -lrhta'
