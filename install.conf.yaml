@@ -144,12 +144,14 @@
     #     stdout:         true
     #     stderr:         true
     #     stdin:          true
-    -
-        description:    "Updating/installing submodules"
-        command:        "git submodule update --init --remote --recursive --merge"
-        stdout:         true
-        stderr:         true
-        stdin:          true
+
+    # May no longer be necesssary, now that submodules are periodically updated by github actions
+    # -
+    #     description:    "Updating/installing submodules"
+    #     command:        "git submodule update --init --remote --recursive --merge"
+    #     stdout:         true
+    #     stderr:         true
+    #     stdin:          true
     -
         description:    "Updating work specific private repo"
         command:        'if [[ $(hostname -f) == *"linkedin.biz"* ]]; then cd ~/.dotfiles_work/ && git pull && cd -; fi'
@@ -175,14 +177,14 @@
     #        stderr:         true
     #        stdin:          true
     -
-        description:    "Upgrading installed packages via brew upgrade"
-        command:        "brew upgrade"
+        description:    "Upgrading installed packages via brew upgrade, if on macos"
+        command:        'if [[ $(uname -s) == "Darwin" ]]; then brew upgrade; fi'
         stdout:         true
         stderr:         true
         stdin:          true
     -
-        description:    "Upgrading installed packages via mas upgrade"
-        command:        "mas upgrade"
+        description:    "Upgrading installed packages via mas upgrade, if on macos"
+        command:        'if [[ $(uname -s) == "Darwin" ]]; then mas upgrade; fi'
         stdout:         true
         stderr:         true
         stdin:          true
