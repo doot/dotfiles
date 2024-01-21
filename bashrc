@@ -242,7 +242,7 @@ alias dammit='sudo $(history -p \!\!)'
 alias h=history
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
-alias sudo="sudo -E"
+# alias sudo="sudo -E"
 alias grep="grep --color=auto"
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
