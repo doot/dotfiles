@@ -199,11 +199,6 @@ _fzf_comprun() {
   esac
 }
 
-# TODO: conditionally import this on non-work machines.  This fucks up builds.
-# if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
-#   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-# fi
-
 vws() { vim -c ":VWS /\c$1/" ~/vimwiki/index.wiki; }
 
 # Aliases
@@ -256,7 +251,7 @@ alias wikipull='cd ~/vimwiki/; git pull && git submodule update --remote --recur
 alias wikipush='cd ~/vimwiki/personal/; git add . && git commit -m "alias commit: `date`" ; git push origin master; cd -; cd ~/vimwiki/; git add . && git commit -m "alias commit: `date`" && git push origin master; cd -;'
 alias setlogintime='sudo lastlog -u $USER -S; sudo lastlog -u $USER'
 
-alias ltmux="ssh -t deskr '/home/linuxbrew/.linuxbrew/bin/tmux -CC attach -d'"
+alias ltmux="ssh -t deskr 'tmux -CC attach -d'"
 
 # Functions
 
