@@ -5,7 +5,7 @@ Host shit
     User admin
     ForwardAgent yes
 
-Host shit2
+Host shit2 sh2
     HostName 192.168.1.60
     Port 2222
     User doot
@@ -44,6 +44,11 @@ Host media-docker md
     User doot
     ProxyJump sf
     ForwardAgent yes
+
+Host nix-media-docker nmd
+  HostName 192.168.1.88
+  ForwardAgent yes
+  User doot
 
 Host github.com
   AddKeysToAgent yes
