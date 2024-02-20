@@ -62,3 +62,8 @@ nnoremap <space>rr :action RenameElement<cr>
 set NERDTree
 nnoremap <space>t :NERDTreeFocus<cr>
 nnoremap <space>T :NERDTreeToggle<cr>
+" Common Commands while tree is focused
+" q Close the NERDTree window
+" p Jump to current nodes parent
+" t Open selected node/bookmark in a new tab
+" o Open directory/file/node
