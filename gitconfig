@@ -48,45 +48,54 @@
 
 [difftool]
   tool = vimdiff
-	prompt = false
+  prompt = false
 
 [help]
   autocorrect = 1
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
 [core]
-	excludesfile = ~/.gitignore_global
-	autocrlf = input
+  # Use user-global gitignore file
+  excludesfile = ~/.gitignore_global
+  # autocrlf = input
   editor = nvim
 
 # Automatic `git config branch.BRANCHNAME.rebase true` on new branches/repos
 # Changes default `git pull` to `git pull --rebase`
 [branch]
   autosetuprebase = always
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+
+[rebase]
+  autoStash = true
+
 [commit]
-	gpgsign = false
+  verbose = True
+  gpgsign = false
+
 [push]
-	default = simple
+  default = simple
+
 [github]
-    user = doot
+  user = doot
+
 [branch "master"]
-    remote = origin
-    merge = refs/heads/master
+  remote = origin
+  merge = refs/heads/master
+
 [alias]
-	lol = log --oneline --graph --decorate --all
-	co = commit -m
+  tree = log --oneline --graph --decorate --all
+  lol = log --oneline --graph --decorate --all
+  co = commit -m
   open = !vim `git-open.sh`
-[merge]
-	conflictstyle = diff3
+
 [pull]
-	rebase = true
+  rebase = true
