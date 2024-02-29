@@ -42,12 +42,18 @@ Host udm
 Host media-docker md
     Hostname media-docker
     User doot
-    ProxyJump sf
+    ProxyJump nsf
     ForwardAgent yes
 
 Host nix-media-docker nmd
   HostName 192.168.1.88
   ForwardAgent yes
+  User doot
+
+Host nix-shitfucker nsf
+  HostName 192.168.1.110
+  ForwardAgent yes
+  Port 22
   User doot
 
 Host github.com
