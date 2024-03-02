@@ -205,3 +205,7 @@
 
 (add-hook 'org-mode-hook 'turn-on-flyspell) ;; Turn on flyspell by default
 
+(setq
+ org-hide-emphasis-markers t
+ org-pretty-entities t
+ org-ellipsis " …")
