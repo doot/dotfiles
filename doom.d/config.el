@@ -202,3 +202,6 @@
        :face (:inherit (doom-dashboard-menu-title bold))
        :action org-agenda-and-all-todos-notes-split))
   (eval '+doom-dashboard-menu-sections)))
+
+(add-hook 'org-mode-hook 'turn-on-flyspell) ;; Turn on flyspell by default
+
