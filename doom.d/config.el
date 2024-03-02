@@ -195,7 +195,7 @@
 (setq +doom-dashboard-menu-sections
   (append
     '(("Agenda and All TODOs"
-       :icon (all-the-icons-octicon "squirrel"
+       :icon (nerd-icons-octicon "nf-oct-squirrel"
        :face 'doom-dashboard-menu-title)
        :face (:inherit (doom-dashboard-menu-title bold))
        :action org-agenda-and-all-todos-notes-split))
