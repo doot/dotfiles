@@ -47,6 +47,8 @@
 ;; load org modules
 (after! org
   (add-to-list 'org-modules 'org-habit)
+  (setq org-log-done t) ;; Log when tasks are done
+  (setq org-log-into-drawer t) ;; log into LOGBOOK drawer
   ;; (add-hook 'before-save-hook #'org-update-all-dblocks) ;; regenerate clock tables before saving
  )
 
