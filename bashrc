@@ -250,8 +250,10 @@ alias vimwiki2html='vim -R ~/vimwiki/index.wiki +VimwikiAll2HTML +q; open ~/vimw
 alias wikipull='cd ~/vimwiki/; git pull && git submodule update --remote --recursive --merge --init; cd -;'
 alias wikipush='cd ~/vimwiki/personal/; git add . && git commit -m "alias commit: `date`" ; git push origin master; cd -; cd ~/vimwiki/; git add . && git commit -m "alias commit: `date`" && git push origin master; cd -;'
 alias setlogintime='sudo lastlog -u $USER -S; sudo lastlog -u $USER'
-
 alias ltmux="ssh -t deskr 'tmux -CC attach -d'"
+
+# NixOS aliases
+alias nixos-changelog='nix profile diff-closures --profile /nix/var/nix/profiles/system'
 
 # Functions
 
