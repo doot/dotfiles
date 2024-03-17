@@ -16,7 +16,7 @@
        (agenda "")
        (alltodo "")))))
  '(org-agenda-files
-   '("~/org/from_vimwiki.org" "~/org/notes.org" "~/org/projects.org" "~/org/template.org" "~/org/todo.org" "~/org/journal/2020-11-02.org" "~/org/personal/" "~/org/persona/personal.org"))
+   '("~/org/from_vimwiki.org" "~/org/notes.org" "~/org/projects.org" "~/org/template.org" "~/org/todo.org" "~/org/journal/2020-11-02.org" "~/org/personal/" "~/org/personal/personal.org" "~/org/calendar-beorg.org"))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
