@@ -209,3 +209,20 @@
  org-hide-emphasis-markers t
  org-pretty-entities t
  org-ellipsis " …")
+
+; Custom Functions
+(defun get-fiscal-quarter ()
+  "Return current fiscal quarter"
+  (setq quarterOffset 2)
+  (setq qi (+ (string-to-number (format-time-string "%q")) quarterOffset))
+  (setq fiscalQuarter (cond ((> qi 4) (- qi 4)) (t qi))))
+
+(defun get-quarter ()
+  "Return current quarter"
+  (string-to-number (format-time-string "%q")))
+
+(defun get-quarter-table ()
+  "Return a list of lists that can be used to show a table of current and fiscal quarters"
+  (list
+    (list "Quarter" "Fiscal Quarter")
+    (list (get-quarter) (get-fiscal-quarter)))
