@@ -225,4 +225,12 @@
   "Return a list of lists that can be used to show a table of current and fiscal quarters"
   (list
     (list "Quarter" "Fiscal Quarter")
-    (list (get-quarter) (get-fiscal-quarter)))
+    (list (get-quarter) (get-fiscal-quarter))))
+
+(defun update-fiscal-table ()
+  "Find and execute the code block named 'fiscal-table'"
+  (save-excursion
+    (org-babel-goto-named-src-block "fiscal-table")
+    (org-babel-execute-src-block)))
+
+(run-at-time "0 sec" 3600 'update-fiscal-table) ;; Run update-fiscal-table every hour
