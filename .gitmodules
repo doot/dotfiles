@@ -127,3 +127,7 @@
   path = vim/bundle/vim-sneak
   url = https://github.com/justinmk/vim-sneak.git
   ignore = dirty
+[submodule "vim/bundle/nvim-lspconfig"]
+	path = vim/bundle/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+  ignore = dirty
