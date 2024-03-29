@@ -38,7 +38,8 @@
 [merge]
   tool = vimdiff
   log  = true
-  conflictstyle = zdiff3
+  # conflictstyle = zdiff3  # TODO: change back to zdiff3 once all systems have newer version of git
+  conflictstyle = diff3
 
 [diff]
   tool = vimdiff
