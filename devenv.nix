@@ -16,6 +16,11 @@
       actionlint.enable = true;
       shellcheck.enable = true;
       statix.enable = true;
+      yamllint = {
+        enable = true;
+        settings.configData = "{extends: relaxed, rules: {line-length: {max: 180}}}";
+      };
+      yamlfmt.enable = true;
     };
     excludes = [
       "iterm2_shell_integration.bash"

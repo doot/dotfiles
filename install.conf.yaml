@@ -1,72 +1,68 @@
+---
 - clean: ['~']
-
 # work specific files
 - link:
     ~/.Brewfile:
-        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
-        path: ${HOME}/.dotfiles_work/Brewfile
-        relink: true
+      if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
+      path: ${HOME}/.dotfiles_work/Brewfile
+      relink: true
     ~/.ssh/config.custom:
-        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
-        path: ${HOME}/.dotfiles_work/ssh_config.custom
-        create: true
+      if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
+      path: ${HOME}/.dotfiles_work/ssh_config.custom
+      create: true
     ~/.gitconfig:
-        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
-        path: ${HOME}/.dotfiles_work/gitconfig
+      if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
+      path: ${HOME}/.dotfiles_work/gitconfig
     ~/scripts:
-        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
-        path: ${HOME}/.dotfiles_work/scripts/
-        create: true
+      if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
+      path: ${HOME}/.dotfiles_work/scripts/
+      create: true
     ~/bitbar:
-        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
-        path: ${HOME}/.dotfiles_work/bitbar/
-        create: true
+      if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
+      path: ${HOME}/.dotfiles_work/bitbar/
+      create: true
     ~/Library/Application Support/xbar/plugins:
-        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
-        path: ${HOME}/.dotfiles_work/bitbar/
-        create: true
+      if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
+      path: ${HOME}/.dotfiles_work/bitbar/
+      create: true
     ~/bin_li:
-        if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
-        path: ${HOME}/.dotfiles_work/bin_li
-        create: true
-
+      if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
+      path: ${HOME}/.dotfiles_work/bin_li
+      create: true
 # NAS specific files
 - link:
     ~/docker-compose.yml:
-        if: '[[ $(hostname -f) == *"ShitHolder2"* ]]'
-        path: ${HOME}/.dotfiles_personal/synology_config/docker-compose.yml
-        relink: true
-
+      if: '[[ $(hostname -f) == *"ShitHolder2"* ]]'
+      path: ${HOME}/.dotfiles_personal/synology_config/docker-compose.yml
+      relink: true
 # PVE specific files
 - link:
     ~/pve_scripts:
-        if: '[[ $(hostname -f) == *"pve"* ]]'
-        path: ${HOME}/.dotfiles_personal/pve_scripts
-        relink: true
-
+      if: '[[ $(hostname -f) == *"pve"* ]]'
+      path: ${HOME}/.dotfiles_personal/pve_scripts
+      relink: true
 # media-docker specific files
 - link:
     ~/media-docker_config:
-        if: '[[ $(hostname -f) == *"media-docker"* ]]'
-        path: ${HOME}/.dotfiles_personal/media-docker_config
-        relink: true
-
+      if: '[[ $(hostname -f) == *"media-docker"* ]]'
+      path: ${HOME}/.dotfiles_personal/media-docker_config
+      relink: true
 # home or shared files
 - link:
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.profile: profile
     ~/.gitconfig:
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: gitconfig
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.vimrc: vimrc
     ~/.doom.d: doom.d
     ~/.ideavimrc: ideavimrc
     ~/.Brewfile:
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: Brewfile
-        relink: true
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: Brewfile
+      relink: true
     ~/.fzf.bash: fzf.bash
     ~/.tmux.conf: tmux.conf
     ~/.skhdrc: skhdrc
@@ -75,68 +71,67 @@
     ~/.editrc: editrc
     ~/.Xmodmap: Xmodmap
     ~/scripts:
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: scripts/
-        create: true
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: scripts/
+      create: true
     ~/.vim:
-        path: vim/
-        create: true
+      path: vim/
+      create: true
     ~/.ssh/config:
-        # ssh_config at work is managed automatically
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: ssh_config
-        create: true
+      # ssh_config at work is managed automatically
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: ssh_config
+      create: true
     ~/.bash-git-prompt:
-        path: bash-git-prompt/
-        create: true
+      path: bash-git-prompt/
+      create: true
     ~/.gnupg/scdaemon.conf:
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: gnupg/scdaemon.conf
-        create: true
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: gnupg/scdaemon.conf
+      create: true
     ~/.gnupg/gpg.conf:
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: gnupg/gpg.conf
-        create: true
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: gnupg/gpg.conf
+      create: true
     ~/.gnupg/gpg-agent.conf:
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: gnupg/gpg-agent.conf
-        create: true
-#    ~/.vim/colors/solarized.vim:
-#        path: solarized/vim-colors-solarized/colors/solarized.vim
-#        create: true
-#        force: true
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: gnupg/gpg-agent.conf
+      create: true
+      #    ~/.vim/colors/solarized.vim:
+      #        path: solarized/vim-colors-solarized/colors/solarized.vim
+      #        create: true
+      #        force: true
     ~/bin:
-        path: bin/
-        create: true
+      path: bin/
+      create: true
     ~/.config/nvim:
-        path: config/nvim
-        create: true
+      path: config/nvim
+      create: true
     ~/.config/deluge/hostlist.conf.1.2:
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: config/deluge/hostlist.conf.1.2
-        create: true
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: config/deluge/hostlist.conf.1.2
+      create: true
     ~/.config/deluge/core.conf:
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: config/deluge/core.conf
-        create: true
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: config/deluge/core.conf
+      create: true
     ~/Library/Application Support/Code/User/settings.json:
-        path: vscode-settings.json
-        create: true
+      path: vscode-settings.json
+      create: true
     ~/bitbar:
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: bitbar/
-        create: true
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: bitbar/
+      create: true
     ~/Library/Application Support/xbar/plugins:
-        if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
-        path: bitbar/
-        create: true
+      if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
+      path: bitbar/
+      create: true
     ~/.config/kyrat:
-        path: config/kyrat
-        create: true
+      path: config/kyrat
+      create: true
     ~/.config/topgrade.toml:
-        path: config/topgrade.toml
-        create: true
-
+      path: config/topgrade.toml
+      create: true
 - shell:
     # - this might not be needed, remove after confirming
     #     description:    "Installing submodules"
@@ -152,45 +147,39 @@
     #     stdout:         true
     #     stderr:         true
     #     stdin:          true
-    -
-        description:    "Updating work specific private repo"
-        command:        'if [[ $(hostname -f) == *"linkedin.biz"* ]]; then cd ~/.dotfiles_work/ && git pull && cd -; fi'
-        stdout:         true
-        stderr:         true
-        stdin:          true
-    -
-        description:    "Updating personal specific private repo"
-        command:        'if [[ $(hostname -f) != *"linkedin.biz"* ]] && [[ -d ~/.dotfiles_personal ]]; then cd ~/.dotfiles_personal/ && git pull && cd -; fi'
-        stdout:         true
-        stderr:         true
-        stdin:          true
-    -
-        description:    "Installing fzf binary"
-        command:        "./fzf/install --bin"
-        stdout:         true
-        stderr:         true
-        stdin:          true
-    #    -
-    #        description:    "Installing packages via 'brew bundle --global'.  Run 'brew bundle dump --describe --force --global' to update with currently installed packages."
-    #        command:        "brew bundle --global || { echo 'Homebrew not installed, this is probably linux'; }"
-    #        stdout:         true
-    #        stderr:         true
-    #        stdin:          true
-    -
-        description:    "Upgrading installed packages via brew upgrade, if on macos"
-        command:        'if [[ $(uname -s) == "Darwin" ]]; then brew upgrade; fi'
-        stdout:         true
-        stderr:         true
-        stdin:          true
-    -
-        description:    "Upgrading installed packages via mas upgrade, if on macos"
-        command:        'if [[ $(uname -s) == "Darwin" ]]; then mas upgrade; fi'
-        stdout:         true
-        stderr:         true
-        stdin:          true
-    -
-        description:    "Installing vim plugins"
-        command:        "nvim +PluginInstall +qall"
-        stdout:         true
-        stderr:         true
-        stdin:          true
+    - description: "Updating work specific private repo"
+      command: 'if [[ $(hostname -f) == *"linkedin.biz"* ]]; then cd ~/.dotfiles_work/ && git pull && cd -; fi'
+      stdout: true
+      stderr: true
+      stdin: true
+    - description: "Updating personal specific private repo"
+      command: 'if [[ $(hostname -f) != *"linkedin.biz"* ]] && [[ -d ~/.dotfiles_personal ]]; then cd ~/.dotfiles_personal/ && git pull && cd -; fi'
+      stdout: true
+      stderr: true
+      stdin: true
+    - description: "Installing fzf binary"
+      command: "./fzf/install --bin"
+      stdout: true
+      stderr: true
+      stdin: true
+    # -
+    #     description: "Installing packages via 'brew bundle --global'.  Run 'brew bundle dump --describe --force --global' to update with currently installed packages."
+    #     command:     "brew bundle --global || { echo 'Homebrew not installed, this is probably linux'; }"
+    #     stdout:      true
+    #     stderr:      true
+    #     stdin:       true
+    - description: "Upgrading installed packages via brew upgrade, if on macos"
+      command: 'if [[ $(uname -s) == "Darwin" ]]; then brew upgrade; fi'
+      stdout: true
+      stderr: true
+      stdin: true
+    - description: "Upgrading installed packages via mas upgrade, if on macos"
+      command: 'if [[ $(uname -s) == "Darwin" ]]; then mas upgrade; fi'
+      stdout: true
+      stderr: true
+      stdin: true
+    - description: "Installing vim plugins"
+      command: "nvim +PluginInstall +qall"
+      stdout: true
+      stderr: true
+      stdin: true
