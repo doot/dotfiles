@@ -40,7 +40,7 @@ Host udm
     ForwardAgent yes
 
 Host media-docker md
-    Hostname media-docker
+    Hostname md.jhauschildt.com
     User doot
     ProxyJump nsf
     ForwardAgent yes
