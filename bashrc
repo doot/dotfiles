@@ -266,3 +266,8 @@ dirvimdiff ()
     nvim -d ${files%:*} ${files#*:};
   done
 }
+
+# Enable direnv, if it's installed
+if type "direnv" &> /dev/null; then
+  eval "$(direnv hook bash)"
+fi
