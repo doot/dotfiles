@@ -67,3 +67,6 @@ nnoremap <space>T :NERDTreeToggle<cr>
 " p Jump to current nodes parent
 " t Open selected node/bookmark in a new tab
 " o Open directory/file/node
+
+" Enable commentary plugin
+ set commentary
