@@ -145,6 +145,8 @@ PATH="${VOLTA_HOME}/bin:$PATH"
 PATH="$PATH:$HOME/.dotfiles/kyrat/bin"
 PATH="$PATH:/usr/local/linkedin/bin:/export/content/linkedin/bin"  # not sure why kyrat causes these not to added from /etc/profile
 
+PATH="$PATH:${HOME}/.local/bin"
+
 export PATH
 
 
