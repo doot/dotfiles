@@ -256,6 +256,7 @@ alias ltmux="ssh -t deskr 'tmux -CC attach -d'"
 
 # NixOS aliases
 alias nixos-changelog='nix profile diff-closures --profile /nix/var/nix/profiles/system'
+alias de="devenv"
 
 # Functions
 
