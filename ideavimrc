@@ -56,7 +56,7 @@ nnoremap gd :action GotoDeclaration<cr>
 nnoremap <space>rr :action RenameElement<cr>
 
 " enable sneak (keys: s/S/;/,)
-" set sneak
+set sneak
 
 " Enable NERDTree plugin
 set NERDTree
