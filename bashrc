@@ -231,6 +231,10 @@ if type "colordiff" &> /dev/null; then
   alias diff='colordiff'
 fi
 
+if type "ggrep" &> /dev/null; then
+  alias grep='ggrep'
+fi
+
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
