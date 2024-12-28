@@ -113,6 +113,9 @@ complete -cf sudo man
 # get a nicer percentage in manpages
 export MANPAGER='less -s -M +Gg'
 
+# Disable telemetry in eternal-terminal
+export ET_NO_TELEMETRY=1
+
 # Vi Mode
 set -o vi
 
