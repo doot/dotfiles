@@ -52,4 +52,9 @@
     "terraform.languageServer": {
         "pathToBinary": "/Users/jhauschi/.vscode-linkedin-extensions/terraform-ls/terraform-ls_darwin_arm64"
     }
+,
+"remote.SSH.allowLocalServerDownload": true,
+"terminal.integrated.enablePersistentSessions": false,
+"remote.SSH.connectTimeout": 45,
+"editor.inlineSuggest.enabled": true
 }
