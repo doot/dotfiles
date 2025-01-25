@@ -215,6 +215,7 @@ if type "nvim" &> /dev/null; then
   alias vimdiff='nvim -d'
   export EDITOR=nvim
   export VISUAL=nvim
+  alias lvim="NVIM_APPNAME=lazyvim nvim"
 else
   export EDITOR=vim
   export VISUAL=vim

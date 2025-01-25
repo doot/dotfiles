@@ -8,3 +8,13 @@ devenv.local.nix
 
 # pre-commit
 .pre-commit-config.yaml
+
+# From LazyVim starter config
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data

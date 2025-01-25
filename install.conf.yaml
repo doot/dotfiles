@@ -107,6 +107,9 @@
     ~/.config/nvim:
       path: config/nvim
       create: true
+    ~/.config/lazyvim:
+      path: config/lazyvim
+      create: true
     ~/.config/deluge/hostlist.conf.1.2:
       if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
       path: config/deluge/hostlist.conf.1.2
