@@ -62,6 +62,8 @@ set sneak
 set NERDTree
 nnoremap <space>t :NERDTreeFocus<cr>
 nnoremap <space>T :NERDTreeToggle<cr>
+nnoremap <space>f :NERDTreeFind<CR>
+
 " Common Commands while tree is focused
 " q Close the NERDTree window
 " p Jump to current nodes parent
@@ -69,4 +71,4 @@ nnoremap <space>T :NERDTreeToggle<cr>
 " o Open directory/file/node
 
 " Enable commentary plugin
- set commentary
+set commentary
