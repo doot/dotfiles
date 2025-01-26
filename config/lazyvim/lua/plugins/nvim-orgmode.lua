@@ -4,7 +4,7 @@ return {
     'nvim-telescope/telescope.nvim',
     'nvim-orgmode/telescope-orgmode.nvim',
     'nvim-orgmode/org-bullets.nvim',
-    'Saghen/blink.cmp'
+    'saghen/blink.cmp'
   },
   event = 'VeryLazy',
   ft = { 'org' },
