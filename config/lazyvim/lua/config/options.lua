@@ -4,3 +4,7 @@
 
 -- Disable auto-format
 vim.g.autoformat = false
+
+-- Disable relative line numbers
+vim.opt.relativenumber = false
+
