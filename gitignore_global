@@ -32,3 +32,7 @@ doc/tags
 
 .ideaDataSources/
 dataSources/
+
+# Created by java language server...
+.project
+.settings/
