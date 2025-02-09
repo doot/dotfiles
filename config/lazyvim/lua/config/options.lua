@@ -8,3 +8,5 @@ vim.g.autoformat = false
 -- Disable relative line numbers
 vim.opt.relativenumber = false
 
+-- Disable yanking to system clipboard, what the fuck is this shit?
+vim.opt.clipboard = ""
