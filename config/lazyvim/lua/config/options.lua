@@ -10,3 +10,10 @@ vim.opt.relativenumber = false
 
 -- Disable yanking to system clipboard, what the fuck is this shit?
 vim.opt.clipboard = ""
+
+vim.opt.textwidth = 160
+
+
+-- Change the terminal's title
+vim.opt.title = true
+vim.opt.titleold = "bash"
