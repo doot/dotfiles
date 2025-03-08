@@ -36,10 +36,10 @@
   decorate = full
 
 [merge]
-  tool = vimdiff
+  # tool = vimdiff
+  tool = nvimdiff3
   log  = true
-  # conflictstyle = zdiff3  # TODO: change back to zdiff3 once all systems have newer version of git
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 
 [diff]
   tool = vimdiff
@@ -73,16 +73,13 @@
   autosetuprebase = always
   sort = -committerdate
 
-[mergetool "sourcetree"]
-  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
 
 [rebase]
   autoStash = true
 
 [commit]
   verbose = True
-  gpgsign = false
+  gpgsign = true
 
 [push]
   default = simple
@@ -102,3 +99,23 @@
 
 [pull]
   rebase = true
+
+[gpg]
+	format = ssh
+
+# Try out delta
+[core]
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  side-by-side = true
+  features = decorations
+  syntax-theme=Solarized (dark)
+
+[diff]
+  colorMoved = default
