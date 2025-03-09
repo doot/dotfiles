@@ -1,27 +1,16 @@
 Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com
-Host shit
+Host shit-old
     HostName 192.168.1.50
     Port 2222
     User admin
     ForwardAgent yes
 
-Host shit2 sh2
+Host shit shit2 sh2
     HostName 192.168.1.60
     Port 2222
     User doot
     ForwardAgent yes
 
-Host prod1
-    HostName 45.55.108.119
-    Port 2022
-    User doot
-    ForwardAgent yes
-
-Host do1
-    HostName 165.227.11.199
-    Port 2022
-    User doot
-    ForwardAgent yes
 
 Host do-dev1
     HostName do-dev1.jhauschildt.com
@@ -45,6 +34,12 @@ Host media-docker md
     ProxyJump nsf
     ForwardAgent yes
 
+
+Host deck
+  HostName 192.168.1.63 
+  ForwardAgent yes
+  User deck
+
 Host nix-media-docker nmd
   HostName 192.168.1.88
   ForwardAgent yes
@@ -56,8 +51,17 @@ Host nix-shitfucker nsf
   Port 22
   User doot
 
+Host pve
+  HostName pve.jhauschildt.com
+  ForwardAgent yes
+  Port 22
+  User doot
+
 Host github.com
   AddKeysToAgent yes
   # UseKeychain yes
   IdentityFile ~/.ssh/id_github
 
+# Force all hosts on the local network to use bitwarden ssh-agent
+# Host 192.168.1.* *.jhauschildt.com
+#   IdentityAgent ~/.bitwarden-ssh-agent.sock
