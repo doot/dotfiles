@@ -3,7 +3,8 @@
 # Please adapt and uncomment the following lines:
   name = Jeremy Hauschildt
   email = jeremy@jhauschildt.com
-  signingkey = D1372D8D
+  # signingkey = D1372D8D
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID2faMGyx7bfdnVYtXrqEJicP/q0HV441nPR9hIz8cJ7
 
 [color]
   ui = auto
