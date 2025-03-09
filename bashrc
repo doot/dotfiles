@@ -64,6 +64,11 @@ esac
 # Brew autocompletion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
+# Wezterm shell completion (if installed)
+if type wezterm > /dev/null 2>&1; then
+  eval "$(wezterm shell-completion --shell=bash)"
+fi
+
 # Include work specific aliases if it exists
 if [[ -f ${HOME}/.dotfiles_work/bashrc_aliases ]]; then
   # shellcheck source=/dev/null
