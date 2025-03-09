@@ -200,6 +200,8 @@ _fzf_comprun() {
     export|unset) fzf "$@" --preview "eval 'echo \$'{}" ;;
     ssh)          fzf "$@" --preview 'dig {}' ;;
     vim)          fzf "$@" --preview 'bat --style=numbers --color=always {} || cat {}' ;;
+    lvim)          fzf "$@" --preview 'bat --style=numbers --color=always {} || cat {}' ;;
+    nvim)          fzf "$@" --preview 'bat --style=numbers --color=always {} || cat {}' ;;
     *)            fzf "$@" ;;
   esac
 }
