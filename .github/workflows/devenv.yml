@@ -1,5 +1,6 @@
 ---
 name: "devenv test"
+permissions: read-all
 on:
   pull_request:
   push:
