@@ -120,3 +120,7 @@
 
 [diff]
   colorMoved = default
+
+[safe]
+	directory = /home/doot/nixos-config-priv/.git
+	directory = /home/doot/nixos-config-priv
