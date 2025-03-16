@@ -135,6 +135,9 @@
     ~/.config/topgrade.toml:
       path: config/topgrade.toml
       create: true
+    ~/.config/ruff:
+      path: config/ruff
+      create: true
 - shell:
     # - this might not be needed, remove after confirming
     #     description:    "Installing submodules"
