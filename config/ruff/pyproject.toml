@@ -1,0 +1,14 @@
+[tool.ruff]
+line-length = 160
+
+# Assume Python 3.10
+target-version = "py310"
+
+[tool.ruff.lint.isort]
+known-third-party = ["aiodns", "appdirs", "click", "distgradle", "dns", "importlib_resources", "pytest", "requests", "responses", "setuptools"]
+lines-between-types = 1
+section-order = ["future", "standard-library", "third-party", "com", "linkedin", "first-party", "local-folder"]
+
+[tool.ruff.lint.isort.sections]
+"linkedin" = ["linkedin"]
+"com" = ["com"]

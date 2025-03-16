@@ -13,7 +13,9 @@ vim.opt.clipboard = ""
 
 vim.opt.textwidth = 160
 
-
 -- Change the terminal's title
 vim.opt.title = true
 vim.opt.titleold = "bash"
+
+-- Switch from pyright to basedpyright
+vim.g.lazyvim_python_lsp = "basedpyright"
