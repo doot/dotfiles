@@ -40,7 +40,7 @@
     },
     "vim.statusBarColors.visualline": "#96962E",
     "editor.renderLineHighlight": "all",
-    "editor.occurrencesHighlight": false,
+    "editor.occurrencesHighlight": "off",
     "files.autoSave": "off",
     "editor.cursorStyle": "line",
     "settingsSync.ignoredExtensions": [
