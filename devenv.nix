@@ -6,6 +6,18 @@
   languages = {
     nix.enable = true;
     shell.enable = true;
+    python = {
+      enable = true;
+      version = "3.13";
+      directory = "./pynvim.venv";
+      venv = {
+        enable = true;
+      };
+      uv = {
+        enable = true;
+        sync.enable = true;
+      };
+    };
   };
 
   pre-commit = {
