@@ -29,22 +29,11 @@ case $os in
     alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
     alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
 
-    # Support for auto-completing brew.  Also loads other auto-completions installed via brew.
-    if [ -f "$(brew --prefix)/etc/bash_completion" ]
-    then
-      # shellcheck source=/dev/null
-      . "$(brew --prefix)/etc/bash_completion"
-    fi
-    if type brew 2&>/dev/null; then
-      for completion_file in "$(brew --prefix)"/etc/bash_completion.d/*; do
-        # shellcheck source=/dev/null
-        source "$completion_file"
-      done
-    fi
-    if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-      . /usr/local/share/bash-completion/bash_completion
-    fi
+    # # Support for auto-completing brew.  Also loads other auto-completions installed via brew.
+    [[ -r "/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
     ;;
+
     "Linux")
       alias ls='ls -F --color=auto'
       if ! shopt -oq posix; then
@@ -60,9 +49,6 @@ case $os in
       PATH=$HOME/.local/podman/bin:$PATH
     ;;
 esac
-
-# Brew autocompletion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Wezterm shell completion (if installed)
 if type wezterm > /dev/null 2>&1; then
@@ -111,7 +97,6 @@ shopt -s cdspell        # correct minor spelling mistakes in directory names for
 # prevent me from doing stupid shit
 export PIP_REQUIRE_VIRTUALENV=true
 
-
 # complete sudo and man-pages
 complete -cf sudo man
 
@@ -157,7 +142,6 @@ PATH="$PATH:${HOME}/.local/bin"
 
 export PATH
 
-
 # Display git status in prompt
 GIT_PROMPT_START="${USER}@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ " # \u is somehow broken when calling new version of bash on linux
 # export GIT_PROMPT_START
@@ -175,7 +159,6 @@ if [ -f "${HOME}/.bash-git-prompt/gitprompt.sh" ]; then
 fi
 
 export LS_COLORS="di=34"
-
 
 # shellcheck source=/dev/null
 [ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
