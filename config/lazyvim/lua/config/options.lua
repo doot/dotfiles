@@ -24,3 +24,6 @@ vim.g.lazyvim_python_ruff = "ruff"
 -- Dedicated venv that has pynvim installed. Specifying this explicitly reduces startup time.
 vim.g.python3_host_prog = "~/.dotfiles/pynvim.venv/.venv/bin/python3"
 
+-- Better vimdiff options
+vim.opt.diffopt="internal,filler,closeoff,indent-heuristic,linematch:60,algorithm:histogram"
+
