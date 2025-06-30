@@ -261,7 +261,6 @@ dirvimdiff ()
 
 # Enable direnv, if it's installed AND it hasn't already been loaded (/etc/bashrc sometimes loads it)
 if type "direnv" &> /dev/null && [[ $(type -t _direnv_hook) != "function" ]] ; then
-  echo "here"
   eval "$(direnv hook bash)"
 fi
 
