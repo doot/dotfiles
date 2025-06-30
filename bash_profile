@@ -25,6 +25,6 @@ elif [ -z "$WEZTERM_CONFIG_DIR" ]; then
 fi
 
 # remove duplicates in PATH:
-PATH=$(echo ${PATH} | /usr/bin/awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
+PATH=$(echo ${PATH} | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
 PATH="${PATH%:}"    # remove trailing colon
 export PATH

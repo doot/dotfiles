@@ -39,6 +39,7 @@
       "bitbar/yabai.1d.sh"
       "imgcat"
       "imgls"
+      "wezterm.sh"
     ];
   };
 }
