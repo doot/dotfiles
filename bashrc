@@ -159,7 +159,7 @@ export FZF_CTRL_T_COMMAND='rg --files --no-ignore-messages --no-messages --hidde
 export FZF_DEFAULT_OPTS="
   --layout=reverse
   --multi
-  --header='>:@ '
+  --ghost='>:@ '
   --pointer='->'
   --prompt='$ '
   --height 40%
@@ -168,6 +168,21 @@ export FZF_DEFAULT_OPTS="
   --bind 'ctrl-a:select-all'
   --bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
   --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
+  --style full
+  --bind 'result:bg-transform-list-label:
+        if [[ -z $FZF_QUERY ]]; then
+          echo \" $FZF_MATCH_COUNT items \"
+        else
+          echo \" $FZF_MATCH_COUNT matches for [$FZF_QUERY] \"
+        fi
+        '
+  --bind 'focus:bg-transform-preview-label:[[ -n {} ]] && printf \" Previewing [%s] \" {}'
+  --bind 'focus:+bg-transform-header:[[ -n {} ]] && file --brief {}'
+  --color 'border:#aaaaaa,label:#cccccc'
+  --color 'preview-border:#9999cc,preview-label:#ccccff'
+  --color 'list-border:#669966,list-label:#99cc99'
+  --color 'input-border:#996666,input-label:#ffcccc'
+  --color 'header-border:#6699cc,header-label:#99ccff'
 "
 
 _fzf_comprun() {
