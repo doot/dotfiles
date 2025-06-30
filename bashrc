@@ -19,7 +19,11 @@ host=$(uname -n | cut -d. -f1)
 # OS Specific settings
 case $os in
   "Darwin")
-    export PATH="/opt/homebrew/bin:$PATH"
+    PATH="/opt/homebrew/bin:$PATH"
+
+    # Put GNU versions of utilities further up in the path than older OSX versions
+    PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+
     alias ls='ls -FG';
 
     # Kindof does the same thing as lsub when it doesn't exist on OS X
@@ -32,6 +36,8 @@ case $os in
     # # Support for auto-completing brew.  Also loads other auto-completions installed via brew.
     [[ -r "/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
+    # Setup bws access token from macos keychain
+    # export "BWS_ACCESS_TOKEN=$(security find-generic-password -w -s 'BWS_ACCESS_TOKEN' -a "${USER}")"
     ;;
 
     "Linux")
@@ -127,30 +133,15 @@ PATH="${HOME}/go/bin:${PATH}"
 # doom emacs
 PATH="${PATH}:${HOME}/.emacs.d/bin"
 
-# Put GNU versions of utilities further up in the path than older OSX versions
-PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
-
-# Volta
-export VOLTA_HOME="${HOME}/.volta"
-PATH="${VOLTA_HOME}/bin:$PATH"
-
 # Kyrat binary
 PATH="$PATH:$HOME/.dotfiles/kyrat/bin"
 PATH="$PATH:/usr/local/linkedin/bin:/export/content/linkedin/bin"  # not sure why kyrat causes these not to added from /etc/profile
 
 PATH="$PATH:${HOME}/.local/bin"
 
-export PATH
-
 # Display git status in prompt
 GIT_PROMPT_START="${USER}@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ " # \u is somehow broken when calling new version of bash on linux
 # export GIT_PROMPT_START
-if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
-  export __GIT_PROMPT_DIR
-  # shellcheck source=/dev/null
-  source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
-fi
 
 #GIT_PROMPT_ONLY_IN_REPO=1
 if [ -f "${HOME}/.bash-git-prompt/gitprompt.sh" ]; then
@@ -200,7 +191,7 @@ vws() { vim -c ":VWS /\c$1/" ~/vimwiki/index.wiki; }
 alias db-update=~/.dotfiles/install
 alias gl='git log --graph --oneline --all'
 
-if type "nvim" &> /dev/null; then
+if type 'nvim' &> /dev/null; then
   alias vim='nvim'
   alias vimdiff='nvim -d'
   export EDITOR=nvim
@@ -211,7 +202,7 @@ else
   export VISUAL=vim
 fi
 
-if type "eza" &> /dev/null; then
+if type 'eza' &> /dev/null; then
   export EXA_COLORS="xx=37"
   alias l='eza -l -snew --color-scale all --color-scale-mode fixed -g --icons --git'
   alias ll='eza -la --color-scale all --color-scale-mode fixed -g --icons --git'
@@ -221,11 +212,11 @@ else
   alias ll='ls -lrhta'
 fi
 
-if type "colordiff" &> /dev/null; then
+if type 'colordiff' &> /dev/null; then
   alias diff='colordiff'
 fi
 
-if type "ggrep" &> /dev/null; then
+if type 'ggrep' &> /dev/null; then
   alias grep='ggrep'
 fi
 
@@ -238,11 +229,11 @@ alias h=history
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
 # alias sudo="sudo -E"
-alias grep="grep --color=auto"
+alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias drm="docker rm"
-alias dps="docker ps"
+alias drm='docker rm'
+alias dps='docker ps'
 alias wiki='vim ~/vimwiki/index.wiki'
 alias todo='vim ~/vimwiki/Todo.wiki'
 alias diary='vim ~/vimwiki/diary/diary.wiki +VimwikiDiaryGenerateLinks +Calendar'
@@ -250,11 +241,11 @@ alias vimwiki2html='vim -R ~/vimwiki/index.wiki +VimwikiAll2HTML +q; open ~/vimw
 alias wikipull='cd ~/vimwiki/; git pull && git submodule update --remote --recursive --merge --init; cd -;'
 alias wikipush='cd ~/vimwiki/personal/; git add . && git commit -m "alias commit: `date`" ; git push origin master; cd -; cd ~/vimwiki/; git add . && git commit -m "alias commit: `date`" && git push origin master; cd -;'
 alias setlogintime='sudo lastlog -u $USER -S; sudo lastlog -u $USER'
-alias ltmux="ssh -t deskr 'tmux -CC attach -d'"
+alias ltmux='ssh -t deskr "tmux -CC attach -d"'
 
 # NixOS aliases
 alias nixos-changelog='nix profile diff-closures --profile /nix/var/nix/profiles/system'
-alias de="devenv"
+alias de='devenv'
 
 # Functions
 
@@ -262,13 +253,19 @@ dirvimdiff ()
 {
   # Diff files between two directories in vimdiff, one at a time
   # dirvimdiff dir1/ dir2/
-  for files in $(diff -rq $1 $2 | awk '/^Files .* differ.*$/ {print $2":"$4}');
+  for files in $(diff -rq "$1" "$2" | awk '/^Files .* differ.*$/ {print $2":"$4}');
   do
-    nvim -d ${files%:*} ${files#*:};
+    nvim -d "${files%:*}" "${files#*:}";
   done
 }
 
-# Enable direnv, if it's installed
-if type "direnv" &> /dev/null; then
+# Enable direnv, if it's installed AND it hasn't already been loaded (/etc/bashrc sometimes loads it)
+if type "direnv" &> /dev/null && [[ $(type -t _direnv_hook) != "function" ]] ; then
+  echo "here"
   eval "$(direnv hook bash)"
 fi
+
+# remove duplicates in PATH:
+PATH=$(echo "${PATH}" | /usr/bin/awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
+PATH="${PATH%:}"    # remove trailing colon
+export PATH
