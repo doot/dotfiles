@@ -20,7 +20,7 @@
     };
   };
 
-  pre-commit = {
+  git-hooks = {
     hooks = {
       commitizen.enable = true;
       alejandra.enable = true;
