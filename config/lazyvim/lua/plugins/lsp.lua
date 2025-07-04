@@ -18,6 +18,19 @@ local spec = {
           },
         },
       },
+      nil_ls = {
+        settings = {
+          ['nil'] = {
+            nix = {
+              flake = {
+                autoArchive = true,
+                -- TODO: This may take some time and consume a lot of resources, consider disabling it if it's not worth it
+                autoEvalInputs = true,
+              }
+            }
+          }
+        }
+      }
     },
   },
 }
