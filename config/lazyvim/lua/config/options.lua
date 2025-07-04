@@ -27,3 +27,10 @@ vim.g.python3_host_prog = "~/.dotfiles/pynvim.venv/.venv/bin/python3"
 -- Better vimdiff options
 vim.opt.diffopt="internal,filler,closeoff,indent-heuristic,linematch:60,algorithm:histogram"
 
+-- Shortcusts for to get shit to and from system clipboard
+ vim.keymap.set('n', '<leader>y', '"+y')
+ vim.keymap.set('n', '<leader>p', '"+p')
+ vim.keymap.set('n', '<leader>P', '"+P')
+ vim.keymap.set('v', '<leader>y', '"+y')
+ vim.keymap.set('v', '<leader>p', '"+p')
+ vim.keymap.set('v', '<leader>P', '"+P')
