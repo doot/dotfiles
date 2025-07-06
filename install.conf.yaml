@@ -138,6 +138,9 @@
     ~/.config/ruff:
       path: config/ruff
       create: true
+    ~/.config/wezterm:
+      path: config/wezterm
+      create: true
 - shell:
     # - this might not be needed, remove after confirming
     #     description:    "Installing submodules"
