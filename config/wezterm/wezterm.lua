@@ -57,7 +57,7 @@ config.window_padding = {
   left = "0.5cell",
   right = "0.5cell",
   top = "0.25cell",
-  bottom = "0.5cell",
+  bottom = "0.75cell",
 }
 config.window_frame = {
   font_size = 12
