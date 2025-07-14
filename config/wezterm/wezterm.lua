@@ -138,7 +138,7 @@ config.audible_bell = "Disabled"
 config.term = "wezterm"
 
 -- Add ":", "=", and "|", to selection word boundary so double clicking behaves more like iterm2
-config.selection_word_boundary = " \t\n{}[]()\"'`:=|"
+config.selection_word_boundary = " \t\n{}[]()\"'`:=|│"
 
 -- Reduce if this causes memory issues
 config.scrollback_lines = 50000
