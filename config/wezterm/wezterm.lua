@@ -99,6 +99,30 @@ config.keys = {
     mods = 'CMD',
     action = wezterm.action.ActivatePaneDirection 'Next',
   },
+
+  -- Adjust pane sizes with hjkl (on top of default key bindings that use arrow keys)
+  {
+    key = 'h',
+    mods = 'CTRL|SHIFT|ALT',
+    action = wezterm.action.AdjustPaneSize({'Left', 5}),
+  },
+  {
+    key = 'l',
+    mods = 'CTRL|SHIFT|ALT',
+    action = wezterm.action.AdjustPaneSize({'Right', 5}),
+  },
+  {
+    key = 'j',
+    mods = 'CTRL|SHIFT|ALT',
+    action = wezterm.action.AdjustPaneSize({'Up', 10}),
+  },
+  {
+    key = 'k',
+    mods = 'CTRL|SHIFT|ALT',
+    action = wezterm.action.AdjustPaneSize({'Down', 10}),
+  },
+
+
 }
 
 config.front_end = "WebGpu"
