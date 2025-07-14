@@ -137,8 +137,8 @@ config.audible_bell = "Disabled"
 -- TODO: add back if this fixes ssh to deskr problem
 config.term = "wezterm"
 
--- Add ":" and "=" to selection word boundary so double clicking behaves more like iterm2
-config.selection_word_boundary = " \t\n{}[]()\"'`:="
+-- Add ":", "=", and "|", to selection word boundary so double clicking behaves more like iterm2
+config.selection_word_boundary = " \t\n{}[]()\"'`:=|"
 
 -- Reduce if this causes memory issues
 config.scrollback_lines = 50000
