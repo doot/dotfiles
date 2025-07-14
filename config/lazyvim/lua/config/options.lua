@@ -36,3 +36,30 @@ vim.g.lazyvim_rust_diagnostics = "bacon-ls"
  vim.keymap.set('v', '<leader>y', '"+y')
  vim.keymap.set('v', '<leader>p', '"+p')
  vim.keymap.set('v', '<leader>P', '"+P')
+
+vim.g.lazyvim_rust_diagnostics = "bacon-ls"
+-- -- provided by rust-analyzer.
+-- vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
+
+-- Fix hanging OCS 52 clipboard in wezterm + multiplexing
+-- TODO: This is still not what I want. This copies to system clipboard, which I explicitly do not want..
+-- vim.o.clipboard = "unnamedplus"
+
+local function paste()
+  return {
+    vim.fn.split(vim.fn.getreg(""), "\n"),
+    vim.fn.getregtype(""),
+  }
+end
+
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = paste,
+    ["*"] = paste,
+  },
+}
