@@ -3,6 +3,7 @@ return {
   opts = {
     ensure_installed = {
       "autotools-language-server",
+      "bacon",
       "basedpyright",
       "bash-language-server",
       "black",
@@ -33,6 +34,7 @@ return {
       "marksman",
       "mypy",
       "ruff",
+      "rust-analyzer",
       "shellcheck",
       "shfmt",
       "sqlfluff",
