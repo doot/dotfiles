@@ -228,7 +228,7 @@ for host, c in pairs(wezterm.enumerate_ssh_hosts(os.getenv('HOME') .. "/.ssh/con
         forwardagent = 'yes',
       },
       username = c.user,
-      local_echo_threshold_ms = 10,
+      local_echo_threshold_ms = 5000,
     })
   end
 end
