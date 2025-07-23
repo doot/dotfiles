@@ -131,7 +131,7 @@ PATH="${HOME}/.cargo/bin:${PATH}"
 PATH="${HOME}/go/bin:${PATH}"
 
 # doom emacs
-PATH="${PATH}:${HOME}/.emacs.d/bin"
+PATH="${PATH}:${HOME}/.config/emacs/bin"
 
 # Kyrat binary
 PATH="$PATH:$HOME/.dotfiles/kyrat/bin"
