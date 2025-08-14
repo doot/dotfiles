@@ -44,7 +44,7 @@ config.color_scheme = 'Solarized Dark - Patched' -- closest to our iterm2 setup
 
 config.font = wezterm.font('FiraCode Nerd Font', { weight = "Light"})
 config.font_size = 13
-config.line_height = 0.95
+config.line_height = 1.1
 config.cell_width = 0.95
 
 config.hide_tab_bar_if_only_one_tab = false
