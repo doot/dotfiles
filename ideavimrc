@@ -54,6 +54,7 @@ nnoremap gd :action GotoDeclaration<cr>
 
 " code refactoring
 nnoremap <space>rr :action RenameElement<cr>
+nnoremap <space>cr :action RenameElement<cr>
 
 " enable sneak (keys: s/S/;/,)
 set sneak
