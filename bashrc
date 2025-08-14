@@ -283,3 +283,5 @@ fi
 PATH=$(echo "${PATH}" | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
 PATH="${PATH%:}"    # remove trailing colon
 export PATH
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
