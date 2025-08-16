@@ -73,3 +73,8 @@ nnoremap <space>f :NERDTreeFind<CR>
 
 " Enable commentary plugin
 set commentary
+
+" Enable which-key plugin
+set which-key
+set timeoutlen=10000
+set notimeout
