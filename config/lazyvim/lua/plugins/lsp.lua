@@ -13,7 +13,11 @@ local spec = {
               typeCheckingMode = "standard",
               autoImportCompletions = true,
               reportMissingTypeStubs = false,
-              diagnosticMode = "openFilesOnly"
+              diagnosticMode = "openFilesOnly",
+              reportUnannotatedClassAttribute = false,
+              reportUndefinedVariable = "off", -- Ruff
+              reportUnusedImport = false, -- Ruff
+              disableOrganizeImports = false, -- Ruff/isort
             },
           },
         },
