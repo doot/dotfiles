@@ -1,6 +1,3 @@
 {
-  "ignore": [
-    "**/iterm2_shell_integration.bash",
-    "**/wezterm.sh"
-  ]
+  "ignore": ["**/iterm2_shell_integration.bash", "**/wezterm.sh"]
 }
