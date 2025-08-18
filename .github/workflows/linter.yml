@@ -4,26 +4,21 @@
 #################################
 name: Lint
 permissions: read-all
-
 on:
   push:
     branches-ignore: [master, main]
     # Remove the line above to run when pushing to master
   pull_request:
     branches: [master, main]
-
 jobs:
   build:
     name: Lint
-
     runs-on: ubuntu-latest
-
     permissions:
       contents: read
       packages: read
       # To report GitHub Actions status checks
       statuses: write
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -31,7 +26,6 @@ jobs:
           # Full git history is needed to get a proper
           # list of changed files within `super-linter`
           fetch-depth: 0
-
       - name: Super-Linter
         uses: super-linter/super-linter@v8.0.0
         env:
