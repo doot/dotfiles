@@ -1,3 +1,6 @@
 {
   "ignore": ["**/iterm2_shell_integration.bash", "**/wezterm.sh"]
+  "threshold": 0.1,
+  "absolute": true,
+  "gitignore": true
 }
