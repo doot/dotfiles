@@ -87,11 +87,8 @@ export HISTTIMEFORMAT="[%F %T] "
 # force flush to history file after every command
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-# only set different bash history file when not using kyrat
-if [ -z "${KYRAT_HOME}" ]; then
-  # set history file to a new location to prevent sessions that don't respect settings above from truncating
-  export HISTFILE=~/.bash_eternal_history
-fi
+# set history file to a new location to prevent sessions that don't respect settings above from truncating
+export HISTFILE=~/.bash_eternal_history
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -132,10 +129,6 @@ PATH="${HOME}/go/bin:${PATH}"
 
 # doom emacs
 PATH="${PATH}:${HOME}/.config/emacs/bin"
-
-# Kyrat binary
-PATH="$PATH:$HOME/.dotfiles/kyrat/bin"
-PATH="$PATH:/usr/local/linkedin/bin:/export/content/linkedin/bin"  # not sure why kyrat causes these not to added from /etc/profile
 
 PATH="$PATH:${HOME}/.local/bin"
 

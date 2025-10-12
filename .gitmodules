@@ -119,10 +119,6 @@
   path = vim/bundle/fzf.vim
   url = https://github.com/junegunn/fzf.vim.git
   ignore = dirty
-[submodule "kyrat"]
-  path = kyrat
-  url = https://github.com/fsquillace/kyrat
-  ignore = dirty
 [submodule "vim/bundle/vim-sneak"]
   path = vim/bundle/vim-sneak
   url = https://github.com/justinmk/vim-sneak.git
