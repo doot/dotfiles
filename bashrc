@@ -33,8 +33,8 @@ case $os in
     alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
     alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
 
-    # # Support for auto-completing brew.  Also loads other auto-completions installed via brew.
-    [[ -r "/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+    # Support for auto-completing brew.  Also loads other auto-completions installed via brew.
+    [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
     # Setup bws access token from macos keychain
     # export "BWS_ACCESS_TOKEN=$(security find-generic-password -w -s 'BWS_ACCESS_TOKEN' -a "${USER}")"
