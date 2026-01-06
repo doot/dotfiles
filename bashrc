@@ -273,7 +273,7 @@ if type "direnv" &> /dev/null && [[ $(type -t _direnv_hook) != "function" ]] ; t
 fi
 
 # remove duplicates in PATH:
-PATH=$(echo "${PATH}" | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
+PATH=$(echo -n "${PATH}" | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
 PATH="${PATH%:}"    # remove trailing colon
 export PATH
 export VOLTA_HOME="$HOME/.volta"
