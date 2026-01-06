@@ -120,6 +120,7 @@ fi
 
 # Custom scripts
 PATH="${HOME}/bin:${PATH}"
+PATH="$PATH:${HOME}/.local/bin"
 
 # Rust/cargo
 PATH="${HOME}/.cargo/bin:${PATH}"
@@ -130,7 +131,9 @@ PATH="${HOME}/go/bin:${PATH}"
 # doom emacs
 PATH="${PATH}:${HOME}/.config/emacs/bin"
 
-PATH="$PATH:${HOME}/.local/bin"
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+PATH="${PATH}:$VOLTA_HOME/bin"
 
 # Display git status in prompt
 GIT_PROMPT_START="${USER}@\h:\[\033[0;33m\]\w\[\033[0;0m\] _LAST_COMMAND_INDICATOR_ " # \u is somehow broken when calling new version of bash on linux
@@ -145,7 +148,7 @@ fi
 export LS_COLORS="di=34"
 
 # shellcheck source=/dev/null
-[ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
+[ -f "$HOME/.dotfiles/fzf.bash" ] && source "$HOME/.dotfiles/fzf.bash"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs --ignore-file ~/.dotfiles/rgignore_fzf'
 export FZF_ALT_C_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs --ignore-file ~/.dotfiles/rgignore_fzf'
 export FZF_CTRL_T_COMMAND='rg --files --no-ignore-messages --no-messages --hidden --no-ignore-vcs --ignore-file ~/.dotfiles/rgignore_fzf'
@@ -275,6 +278,5 @@ fi
 # remove duplicates in PATH:
 PATH=$(echo -n "${PATH}" | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
 PATH="${PATH%:}"    # remove trailing colon
+
 export PATH
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"

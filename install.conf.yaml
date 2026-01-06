@@ -63,7 +63,6 @@
       if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
       path: Brewfile
       relink: true
-    ~/.fzf.bash: fzf.bash
     ~/.tmux.conf: tmux.conf
     ~/.skhdrc: skhdrc
     ~/.yabairc: yabairc
