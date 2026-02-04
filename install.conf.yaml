@@ -128,9 +128,6 @@
       if: '[[ $(hostname -f) != *"linkedin.biz"* ]]'
       path: bitbar/
       create: true
-    ~/.config/kyrat:
-      path: config/kyrat
-      create: true
     ~/.config/topgrade.toml:
       path: config/topgrade.toml
       create: true
