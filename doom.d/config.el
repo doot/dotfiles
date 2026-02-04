@@ -235,3 +235,4 @@
     (org-babel-execute-src-block)))
 
 (run-at-time "0 sec" 3600 'update-fiscal-table) ;; Run update-fiscal-table every hour
+(setq ispell-personal-dictionary "~/.config/enchant/en_US.dic")

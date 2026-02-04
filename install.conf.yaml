@@ -137,6 +137,9 @@
     ~/.config/wezterm:
       path: config/wezterm
       create: true
+    ~/.config/enchant:
+      path: config/enchant
+      create: true
 - shell:
     # - this might not be needed, remove after confirming
     #     description:    "Installing submodules"
