@@ -5,9 +5,13 @@
 
   languages = {
     nix.enable = true;
-    shell.enable = true;
+    shell = {
+      enable = true;
+      lsp.enable = true;
+    };
     python = {
       enable = true;
+      lsp.enable = true;
       version = "3.13";
       directory = "./pynvim.venv";
       venv = {
