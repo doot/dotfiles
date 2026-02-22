@@ -143,6 +143,24 @@ config.selection_word_boundary = " \t\n{}[]()\"'`:=|│"
 -- Reduce if this causes memory issues
 config.scrollback_lines = 50000
 
+-- Reformat the window title to include workspace and domain information
+wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
+  local zoomed = ''
+  if tab.active_pane.is_zoomed then
+    zoomed = '[Z] '
+  end
+
+  local index = ''
+  if #tabs > 1 then
+    index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
+  end
+
+  local host_workspace = '[' .. wezterm.mux.get_active_workspace() .. ']'
+  host_workspace = host_workspace .. ' ' .. wezterm.mux.get_domain():name() .. ' - '
+
+  return zoomed .. index .. host_workspace .. tab.active_pane.title
+end)
+
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 tabline.setup({
   options = {
