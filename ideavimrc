@@ -78,3 +78,6 @@ set commentary
 set which-key
 set timeoutlen=10000
 set notimeout
+
+" Enable surround plugin
+set surround
