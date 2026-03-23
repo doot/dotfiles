@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
- '(display-battery-mode t)
+ '(display-battery-mode nil)
  '(menu-bar-mode nil)
  '(org-agenda-custom-commands
    '(("n" "Agenda and all TODOs"

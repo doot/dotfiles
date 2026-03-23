@@ -3,8 +3,8 @@ return {
   opts = {
     ensure_installed = {
       "autotools-language-server",
-      "bacon",
       "bacon-ls",
+      "bacon",
       "basedpyright",
       "bash-language-server",
       "checkmake",
@@ -44,6 +44,8 @@ return {
       "texlab",
       "vtsls",
       "yaml-language-server",
+      "helm-ls",
+      "sqls"
     },
   },
 }

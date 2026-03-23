@@ -1,3 +1,8 @@
+# PS4='+ $(/opt/homebrew/bin/gdate "+%s.%N")\011 '
+# exec 3>&2 2>/tmp/bashstart.$$.log
+# set -x
+# /opt/homebrew/bin/gdate "+%s.%N"
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
@@ -280,3 +285,7 @@ PATH=$(echo -n "${PATH}" | awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')
 PATH="${PATH%:}"    # remove trailing colon
 
 export PATH
+
+# /opt/homebrew/bin/gdate "+%s.%N"
+# set +x
+# exec 2>&3 3>&-
