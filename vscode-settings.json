@@ -27,12 +27,14 @@
     "vim.easymotion": true,
     "vsicons.projectDetection.autoReload": true,
     "gitlabPipelineMonitor.tokens": {
-        "gitlab.com" : "Ct8xUtgcVAChD81sczMY"
+        "gitlab.com": "Ct8xUtgcVAChD81sczMY"
     },
     "workbench.colorCustomizations": {
         "statusBar.background": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
+        "statusBar.debuggingBackground": "#005f5f",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
     },
     "vim.handleKeys": {
         "<C-d>": true,
@@ -43,18 +45,18 @@
     "editor.occurrencesHighlight": "off",
     "files.autoSave": "off",
     "editor.cursorStyle": "line",
-    "settingsSync.ignoredExtensions": [
-    
-    ],
+    "settingsSync.ignoredExtensions": [],
     "workbench.preferredLightColorTheme": "Visual Studio Dark",
     "linkedin-extensions.directory": "/Users/jhauschi/.vscode-linkedin-extensions",
     "terraform-ls.terraformExecPath": "/Users/jhauschi/.vscode-linkedin-extensions/terraform-ls/terraform-ls_darwin_arm64",
     "terraform.languageServer": {
         "pathToBinary": "/Users/jhauschi/.vscode-linkedin-extensions/terraform-ls/terraform-ls_darwin_arm64"
-    }
-,
-"remote.SSH.allowLocalServerDownload": true,
-"terminal.integrated.enablePersistentSessions": false,
-"remote.SSH.connectTimeout": 45,
-"editor.inlineSuggest.enabled": true
+    },
+    "remote.SSH.allowLocalServerDownload": true,
+    "terminal.integrated.enablePersistentSessions": false,
+    "remote.SSH.connectTimeout": 45,
+    "editor.inlineSuggest.enabled": true,
+    "git.useIntegratedAskPass": false,
+    "github.gitAuthentication": false,
+    "git.terminalAuthentication": false
 }
