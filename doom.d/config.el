@@ -346,3 +346,6 @@
 ;
 
 (setq ispell-personal-dictionary "~/.config/enchant/en_US.dic")
+
+(after! gcmh
+  (setq gcmh-high-cons-threshold 33554432))  ; 32mb, or 64mb, or *maybe* 128mb, BUT NOT 512mb
