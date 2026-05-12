@@ -49,9 +49,5 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! org-alert)
-(package! org-jira)
-(package! org-appear ;; reveal emphais markers when under cursor
-  :recipe (:host github
-           :repo "awth13/org-appear"))
-(package! org-modern)
+;; (package! org-alert)
+;; (package! org-jira)
