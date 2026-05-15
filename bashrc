@@ -66,6 +66,10 @@ if type wezterm > /dev/null 2>&1; then
   eval "$(wezterm shell-completion --shell=bash)"
 fi
 
+if type devenv > /dev/null 2>&1; then
+  eval "$(devenv hook bash)"
+fi
+
 # Include work specific aliases if it exists
 if [[ -f ${HOME}/.dotfiles_work/bashrc_aliases ]]; then
   # shellcheck source=/dev/null
