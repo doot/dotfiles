@@ -39,3 +39,5 @@ dataSources/
 
 
 .ropeproject/
+
+**/.claude/settings.local.json
