@@ -121,8 +121,6 @@ config.keys = {
     mods = 'CTRL|SHIFT|ALT',
     action = wezterm.action.AdjustPaneSize({'Down', 10}),
   },
-
-
 }
 
 config.front_end = "WebGpu"
