@@ -43,6 +43,14 @@ config.unix_domains = {
 config.color_scheme = 'Solarized Dark - Patched' -- closest to our iterm2 setup
 
 config.font = wezterm.font('FiraCode Nerd Font', { weight = "Light"})
+config.font = wezterm.font_with_fallback {
+  'FiraCode Nerd Font',
+  'Fira Code',
+  'Symbols Nerd Font Mono',
+  'JetBrains Mono',
+  'Font Awesome 7 Free',
+  'Noto Sans Bamum',
+}
 config.font_size = 13
 config.line_height = 1.1
 config.cell_width = 0.95
