@@ -319,7 +319,7 @@ require("wuake").setup {
 -- 	-- Make username/project paths clickable. this implies paths like the following are for github.
 -- 	-- ( "nvim-treesitter/nvim-treesitter" | wbthomason/packer.nvim | wez/wezterm | "wez/wezterm.git" )
 -- 	-- as long as a full url hyperlink regex exists above this it should not match a full url to
--- 	-- github or gitlab / bitbucket (i.e. https://gitlab.com/user/project.git is still a whole clickable url)
+-- 	-- github or gitlab / bitbucket (i.e. https://github.com/doot/dotfiles.git is still a whole clickable url)
 -- 	table.insert(rules, {
 -- 		regex = [[["]?([\w\d]{1}[-\w\d]+)(/){1}([-\w\d\.]+)["]?%s+]],
 -- 		format = "https://www.github.com/$1/$3",

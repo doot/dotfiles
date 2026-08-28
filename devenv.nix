@@ -10,8 +10,10 @@
       "imgcat"
       "imgls"
       "wezterm.sh"
-      ".*/vim/bundle/.*"
+      ".*vim\/bundle.*"
+      ".*vim\/plugin.*"
     ];
     hooks.statix.settings.ignore = ["*vim/bundle*"]; # For whatever reason, statix git-hooks integration doesn't respect excludes above
+    hooks.lychee.settings.flags = "--verbose --cache=true --cache-exclude-status '429, 500..600' --exclude-all-private=true --exclude='go\/' --exclude='github\.com\/\\$1'";
   };
 }
