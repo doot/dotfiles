@@ -26,11 +26,11 @@
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1787794901,
-        "narHash": "sha256-LxOLvdHdvtLHSmPOqAswd0m3KoL+27xgZ8FR3yzGovQ=",
+        "lastModified": 1787881738,
+        "narHash": "sha256-RcTIzJeO86DUS48m2IXQznconZJ5MmL1H9gMegFZ04c=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "94dcc9aaf72e13f43c6b876bf9d907a88cf21571",
+        "rev": "3d2c030b7ba3da63bd68619c510aedd68cde11c9",
         "type": "github"
       },
       "original": {
@@ -46,11 +46,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1787797363,
-        "narHash": "sha256-YcnJbr8lenExafisuHxh/eYl7zdHqAMajKZQxOcoOFo=",
+        "lastModified": 1787882735,
+        "narHash": "sha256-5ZpC5Do/jauJ8PTs8u6Jb7xcWY8BDJg7ogfccnQmZko=",
         "owner": "doot",
         "repo": "devenv-base",
-        "rev": "a7324f4cd9a2911166c7a2e1358235b4e6218b82",
+        "rev": "1f7ba3a13effd4162c092ea7271c387886fdcb14",
         "type": "github"
       },
       "original": {
@@ -67,11 +67,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787796816,
-        "narHash": "sha256-w84KUpTUMA/IK9P/6XzG3odKqDTh48xLp/gNzxUdDqE=",
+        "lastModified": 1787880602,
+        "narHash": "sha256-c28o+WW/+aLDcDK+CUGbaPi+8mGyfhGZb7dlInzxJmY=",
         "ref": "refs/heads/main",
-        "rev": "1844cd56be1a2be08e4c80041e2db239d1f992a6",
-        "revCount": 9,
+        "rev": "faf04686e7c8ddc81cd67fba808b4092757db265",
+        "revCount": 11,
         "type": "git",
         "url": "ssh://git@github.com/doot/devenv-priv"
       },
