@@ -1,14 +1,18 @@
 ---
+# yaml-language-server: $schema=https://devenv.sh/devenv.schema.json
 inputs:
-  git-hooks:
-    url: github:cachix/git-hooks.nix
-    inputs:
-      nixpkgs:
-        follows: nixpkgs
+  devenv-base:
+    url: github:doot/devenv-base
+    flake: true
   nixpkgs:
-    url: github:cachix/devenv-nixpkgs/rolling
+    follows: devenv-base/nixpkgs
+  git-hooks:
+    follows: devenv-base/git-hooks
   nixpkgs-python:
     url: github:cachix/nixpkgs-python
     inputs:
       nixpkgs:
         follows: nixpkgs
+imports:
+  - devenv-base
+profile: python

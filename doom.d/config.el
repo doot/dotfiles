@@ -176,7 +176,7 @@
 ;
 ; (setq split-width-threshold 5000) ;; try to prevent splitting vertically when we want to split horizontally
 ;
-; (setq jiralib-url "https://jira01.corp.linkedin.com:8443")
+; (setq jiralib-url "")
 ; (after! auth-source
 ;   (setq auth-sources (nreverse auth-sources))) ;; fucking macos keychain does not support creation
 ;
