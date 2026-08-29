@@ -43,6 +43,14 @@ config.unix_domains = {
 config.color_scheme = 'Solarized Dark - Patched' -- closest to our iterm2 setup
 
 config.font = wezterm.font('FiraCode Nerd Font', { weight = "Light"})
+config.font = wezterm.font_with_fallback {
+  'FiraCode Nerd Font',
+  'Fira Code',
+  'Symbols Nerd Font Mono',
+  'JetBrains Mono',
+  'Font Awesome 7 Free',
+  'Noto Sans Bamum',
+}
 config.font_size = 13
 config.line_height = 1.1
 config.cell_width = 0.95
@@ -121,8 +129,6 @@ config.keys = {
     mods = 'CTRL|SHIFT|ALT',
     action = wezterm.action.AdjustPaneSize({'Down', 10}),
   },
-
-
 }
 
 config.front_end = "WebGpu"
@@ -313,7 +319,7 @@ require("wuake").setup {
 -- 	-- Make username/project paths clickable. this implies paths like the following are for github.
 -- 	-- ( "nvim-treesitter/nvim-treesitter" | wbthomason/packer.nvim | wez/wezterm | "wez/wezterm.git" )
 -- 	-- as long as a full url hyperlink regex exists above this it should not match a full url to
--- 	-- github or gitlab / bitbucket (i.e. https://gitlab.com/user/project.git is still a whole clickable url)
+-- 	-- github or gitlab / bitbucket (i.e. https://github.com/doot/dotfiles.git is still a whole clickable url)
 -- 	table.insert(rules, {
 -- 		regex = [[["]?([\w\d]{1}[-\w\d]+)(/){1}([-\w\d\.]+)["]?%s+]],
 -- 		format = "https://www.github.com/$1/$3",

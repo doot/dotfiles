@@ -1,62 +1,62 @@
 {
-    "workbench.colorTheme": "Oceanic Plus",
-    "editor.fontFamily": "'Fira Code'",
-    "editor.fontLigatures": true,
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true,
-        "suppressWelcomeNotice": true
-    },
-    "gitlens.keymap": "none",
-    "workbench.iconTheme": "vscode-icons",
-    "editor.tabSize": 2,
-    "window.zoomLevel": -0.5,
-    "editor.fontSize": 13,
-    "files.hotExit": "onExitAndWindowClose",
-    "standard.usePackageJson": true,
-    "vim.useSystemClipboard": true,
-    "vim.statusBarColorControl": true,
-    "vim.ignorecase": false,
-    "vim.incsearch": false,
-    "vim.textwidth": 100,
-    "vim.hlsearch": true,
-    "vsicons.dontShowNewVersionMessage": true,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "code-runner.enableAppInsights": false,
-    "gitlens.advanced.telemetry.enabled": false,
-    "vim.easymotion": true,
-    "vsicons.projectDetection.autoReload": true,
-    "gitlabPipelineMonitor.tokens": {
-        "gitlab.com": "Ct8xUtgcVAChD81sczMY"
-    },
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f",
-        "statusBar.foreground": "#ffffff",
-        "statusBar.debuggingForeground": "#ffffff"
-    },
-    "vim.handleKeys": {
-        "<C-d>": true,
-        "<C-a>": false
-    },
-    "vim.statusBarColors.visualline": "#96962E",
-    "editor.renderLineHighlight": "all",
-    "editor.occurrencesHighlight": "off",
-    "files.autoSave": "off",
-    "editor.cursorStyle": "line",
-    "settingsSync.ignoredExtensions": [],
-    "workbench.preferredLightColorTheme": "Visual Studio Dark",
-    "linkedin-extensions.directory": "/Users/jhauschi/.vscode-linkedin-extensions",
-    "terraform-ls.terraformExecPath": "/Users/jhauschi/.vscode-linkedin-extensions/terraform-ls/terraform-ls_darwin_arm64",
-    "terraform.languageServer": {
-        "pathToBinary": "/Users/jhauschi/.vscode-linkedin-extensions/terraform-ls/terraform-ls_darwin_arm64"
-    },
-    "remote.SSH.allowLocalServerDownload": true,
-    "terminal.integrated.enablePersistentSessions": false,
-    "remote.SSH.connectTimeout": 45,
-    "editor.inlineSuggest.enabled": true,
-    "git.useIntegratedAskPass": false,
-    "github.gitAuthentication": false,
-    "git.terminalAuthentication": false
+  "code-runner.enableAppInsights": false,
+  "editor.cursorStyle": "line",
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.inlineSuggest.enabled": true,
+  "editor.occurrencesHighlight": "off",
+  "editor.renderLineHighlight": "all",
+  "editor.tabSize": 2,
+  "files.autoSave": "off",
+  "files.hotExit": "onExitAndWindowClose",
+  "git.terminalAuthentication": false,
+  "git.useIntegratedAskPass": false,
+  "github.gitAuthentication": false,
+  "gitlabPipelineMonitor.tokens": {
+    "gitlab.com": "Ct8xUtgcVAChD81sczMY"
+  },
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true,
+    "suppressWelcomeNotice": true
+  },
+  "gitlens.advanced.telemetry.enabled": false,
+  "gitlens.keymap": "none",
+  "linkedin-extensions.directory": "/Users/jhauschi/.vscode-linkedin-extensions",
+  "remote.SSH.allowLocalServerDownload": true,
+  "remote.SSH.connectTimeout": 45,
+  "settingsSync.ignoredExtensions": [],
+  "standard.usePackageJson": true,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "terminal.integrated.enablePersistentSessions": false,
+  "terraform-ls.terraformExecPath": "/Users/jhauschi/.vscode-linkedin-extensions/terraform-ls/terraform-ls_darwin_arm64",
+  "terraform.languageServer": {
+    "pathToBinary": "/Users/jhauschi/.vscode-linkedin-extensions/terraform-ls/terraform-ls_darwin_arm64"
+  },
+  "vim.easymotion": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-d>": true
+  },
+  "vim.hlsearch": true,
+  "vim.ignorecase": false,
+  "vim.incsearch": false,
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.visualline": "#96962E",
+  "vim.textwidth": 100,
+  "vim.useSystemClipboard": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsicons.projectDetection.autoReload": true,
+  "window.zoomLevel": -0.5,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.debuggingForeground": "#ffffff",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.noFolderBackground": "#005f5f"
+  },
+  "workbench.colorTheme": "Oceanic Plus",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.preferredLightColorTheme": "Visual Studio Dark"
 }
