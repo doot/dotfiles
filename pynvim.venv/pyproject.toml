@@ -4,6 +4,6 @@ version = "0.1.0"
 description = "Dedicated venv for neovim"
 requires-python = ">=3.13"
 dependencies = [
-    "debugpy>=1.8.14",
-    "pynvim>=0.5.2",
+    "debugpy>=1.8.21",
+    "pynvim>=0.6.0",
 ]

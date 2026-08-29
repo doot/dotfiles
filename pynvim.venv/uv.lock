@@ -163,6 +163,6 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "debugpy", specifier = ">=1.8.14" },
-    { name = "pynvim", specifier = ">=0.5.2" },
+    { name = "debugpy", specifier = ">=1.8.21" },
+    { name = "pynvim", specifier = ">=0.6.0" },
 ]
