@@ -41,5 +41,12 @@ dataSources/
 .ropeproject/
 
 **/.claude/settings.local.json
+**/.claude/settings.json
 
 **/.claude/.cc-writes/
+
+core.*
+
+.lycheecache
+
+devenv.local.yaml
