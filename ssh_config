@@ -58,10 +58,10 @@ Host pve pve.jhauschildt.com
     Port 22
 
 Host slop nix-slopfucker slop.jhauschildt.com
-  HostName slop.jhauschildt.com
-  User doot
-  ForwardAgent yes
-  Port 22
+    HostName slop.jhauschildt.com
+    User doot
+    ForwardAgent yes
+    Port 22
 
 Host github.com
     AddKeysToAgent yes
@@ -71,3 +71,7 @@ Host github.com
 # Force all hosts on the local network to use bitwarden ssh-agent
 # Host 192.168.1.* *.jhauschildt.com
 #    IdentityAgent ~/.bitwarden-ssh-agent.sock
+
+Host git.nmd.jhauschildt.com
+    User forgejo
+    IdentityFile ~/.ssh/id_github
