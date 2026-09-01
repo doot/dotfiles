@@ -34,14 +34,35 @@ local spec = {
             }
           }
         }
-      }
+      },
+      nixd = {
+        settings = {
+          ['nixd'] = {
+            nixd = {
+              formatting = {
+                command = { "nixfmt" };
+              }
+            },
+            options = {
+              nixos = {
+                expr = string.format("(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.%s.options", vim.fn.hostname()),
+              },
+              home_manager = {
+                expr = string.format("(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.%s.options.home-manager.users.type.getSubOptions []", vim.fn.hostname()),
+              }
+            }
+          }
+        }
+      },
+
     },
   },
 }
 
--- Disable nil_ls (nix language server) on hosts that do not contain "nix" in the hostname
+-- Disable nil_ls (nix language server), nixd on hosts that do not contain "nix" in the hostname
 if string.match(vim.fn.hostname(), "nix") == nil then
   spec.opts.servers.nil_ls = { mason = false }
+  spec.opts.servers.nixd = { mason = false }
 end
 
 return spec
