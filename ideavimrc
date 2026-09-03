@@ -81,3 +81,11 @@ set notimeout
 
 " Enable surround plugin
 set surround
+
+set easymotion
+
+set which-key
+
+" Enable lazy-idea plugin: https://github.com/cufarvid/lazy-idea
+source ~/.dotfiles/lazy-idea/lazy-idea.vim
+

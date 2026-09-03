@@ -127,3 +127,6 @@
 	path = vim/bundle/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
   ignore = dirty
+[submodule "lazy-idea"]
+	path = lazy-idea
+	url = https://github.com/cufarvid/lazy-idea.git
