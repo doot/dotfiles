@@ -54,7 +54,13 @@ local spec = {
           }
         }
       },
-
+      copilot = {
+        settings = {
+          telemetry = {
+            telemetryLevel = "off"
+          },
+        },
+      },
     },
   },
 }
