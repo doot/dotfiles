@@ -1,6 +1,7 @@
 return {
   "mason-org/mason.nvim",
   opts = {
+    PATH = "append", # Allow any locally installed tools to take precedence over mason
     ensure_installed = {
       "autotools-language-server",
       "bacon-ls",
