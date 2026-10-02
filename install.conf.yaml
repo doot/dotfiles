@@ -29,6 +29,12 @@
       if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
       path: ${HOME}/.dotfiles_work/bin_li
       create: true
+    .claude/CLAUDE.md:
+      if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
+      path: ${HOME}/.dotfiles_work/GLOBAL-AGENT.md
+    ~/.copilot/copilot-instructions.md:
+      if: '[[ $(hostname -f) == *"linkedin.biz"* ]]'
+      path: ${HOME}/.dotfiles_work/GLOBAL-AGENT.md
 # NAS specific files
 - link:
     ~/docker-compose.yml:
