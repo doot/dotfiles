@@ -1,4 +1,8 @@
 -- luacheck: read globals vim
+local nixos_options = ("(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.%s.options"):format(
+  vim.fn.hostname()
+)
+
 return {
   "neovim/nvim-lspconfig",
   ---@class PluginLspOpts
@@ -31,7 +35,7 @@ return {
             nix = {
               flake = {
                 autoArchive = true,
-                -- TODO: This may take some time and consume a lot of resources, consider disabling it if it's not worth it
+                -- TODO: Consider disabling this if evaluating flake inputs gets too expensive.
                 autoEvalInputs = true,
               }
             }
@@ -50,10 +54,10 @@ return {
             },
             options = {
               nixos = {
-                expr = string.format("(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.%s.options", vim.fn.hostname()),
+                expr = nixos_options,
               },
               home_manager = {
-                expr = string.format("(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.%s.options.home-manager.users.type.getSubOptions []", vim.fn.hostname()),
+                expr = nixos_options .. ".home-manager.users.type.getSubOptions []",
               }
             }
           }
