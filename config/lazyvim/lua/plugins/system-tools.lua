@@ -1,3 +1,4 @@
+-- luacheck: read globals vim
 if not vim.g.lazyvim_system_tools then
   return {}
 end
