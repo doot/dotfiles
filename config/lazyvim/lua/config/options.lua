@@ -22,12 +22,6 @@ vim.opt.titleold = "bash"
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_python_ruff = "ruff"
 
-vim.g.lazyvim_system_tools = vim.fn.hostname() == "nix-slopfucker" and vim.env.USER == "doot"
-if not vim.g.lazyvim_system_tools then
-  vim.lsp.enable('nixd')
-  vim.lsp.enable('statix')
-end
-
 -- Dedicated venv that has pynvim installed. Specifying this explicitly reduces startup time.
 vim.g.python3_host_prog = "~/.dotfiles/pynvim.venv/.venv/bin/python3"
 

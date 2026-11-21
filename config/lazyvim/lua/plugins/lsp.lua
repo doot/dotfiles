@@ -1,4 +1,5 @@
-local spec = {
+-- luacheck: read globals vim
+return {
   "neovim/nvim-lspconfig",
   ---@class PluginLspOpts
   opts = {
@@ -23,6 +24,8 @@ local spec = {
         },
       },
       nil_ls = {
+        enabled = vim.fn.executable("nil") == 1,
+        mason = false,
         settings = {
           ['nil'] = {
             nix = {
@@ -36,6 +39,8 @@ local spec = {
         }
       },
       nixd = {
+        enabled = vim.fn.executable("nixd") == 1,
+        mason = false,
         settings = {
           ['nixd'] = {
             nixd = {
@@ -64,11 +69,3 @@ local spec = {
     },
   },
 }
-
--- Disable nil_ls (nix language server), nixd on hosts that do not contain "nix" in the hostname
-if string.match(vim.fn.hostname(), "nix") == nil then
-  spec.opts.servers.nil_ls = { mason = false }
-  spec.opts.servers.nixd = { mason = false }
-end
-
-return spec

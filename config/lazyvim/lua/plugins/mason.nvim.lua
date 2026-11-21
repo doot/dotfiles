@@ -1,3 +1,12 @@
+-- luacheck: read globals vim
+if vim.fn.has("mac") == 0 or vim.fn.executable("nix") == 1 then
+  return {
+    { "mason-org/mason.nvim", cond = false },
+    { "mason-org/mason-lspconfig.nvim", cond = false },
+    { "jay-babu/mason-nvim-dap.nvim", cond = false },
+  }
+end
+
 return {
   "mason-org/mason.nvim",
   opts = {

@@ -238,6 +238,8 @@ brew "tig"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Parser generator for Neovim
+brew "tree-sitter-cli"
 # Config manager based on git
 brew "vcsh"
 # Vi 'workalike' with many additional features
