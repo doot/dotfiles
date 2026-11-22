@@ -1,6 +1,5 @@
 -- luacheck: read globals vim
-local data = vim.fn.stdpath("data")
-local lazypath = data .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
   local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
@@ -16,12 +15,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Neovim must see the parser site when lazy.nvim sets the runtime path.
-vim.fn.mkdir(data .. "/site", "p")
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- An explicit install_dir makes new parsers visible without a restart.
+    { "nvim-treesitter/nvim-treesitter", opts = { install_dir = vim.fn.stdpath("data") .. "/site" } },
     -- import/override with your plugins
     { import = "plugins" },
   },

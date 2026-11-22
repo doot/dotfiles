@@ -35,7 +35,8 @@ return {
             nix = {
               flake = {
                 autoArchive = true,
-                -- TODO: Consider disabling this if evaluating flake inputs gets too expensive.
+                -- TODO: This may take some time and consume a lot of resources,
+                -- consider disabling it if it's not worth it
                 autoEvalInputs = true,
               }
             }
@@ -63,6 +64,7 @@ return {
           }
         }
       },
+      statix = false,
       copilot = {
         settings = {
           telemetry = {
