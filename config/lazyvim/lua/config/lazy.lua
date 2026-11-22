@@ -19,8 +19,6 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- An explicit install_dir makes new parsers visible without a restart.
-    { "nvim-treesitter/nvim-treesitter", opts = { install_dir = vim.fn.stdpath("data") .. "/site" } },
     -- import/override with your plugins
     { import = "plugins" },
   },
