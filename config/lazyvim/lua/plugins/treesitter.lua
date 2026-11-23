@@ -1,4 +1,4 @@
--- luacheck: read globals vim LazyVim
+-- luacheck: read globals vim LazyVim, globals vim.g.loaded_nvim_treesitter
 local grammars = vim.env.NVIM_TREESITTER_GRAMMARS
 if not grammars then
   local function refresh(previous)
