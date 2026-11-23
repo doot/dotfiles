@@ -3,30 +3,42 @@ local grammars = vim.env.NVIM_TREESITTER_GRAMMARS
 if not grammars then
   local queries = { "highlights", "indents", "folds", "textobjects" }
 
-  local function missing_queries(installed)
+  local function query_additions(pattern)
     local dir = require("nvim-treesitter.config").get_install_dir("queries")
-    local missing = {}
-    for lang in pairs(installed) do
-      missing[lang] = {}
-      for _, query in ipairs(queries) do
-        local path = vim.fs.joinpath(dir, lang, query .. ".scm")
-        if not vim.uv.fs_stat(path) then
-          missing[lang][query] = path
+    local function paths()
+      return vim.fn.globpath(dir, pattern, true, true)
+    end
+    local before = {}
+    for _, path in ipairs(paths()) do
+      before[path] = true
+    end
+    return function(added)
+      for _, path in ipairs(paths()) do
+        if not before[path] then
+          added[path] = true
         end
       end
     end
-    return missing
   end
 
-  local function refresh(previous, missing)
+  local function refresh(previous, added)
     local installed = LazyVim.treesitter.get_installed(true)
     local changed = {}
+    local function restored(lang, query)
+      if not next(added) then
+        return false
+      end
+      local ok, files = pcall(vim.treesitter.query.get_files, lang, query)
+      return ok and vim.iter(files):any(function(path)
+        return added[path] or added[vim.fs.dirname(path)]
+      end)
+    end
     for lang in pairs(installed) do
       for _, query in ipairs(queries) do
-        local path = missing and missing[lang] and missing[lang][query]
-        if not previous[lang] or (path and vim.uv.fs_stat(path)) then
+        if not previous[lang] or restored(lang, query) then
           vim.treesitter.query.get:clear(lang, query)
-          changed[lang] = true
+          changed[lang] = changed[lang] or {}
+          changed[lang][query] = true
         end
       end
     end
@@ -35,6 +47,10 @@ if not grammars then
       local lang = vim.treesitter.language.get_lang(vim.bo[buf].filetype)
       if changed[lang] then
         vim.api.nvim_buf_call(buf, function()
+          -- start() reuses an attached highlighter, including its cached partial query.
+          if changed[lang].highlights and vim.treesitter.highlighter.active[buf] then
+            vim.treesitter.stop(buf)
+          end
           for _, group in ipairs({ "lazyvim_treesitter", "lazyvim_treesitter_textobjects" }) do
             if vim.fn.exists("#" .. group .. "#FileType") == 1 then
               vim.api.nvim_exec_autocmds("FileType", { buffer = buf, group = group, modeline = false })
@@ -54,27 +70,38 @@ if not grammars then
       plugin.config = LazyVim.inject.args(config, function()
         plugin.config = config
         local installer = require("nvim-treesitter.install")
-        local install, pending = installer.install, 0
-        local previous, missing
-        installer.install = function(languages, options)
-          if pending == 0 then
-            previous = LazyVim.treesitter.get_installed(true)
-            missing = nil
-          end
-          -- A forced install can restore queries without adding a parser, including for dependencies.
-          if options and options.force and not missing then
-            missing = missing_queries(previous)
-          end
-          pending = pending + 1
-          local task = install(languages, options)
-          -- TSUpdate fires before installation; another install can still be writing its queries.
-          task:await(function()
-            pending = pending - 1
-            if pending == 0 then
-              refresh(previous, missing)
+        local pending = 0
+        local previous, directories, files
+        for _, method in ipairs({ "install", "update" }) do
+          local run = installer[method]
+          installer[method] = function(languages, options)
+            local task = run(languages, options)
+            -- Both installers schedule their writes; a finished task had nothing to install.
+            if task:status() == "dead" then
+              return task
             end
-          end)
-          return task
+            if pending == 0 then
+              previous = LazyVim.treesitter.get_installed(true)
+              directories, files = query_additions("*"), nil
+            end
+            -- Only a force or update can replace individual files in an installed directory.
+            if not files and (method == "update" or (options and options.force)) then
+              files = query_additions("*/*.scm")
+            end
+            pending = pending + 1
+            task:await(function()
+              pending = pending - 1
+              if pending == 0 then
+                local added = {}
+                directories(added)
+                if files then
+                  files(added)
+                end
+                refresh(previous, added)
+              end
+            end)
+            return task
+          end
         end
       end)
     end,

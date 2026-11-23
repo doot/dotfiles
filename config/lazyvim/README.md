@@ -5,7 +5,8 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 ## Java debugging without Mason
 
-Put `jdtls` on the project's `PATH`. For debugging, add the `share` directory of
+Put `jdtls` on the project's `PATH`, or set LazyVim's `cmd` or `full_cmd` to use
+a custom launcher. For debugging, add the `share` directory of
 `pkgs.vscode-extensions.vscjava.vscode-java-debug` to `XDG_DATA_DIRS`; for JUnit,
 also add the one from `vscode-java-test`. Neither extension is needed for editing.
 

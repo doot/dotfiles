@@ -1,4 +1,4 @@
--- luacheck: read globals vim
+-- luacheck: read globals vim LazyVim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -19,6 +19,16 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- Keep the default launcher on project PATH before user specs can pin a command.
+    {
+      "mfussenegger/nvim-jdtls",
+      optional = true,
+      opts = function(_, opts)
+        if opts.cmd and not LazyVim.has("mason.nvim") then
+          opts.cmd[1] = "jdtls"
+        end
+      end,
+    },
     -- import/override with your plugins
     { import = "plugins" },
   },

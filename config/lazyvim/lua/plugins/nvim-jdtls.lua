@@ -32,31 +32,31 @@ return {
     if LazyVim.has("mason.nvim") or type(plugin.config) ~= "function" then
       return ft
     end
-    local source = debug.getinfo(plugin.config, "S").source
-    local attach
+    local configure = plugin.config
+    plugin.config = LazyVim.inject.args(configure, function()
+      plugin.config = configure
+      local jdtls = require("jdtls")
+      local start = jdtls.start_or_attach
+      jdtls.start_or_attach = function(config, ...)
+        if type(config.cmd) == "table" and config.cmd[1] == "jdtls" then
+          local executable = vim.fn.exepath("jdtls")
+          if executable == "" then
+            return
+          end
+          local cmd = vim.list_slice(config.cmd)
+          cmd[1] = executable
+          config = vim.tbl_extend("force", config, { cmd = cmd })
+        end
+        return start(config, ...)
+      end
+    end)
+    -- The Java extra attaches on load; replaying FileType would evaluate full_cmd twice.
     vim.api.nvim_create_autocmd("FileType", {
       group = vim.api.nvim_create_augroup("dotfiles_jdtls", { clear = true }),
       pattern = ft,
-      callback = function(event)
-        local cmd = vim.fn.exepath("jdtls")
-        if cmd == "" then
-          return
-        end
-        LazyVim.opts(plugin.name).cmd[1] = cmd
-        if attach then
-          attach(event)
-          return
-        end
-        -- The Java extra attaches on load and registers a FileType callback for later buffers.
+      once = true,
+      callback = function()
         require("lazy").load({ plugins = { plugin.name } })
-        local handlers = vim.tbl_filter(function(ac)
-          return type(ac.callback) == "function" and debug.getinfo(ac.callback, "S").source == source
-        end, vim.api.nvim_get_autocmds({ event = "FileType", pattern = ft }))
-        if #handlers ~= 1 then
-          return true -- never replace an unidentified callback
-        end
-        attach = handlers[1].callback
-        vim.api.nvim_del_autocmd(handlers[1].id)
       end,
     })
     return {}
