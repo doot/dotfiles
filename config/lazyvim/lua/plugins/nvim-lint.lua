@@ -25,6 +25,9 @@ return {
         end,
       },
       ["markdownlint-cli2"] = {
+        condition = function()
+          return vim.fn.executable("markdownlint-cli2") == 1
+        end,
         prepend_args = { "--config", vim.fn.expand("$HOME/.dotfiles/.markdownlint-cli2.yaml"), "--" },
       },
     })
