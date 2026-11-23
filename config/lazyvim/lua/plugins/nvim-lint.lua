@@ -1,4 +1,4 @@
--- luacheck: read globals vim
+-- luacheck: read globals vim LazyVim
 return {
   "mfussenegger/nvim-lint",
   opts = function(_, opts)
@@ -13,23 +13,21 @@ return {
       end,
     })
 
-    opts.linters = vim.tbl_deep_extend("force", opts.linters, {
-      sqlfluff = {
-        condition = function()
-          return vim.fn.executable("sqlfluff") == 1
-        end,
-      },
-      statix = {
-        condition = function()
-          return vim.fn.executable("statix") == 1
-        end,
-      },
-      ["markdownlint-cli2"] = {
-        condition = function()
-          return vim.fn.executable("markdownlint-cli2") == 1
-        end,
-        prepend_args = { "--config", vim.fn.expand("$HOME/.dotfiles/.markdownlint-cli2.yaml"), "--" },
-      },
-    })
+    -- The Elixir extra replaces linters_by_ft after the Docker extra registers Hadolint.
+    if LazyVim.has_extra("lang.docker") then
+      opts.linters_by_ft.dockerfile = opts.linters_by_ft.dockerfile or { "hadolint" }
+    end
+
+    for _, cmd in ipairs({ "hadolint", "markdownlint-cli2", "sqlfluff", "statix" }) do
+      opts.linters[cmd] = opts.linters[cmd] or {}
+      opts.linters[cmd].condition = function()
+        return vim.fn.executable(cmd) == 1
+      end
+    end
+    opts.linters["markdownlint-cli2"].prepend_args = {
+      "--config",
+      vim.fn.expand("$HOME/.dotfiles/.markdownlint-cli2.yaml"),
+      "--",
+    }
   end,
 }

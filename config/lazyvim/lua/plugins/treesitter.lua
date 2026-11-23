@@ -12,7 +12,9 @@ if not grammars then
       local buf = info.bufnr
       local lang = vim.treesitter.language.get_lang(vim.bo[buf].filetype)
       if installed[lang] and not previous[lang] then
-        vim.api.nvim_exec_autocmds("FileType", { buffer = buf, group = "lazyvim_treesitter", modeline = false })
+        vim.api.nvim_buf_call(buf, function()
+          vim.api.nvim_exec_autocmds("FileType", { buffer = buf, group = "lazyvim_treesitter", modeline = false })
+        end)
       end
     end
   end

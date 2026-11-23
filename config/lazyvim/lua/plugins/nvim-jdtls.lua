@@ -65,34 +65,46 @@ return {
     if LazyVim.has("mason.nvim") or not (opts.dap and LazyVim.has("nvim-dap")) then
       return
     end
-    local jars = bundles("debug")
-    if #jars == 0 then
-      return
+    local function test_keys(client, buf)
+      local commands = vim.tbl_get(client.server_capabilities, "executeCommandProvider", "commands") or {}
+      if not opts.test or not vim.tbl_contains(commands, "vscode.java.startDebugSession") then
+        return
+      end
+      if not vim.tbl_contains(commands, "vscode.java.test.junit.argument") then
+        return
+      end
+      local dap = require("jdtls.dap")
+      local test = type(opts.test) == "table" and opts.test or {}
+      local function map(key, action, desc)
+        vim.keymap.set("n", "<leader>" .. key, function()
+          action(test)
+        end, { buffer = buf, desc = desc })
+      end
+      map("tt", dap.test_class, "Run Test Class")
+      map("tr", dap.test_nearest_method, "Run Nearest Test")
+      map("tT", dap.pick_test, "Pick Test")
     end
-    if opts.test then
-      vim.list_extend(jars, bundles("test"))
+
+    local jdtls = opts.jdtls
+    opts.jdtls = function(config)
+      if type(jdtls) == "function" then
+        config = jdtls(config) or config
+      elseif jdtls then
+        config = vim.tbl_deep_extend("force", config, jdtls)
+      end
+      local jars = bundles("debug")
+      if #jars == 0 then
+        return config
+      end
+      if opts.test then
+        vim.list_extend(jars, bundles("test"))
+      end
+      local existing = vim.tbl_get(config, "init_options", "bundles") or {}
+      local attach = config.on_attach
+      return vim.tbl_deep_extend("force", config, {
+        init_options = { bundles = LazyVim.dedup(vim.list_extend(vim.list_slice(existing), jars)) },
+        on_attach = vim.list_extend({ test_keys }, type(attach) == "table" and attach or { attach }),
+      })
     end
-    opts.jdtls = {
-      init_options = { bundles = jars },
-      on_attach = function(client, buf)
-        local commands = vim.tbl_get(client.server_capabilities, "executeCommandProvider", "commands") or {}
-        if not opts.test or not vim.tbl_contains(commands, "vscode.java.startDebugSession") then
-          return
-        end
-        if not vim.tbl_contains(commands, "vscode.java.test.junit.argument") then
-          return
-        end
-        local dap = require("jdtls.dap")
-        local test = type(opts.test) == "table" and opts.test or {}
-        local function map(key, action, desc)
-          vim.keymap.set("n", "<leader>" .. key, function()
-            action(test)
-          end, { buffer = buf, desc = desc })
-        end
-        map("tt", dap.test_class, "Run Test Class")
-        map("tr", dap.test_nearest_method, "Run Nearest Test")
-        map("tT", dap.pick_test, "Pick Test")
-      end,
-    }
   end,
 }
