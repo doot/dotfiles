@@ -69,9 +69,17 @@ return {
       local commands = vim.tbl_get(client.server_capabilities, "executeCommandProvider", "commands") or {}
       return vim.tbl_contains(commands, command)
     end
-    local function setup_dap(client)
-      if supports(client, "vscode.java.startDebugSession") then
-        require("jdtls").setup_dap(opts.dap)
+    local function configure_dap(setup, options, automatic)
+      -- Both nvim-jdtls helpers write the same provider slot. Preserve a user replacement.
+      local providers = require("dap").providers.configs
+      local provider = providers.jdtls
+      local source = type(provider) == "function" and debug.getinfo(provider, "S").source
+      if not automatic and source == debug.getinfo(setup, "S").source then
+        provider = nil
+      end
+      setup(options)
+      if provider or not automatic then
+        providers.jdtls = provider
       end
     end
     local function test_keys(client, buf)
@@ -100,12 +108,30 @@ return {
       elseif jdtls then
         config = vim.tbl_deep_extend("force", config, jdtls)
       end
-      if type(opts.dap) == "table" then
-        -- nvim-jdtls registers the adapter on LspAttach; only the first setup keeps its options.
-        local init = config.on_init
-        local callbacks = type(init) == "table" and vim.list_slice(init) or { init }
-        table.insert(callbacks, setup_dap)
-        config = vim.tbl_extend("force", config, { on_init = callbacks })
+      local main = opts.dap_main
+      local configured = type(main) == "table" and next(main) ~= nil
+      local automatic = main ~= false and not configured
+      -- nvim-jdtls registers the adapter on LspAttach; only the first setup keeps its options.
+      local init = config.on_init
+      local callbacks = type(init) == "table" and vim.list_slice(init) or { init }
+      table.insert(callbacks, function(client)
+        if supports(client, "vscode.java.startDebugSession") then
+          configure_dap(require("jdtls").setup_dap, type(opts.dap) == "table" and opts.dap or {}, automatic)
+        end
+      end)
+      config = vim.tbl_extend("force", config, { on_init = callbacks })
+      if configured then
+        local function discover(client, buf)
+          if supports(client, "vscode.java.resolveMainClass") then
+            vim.api.nvim_buf_call(buf, function()
+              configure_dap(require("jdtls.dap").setup_dap_main_class_configs, main, false)
+            end)
+          end
+        end
+        local attach = config.on_attach
+        config = vim.tbl_extend("force", config, {
+          on_attach = vim.list_extend({ discover }, type(attach) == "table" and attach or { attach }),
+        })
       end
       local jars = bundles("debug")
       if #jars == 0 then
