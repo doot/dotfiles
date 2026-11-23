@@ -65,12 +65,20 @@ return {
     if LazyVim.has("mason.nvim") or not (opts.dap and LazyVim.has("nvim-dap")) then
       return
     end
-    local function test_keys(client, buf)
+    local function supports(client, command)
       local commands = vim.tbl_get(client.server_capabilities, "executeCommandProvider", "commands") or {}
-      if not opts.test or not vim.tbl_contains(commands, "vscode.java.startDebugSession") then
+      return vim.tbl_contains(commands, command)
+    end
+    local function setup_dap(client)
+      if supports(client, "vscode.java.startDebugSession") then
+        require("jdtls").setup_dap(opts.dap)
+      end
+    end
+    local function test_keys(client, buf)
+      if not opts.test or not supports(client, "vscode.java.startDebugSession") then
         return
       end
-      if not vim.tbl_contains(commands, "vscode.java.test.junit.argument") then
+      if not supports(client, "vscode.java.test.junit.argument") then
         return
       end
       local dap = require("jdtls.dap")
@@ -91,6 +99,13 @@ return {
         config = jdtls(config) or config
       elseif jdtls then
         config = vim.tbl_deep_extend("force", config, jdtls)
+      end
+      if type(opts.dap) == "table" then
+        -- nvim-jdtls registers the adapter on LspAttach; only the first setup keeps its options.
+        local init = config.on_init
+        local callbacks = type(init) == "table" and vim.list_slice(init) or { init }
+        table.insert(callbacks, setup_dap)
+        config = vim.tbl_extend("force", config, { on_init = callbacks })
       end
       local jars = bundles("debug")
       if #jars == 0 then

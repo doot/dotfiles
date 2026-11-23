@@ -5,7 +5,9 @@ if not grammars then
     local installed = LazyVim.treesitter.get_installed(true)
     for lang in pairs(installed) do
       if not previous[lang] then
-        vim.treesitter.query.get:clear(lang, "highlights")
+        for _, query in ipairs({ "highlights", "indents", "folds", "textobjects" }) do
+          vim.treesitter.query.get:clear(lang, query)
+        end
       end
     end
     for _, info in ipairs(vim.fn.getbufinfo({ bufloaded = 1 })) do
@@ -13,7 +15,11 @@ if not grammars then
       local lang = vim.treesitter.language.get_lang(vim.bo[buf].filetype)
       if installed[lang] and not previous[lang] then
         vim.api.nvim_buf_call(buf, function()
-          vim.api.nvim_exec_autocmds("FileType", { buffer = buf, group = "lazyvim_treesitter", modeline = false })
+          for _, group in ipairs({ "lazyvim_treesitter", "lazyvim_treesitter_textobjects" }) do
+            if vim.fn.exists("#" .. group .. "#FileType") == 1 then
+              vim.api.nvim_exec_autocmds("FileType", { buffer = buf, group = group, modeline = false })
+            end
+          end
         end)
       end
     end
@@ -31,7 +37,7 @@ if not grammars then
         local install, pending, previous = installer.install, 0, nil
         installer.install = function(...)
           if pending == 0 then
-            previous = LazyVim.treesitter.get_installed()
+            previous = LazyVim.treesitter.get_installed(true)
           end
           pending = pending + 1
           local task = install(...)
