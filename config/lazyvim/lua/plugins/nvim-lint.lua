@@ -15,61 +15,64 @@ local function in_cwd(cwd, fn)
   return result
 end
 
-local function go_args(linter, overrides)
-  if overrides.args then
-    return
-  end
+local function go_args(exe)
+  -- The adapter hard-codes its version probe. Redirect only that call, not the PATH used by go env.
+  local fn = setmetatable({
+    system = function(argv)
+      if argv[1] == "golangci-lint" then
+        argv[1] = exe
+      end
+      return vim.fn.system(argv)
+    end,
+  }, { __index = vim.fn })
+  local scoped = setmetatable({ fn = fn }, { __index = vim })
+  local adapter = assert(loadfile(LazyVim.get_plugin("nvim-lint").dir .. "/lua/lint/linters/golangcilint.lua"))
+  return setfenv(adapter, setmetatable({ vim = scoped }, { __index = getfenv(adapter) }))().args
+end
+
+local function go_guard(overrides)
   local previous
-  return function(exe)
+  return function(linter, exe)
     if vim.fn.executable("go") == 0 then
       return false
     end
-    local context = { exe, vim.uv.cwd(), vim.env.PATH }
-    if not vim.deep_equal(previous, context) then
-      -- The stock adapter probes golangci-lint and the current Go module as it loads.
-      local path = vim.env.PATH
-      if vim.fs.basename(exe) == "golangci-lint" then
-        path = path .. ":" .. vim.fs.dirname(exe)
+    if type(overrides) ~= "function" and not overrides.args then
+      local context = { exe, vim.uv.cwd(), vim.env.PATH }
+      if not vim.deep_equal(previous, context) then
+        local args = go_args(exe)
+        if not args then
+          return false
+        end
+        linter.args = vim.list_extend(args, overrides.prepend_args or {})
+        previous = context
       end
-      local args = vim._with({ env = { PATH = path } }, function()
-        return dofile(vim.api.nvim_get_runtime_file("lua/lint/linters/golangcilint.lua", false)[1]).args
-      end)
-      if not args then
-        return false
-      end
-      linter.args = vim.list_extend(args, overrides.prepend_args or {})
-      previous = context
     end
     return true
   end
 end
 
-local function guard(linter, prepare)
-  local condition = linter.condition
-  linter.condition = function(ctx)
-    if condition and not condition(ctx) then
-      return false
-    end
-    return in_cwd(linter.cwd, function()
-      local cmd = linter.cmd
-      local resolved = type(cmd) == "function" and cmd() or cmd
-      local path = vim.tbl_get(linter, "env", "PATH") or vim.env.PATH
-      return vim._with({ env = { PATH = path == "" and "." or path } }, function()
-        local exe = vim.fn.exepath(resolved)
-        if exe == "" or (prepare and not prepare(exe)) then
-          return false
-        end
-        if type(cmd) == "function" then
-          -- Use the command already resolved for this event, not a second call to the project.
-          linter.cmd = function()
-            linter.cmd = cmd
-            return resolved
-          end
-        end
-        return true
+local function lint_options(prepare)
+  local command
+  return {
+    filter = function(linter)
+      local ok, eligible = pcall(in_cwd, linter.cwd, function()
+        command = type(linter.cmd) == "function" and linter.cmd() or linter.cmd
+        local path = vim.tbl_get(linter, "env", "PATH") or vim.env.PATH
+        return vim._with({ env = { PATH = path == "" and "." or path } }, function()
+          local exe = vim.fn.exepath(command)
+          return exe ~= "" and (not prepare or prepare(linter, exe))
+        end)
       end)
-    end)
-  end
+      if not ok then
+        vim.notify_once(tostring(eligible), vim.log.levels.WARN)
+      end
+      return ok and eligible
+    end,
+    wrap_linter = function(linter)
+      linter.cmd = command
+      return linter
+    end,
+  }
 end
 
 return {
@@ -85,12 +88,16 @@ return {
   end,
   init = function()
     LazyVim.on_load("nvim-lint", function()
-      local linters = require("lint").linters
-      local opts = LazyVim.opts("nvim-lint").linters
-      for _, name in ipairs(optional) do
-        local linter = linters[name]
-        if type(linter) == "table" then
-          guard(linter, name == "golangcilint" and go_args(linter, opts[name] or {}))
+      local lint = require("lint")
+      local run = lint.try_lint
+      local go = go_guard(LazyVim.opts("nvim-lint").linters.golangcilint or {})
+      lint.try_lint = function(names, options)
+        -- LazyVim passes a list without options. Preserve callers' own filters and wrappers.
+        if type(names) ~= "table" or options then
+          return run(names, options)
+        end
+        for _, name in ipairs(names) do
+          run(name, vim.list_contains(optional, name) and lint_options(name == "golangcilint" and go) or nil)
         end
       end
     end)
