@@ -7,16 +7,10 @@ return {
   "neovim/nvim-lspconfig",
   ---@class PluginLspOpts
   opts = {
-    setup = {
-      nil_ls = function()
-        return vim.fn.executable("nil") == 0
-      end,
-      nixd = function()
-        return vim.fn.executable("nixd") == 0
-      end,
-    },
     ---@type lspconfig.options
     servers = {
+      -- Mason's separate tool list supplies the fallback without delaying a project server.
+      gopls = { mason = false },
       basedpyright = {
         settings = {
           basedpyright = {
