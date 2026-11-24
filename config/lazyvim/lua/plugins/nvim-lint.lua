@@ -18,11 +18,14 @@ return {
       opts.linters_by_ft.dockerfile = opts.linters_by_ft.dockerfile or { "hadolint" }
     end
 
-    for _, cmd in ipairs({ "hadolint", "markdownlint-cli2", "sqlfluff", "statix" }) do
-      opts.linters[cmd] = opts.linters[cmd] or {}
-      opts.linters[cmd].condition = function()
-        return vim.fn.executable(cmd) == 1
+    for _, name in ipairs({ "credo", "hadolint", "markdownlint-cli2", "sqlfluff", "statix" }) do
+      local cmd = name == "credo" and "mix" or name
+      local linter = opts.linters[name] or {}
+      local condition = linter.condition
+      linter.condition = function(ctx)
+        return vim.fn.executable(cmd) == 1 and (not condition or condition(ctx))
       end
+      opts.linters[name] = linter
     end
     opts.linters["markdownlint-cli2"].prepend_args = {
       "--config",

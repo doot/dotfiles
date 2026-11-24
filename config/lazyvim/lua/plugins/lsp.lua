@@ -7,6 +7,14 @@ return {
   "neovim/nvim-lspconfig",
   ---@class PluginLspOpts
   opts = {
+    setup = {
+      nil_ls = function()
+        return vim.fn.executable("nil") == 0
+      end,
+      nixd = function()
+        return vim.fn.executable("nixd") == 0
+      end,
+    },
     ---@type lspconfig.options
     servers = {
       basedpyright = {
@@ -28,7 +36,6 @@ return {
         },
       },
       nil_ls = {
-        enabled = vim.fn.executable("nil") == 1,
         mason = false,
         settings = {
           ['nil'] = {
@@ -44,7 +51,6 @@ return {
         }
       },
       nixd = {
-        enabled = vim.fn.executable("nixd") == 1,
         mason = false,
         settings = {
           ['nixd'] = {
