@@ -1,9 +1,16 @@
-local spec = {
+-- luacheck: read globals vim
+local nixos_options = ("(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.%s.options"):format(
+  vim.fn.hostname()
+)
+
+return {
   "neovim/nvim-lspconfig",
   ---@class PluginLspOpts
   opts = {
     ---@type lspconfig.options
     servers = {
+      -- Mason's separate tool list supplies the fallback without delaying a project server.
+      gopls = { mason = false },
       basedpyright = {
         settings = {
           basedpyright = {
@@ -23,12 +30,14 @@ local spec = {
         },
       },
       nil_ls = {
+        mason = false,
         settings = {
           ['nil'] = {
             nix = {
               flake = {
                 autoArchive = true,
-                -- TODO: This may take some time and consume a lot of resources, consider disabling it if it's not worth it
+                -- TODO: This may take some time and consume a lot of resources,
+                -- consider disabling it if it's not worth it
                 autoEvalInputs = true,
               }
             }
@@ -36,6 +45,7 @@ local spec = {
         }
       },
       nixd = {
+        mason = false,
         settings = {
           ['nixd'] = {
             nixd = {
@@ -45,15 +55,16 @@ local spec = {
             },
             options = {
               nixos = {
-                expr = string.format("(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.%s.options", vim.fn.hostname()),
+                expr = nixos_options,
               },
               home_manager = {
-                expr = string.format("(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.%s.options.home-manager.users.type.getSubOptions []", vim.fn.hostname()),
+                expr = nixos_options .. ".home-manager.users.type.getSubOptions []",
               }
             }
           }
         }
       },
+      statix = false,
       copilot = {
         settings = {
           telemetry = {
@@ -64,11 +75,3 @@ local spec = {
     },
   },
 }
-
--- Disable nil_ls (nix language server), nixd on hosts that do not contain "nix" in the hostname
-if string.match(vim.fn.hostname(), "nix") == nil then
-  spec.opts.servers.nil_ls = { mason = false }
-  spec.opts.servers.nixd = { mason = false }
-end
-
-return spec
