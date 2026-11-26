@@ -1,8 +1,3 @@
--- luacheck: read globals vim
-local nixos_options = ("(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.%s.options"):format(
-  vim.fn.hostname()
-)
-
 return {
   "neovim/nvim-lspconfig",
   ---@class PluginLspOpts
@@ -32,43 +27,31 @@ return {
       nil_ls = {
         mason = false,
         settings = {
-          ['nil'] = {
+          ["nil"] = {
             nix = {
               flake = {
-                autoArchive = true,
-                -- TODO: This may take some time and consume a lot of resources,
-                -- consider disabling it if it's not worth it
+                -- A path: archive copies even Git-ignored files into the Nix store.
+                autoArchive = false,
+                -- Evaluating large inputs like nixpkgs for completion can still take time and memory.
                 autoEvalInputs = true,
-              }
-            }
-          }
-        }
+              },
+            },
+          },
+        },
       },
       nixd = {
         mason = false,
         settings = {
-          ['nixd'] = {
-            nixd = {
-              formatting = {
-                command = { "nixfmt" };
-              }
-            },
-            options = {
-              nixos = {
-                expr = nixos_options,
-              },
-              home_manager = {
-                expr = nixos_options .. ".home-manager.users.type.getSubOptions []",
-              }
-            }
-          }
-        }
+          nixd = {
+            formatting = { command = { "nixfmt" } },
+          },
+        },
       },
       statix = false,
       copilot = {
         settings = {
           telemetry = {
-            telemetryLevel = "off"
+            telemetryLevel = "off",
           },
         },
       },
