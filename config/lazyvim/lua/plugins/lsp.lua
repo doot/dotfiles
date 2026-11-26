@@ -30,8 +30,10 @@ return {
           ["nil"] = {
             nix = {
               flake = {
+                -- A path: archive copies even Git-ignored files into the Nix store.
                 autoArchive = false,
-                autoEvalInputs = false,
+                -- Evaluating large inputs like nixpkgs for completion can still take time and memory.
+                autoEvalInputs = true,
               },
             },
           },
